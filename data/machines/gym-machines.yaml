@@ -1,0 +1,13 @@
+machines:
+  - name: Seated Leg Press
+  - name: Leg Extension
+  - name: Seated Leg Curl
+  - name: Hip Adduction
+  - name: Hip Abduction
+  - name: Torso Rotation
+  - name: Abdominal Machine
+  - name: Row Machine
+  - name: Lat Pulldown
+  - name: Shoulder Press
+  - name: Chest Press
+  - name: Treadmill (incline available)
