@@ -4,7 +4,8 @@
 
 ## 基本方針
 
-- 最新メニューの正本は常に `data/menus/current-menus.md` とする
+- ユーザが最新メニューを最初に確認する場所は、レポジトリ直下の `README.md` 冒頭とする
+- `README.md` 冒頭はユーザ向けQuick Reference、`data/menus/current-menus.md` はLLM参照用の完全なメニューとして扱う
 - このリポジトリはフィットネスメニュー管理のソースオブトゥルースとして扱う
 - 画像解析そのものを勝手に進めず、ユーザが渡したGarmin情報を正確にテキスト化して残す
 - ChatGPTは外部レビュアーであり、提案をそのまま正解扱いしない
@@ -12,12 +13,14 @@
 
 ## 更新ルール
 
-- メニュー更新時は `data/menus/current-menus.md` と `data/menus/menu-history.md` を同時更新する
+- メニュー更新時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
 - 設計思想が変わった場合は `data/menus/design-philosophy.md` も更新する
 - Garminログを追加したら `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` の両方を更新する
 - ユーザが「ChatGPTに送る用のプロンプトを書いて」と言ったら、`data/prompts/chatgpt-review-template.md` を元に今回用のレビュー依頼文を生成する
 - ユーザがChatGPTからの修正案を貼ったら、内容を鵜呑みにせず、どのファイルをどう更新するかを明示してから更新する
 - レビュー結果や提案文を保存する場合は `data/logs/reviews/` 配下に日付つきMarkdownで残す
+- `README.md` 冒頭のQuick Referenceは `data/menus/current-menus.md` の数値と順序を要約したものとして維持し、推測で補わない
+- メニュー更新後は `README.md` と `data/menus/current-menus.md` の重量、回数、セット数、レスト、速度、傾斜、順序が一致しているか確認する
 
 ## 勝手に変えてはいけないもの
 
@@ -42,6 +45,7 @@
 - ChatGPTレビュー依頼時は、現行メニュー、設計思想、対象ログ、ユーザ主観、評価してほしい点を揃える
 - 依頼文には「必要であればメニューを修正してください」を含める
 - ChatGPTの提案を採用した場合は、変更理由と差分概要を `data/menus/menu-history.md` に残す
+- ChatGPTの提案を採用してメニューを変えた場合は、`README.md` 冒頭のQuick Referenceも同じ更新で同期する
 
 ## 出力の優先順位
 
