@@ -169,3 +169,205 @@ sessions:
         max_hr: 175
         calories: 25
         notes: Lap 4。元の表示時間は5:16.0。
+  - date: 2026-04-02
+    session_type: B_machine_only
+    segment_type: full_session
+    duration_min: 41.62
+    avg_hr: 126
+    max_hr: 162
+    aerobic_te: 2.7
+    anaerobic_te: 0.0
+    exercise_load: 43
+    calories: 223
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: 29.0
+    zone1_time: "8:54"
+    zone2_time: "21:45"
+    zone3_time: "5:50"
+    zone4_time: "5:07"
+    zone5_time: "0:00"
+    subjective_fatigue: 不完全燃焼
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: B60短縮版。Lap 1をwarmup、Lap 2をmachineとして記録。後半トレッドミル本体とcooldownは未実施。
+    notes: "Garmin画像から転記。主観: 各マシンはもうちょっと追い込めた。全体的に不完全燃焼。"
+    subjective_notes:
+      exercise_feedback:
+        overall_machine_comment: 各マシンはもうちょっと追い込めた
+      post_session:
+        overall_comment: 全体的に不完全燃焼。
+      next_day:
+        soreness_areas: unknown
+        fatigue_level: unknown
+    segments:
+      - segment_type: warmup
+        duration_min: 8
+        avg_hr: 150
+        max_hr: 162
+        calories: 69
+        notes: Lap 1。元の表示時間は7:59.8。ユーザ指定によりアップとして記録。
+      - segment_type: machine
+        duration_min: 33.63
+        avg_hr: 121
+        max_hr: 160
+        calories: 154
+        notes: "Lap 2。元の表示時間は33:38。主観: 各マシンはもうちょっと追い込めた。"
+  - date: 2026-04-05
+    session_type: B_full
+    segment_type: full_session
+    duration_min: 66.95
+    avg_hr: 126
+    max_hr: 162
+    aerobic_te: 3.0
+    anaerobic_te: 0.1
+    exercise_load: 57
+    calories: 370
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: 28.9
+    zone1_time: "20:48"
+    zone2_time: "21:48"
+    zone3_time: "18:28"
+    zone4_time: "5:00"
+    zone5_time: "0:00"
+    subjective_fatigue: 各セット10段階中9くらいの追い込み
+    soreness_next_day: 翌日以降に残る筋肉痛はなし
+    machine_order_changed: unknown
+    menu_deviation: unknown
+    notes: Garmin画像から転記。ラップ1-4をwarmup machine treadmill_main cooldownとして記録。主観として、各セット10段階中9くらいの追い込み。翌日以降に残る筋肉痛はなし。
+    subjective_notes:
+      exercise_feedback:
+        overall_machine_comment: 各セット10段階中9くらいの追い込み
+      post_session:
+        overall_comment: 各セット10段階中9くらいの追い込み。
+      next_day:
+        soreness_areas: なし
+        fatigue_level: なし
+    segments:
+      - segment_type: warmup
+        duration_min: 8.1
+        avg_hr: 135
+        max_hr: 154
+        calories: 61
+        notes: Lap 1。元の表示時間は8:06.0。
+      - segment_type: machine
+        duration_min: 37.45
+        avg_hr: 115
+        max_hr: 154
+        calories: 155
+        notes: "Lap 2。元の表示時間は37:27。主観: 各セット10段階中9くらいの追い込み。"
+      - segment_type: treadmill_main
+        duration_min: 16.02
+        avg_hr: 147
+        max_hr: 162
+        calories: 132
+        notes: Lap 3。元の表示時間は16:01。
+      - segment_type: cooldown
+        duration_min: 5.39
+        avg_hr: 126
+        max_hr: 155
+        calories: 23
+        notes: Lap 4。元の表示時間は5:23.3。
+  - date: 2026-04-09
+    session_type: A_full
+    segment_type: full_session
+    duration_min: 63.07
+    avg_hr: 127
+    max_hr: 172
+    aerobic_te: 3.0
+    anaerobic_te: 0.3
+    exercise_load: 60
+    calories: 356
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: 26.2
+    zone1_time: "16:18"
+    zone2_time: "29:54"
+    zone3_time: "8:52"
+    zone4_time: "7:20"
+    zone5_time: "0:10"
+    subjective_fatigue: unknown
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: unknown
+    notes: ユーザ指定のA60として記録。Garmin画像から転記。ラップ1-4をwarmup machine treadmill_main cooldownとして記録。
+    segments:
+      - segment_type: warmup
+        duration_min: 8.11
+        avg_hr: 130
+        max_hr: 148
+        calories: 58
+        notes: Lap 1。元の表示時間は8:06.5。
+      - segment_type: machine
+        duration_min: 30.85
+        avg_hr: 117
+        max_hr: 150
+        calories: 138
+        notes: Lap 2。元の表示時間は30:51。
+      - segment_type: treadmill_main
+        duration_min: 18.05
+        avg_hr: 144
+        max_hr: 172
+        calories: 136
+        notes: Lap 3。元の表示時間は18:03。
+      - segment_type: cooldown
+        duration_min: 6.06
+        avg_hr: 126
+        max_hr: 164
+        calories: 24
+        notes: Lap 4。元の表示時間は6:03.7。
+  - date: 2026-04-11
+    session_type: B_full
+    segment_type: full_session
+    duration_min: 72.62
+    avg_hr: 120
+    max_hr: 160
+    aerobic_te: 3.0
+    anaerobic_te: 0.0
+    exercise_load: 57
+    calories: 356
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: 30.5
+    zone1_time: "37:13"
+    zone2_time: "14:58"
+    zone3_time: "11:58"
+    zone4_time: "6:19"
+    zone5_time: "0:00"
+    subjective_fatigue: unknown
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: unknown
+    notes: Garmin画像から転記。ラップ1-4をwarmup machine treadmill_main cooldownとして記録。ローとプルは40kg、アブドリミナルは42.5kgで十分でした。
+    subjective_notes:
+      exercise_feedback:
+        row_machine: 40kgで十分
+        lat_pulldown: 40kgで十分
+        abdominal: 42.5kgで十分
+      post_session:
+        overall_comment: ローとプルは40kg、アブドリミナルは42.5kgで十分でした。
+      next_day:
+        soreness_areas: unknown
+        fatigue_level: unknown
+    segments:
+      - segment_type: warmup
+        duration_min: 8.75
+        avg_hr: 127
+        max_hr: 143
+        calories: 59
+        notes: Lap 1。元の表示時間は8:45.2。
+      - segment_type: machine
+        duration_min: 37.77
+        avg_hr: 108
+        max_hr: 129
+        calories: 138
+        notes: Lap 2。元の表示時間は37:46。ローとプルは40kg、アブドリミナルは42.5kgで十分でした。
+      - segment_type: treadmill_main
+        duration_min: 16.3
+        avg_hr: 147
+        max_hr: 160
+        calories: 133
+        notes: Lap 3。元の表示時間は16:18。
+      - segment_type: cooldown
+        duration_min: 9.8
+        avg_hr: 112
+        max_hr: 153
+        calories: 26
+        notes: Lap 4。元の表示時間は9:48.1。

@@ -2,6 +2,43 @@
 
 このファイルは、メニュー変更履歴の正本です。最新状態のQuick Referenceは `README.md` 冒頭、完全版は `current-menus.md` を見て、このファイルでは変更理由と差分概要を追います。
 
+## 2026-04-11（ChatGPTレビュー採用）
+
+- 種別: メニュー微修正
+- 理由: 2026-03-28 から 2026-04-11 の直近ログと主観を踏まえたChatGPTレビューを採用し、B日の重量を最小限更新しつつ、A日はSSOT表記との不一致だけを正規化するため
+- design philosophy update not required: yes
+- 変更前:
+  - A60 `Hip Adduction` は `60kg`
+  - B60 `Lat Pulldown` は `33kg × 12回 × 4set`
+  - B60 `Row Machine` は `33kg × 12回 × 4set`
+  - B60 `Abdominal` は `35kg × 12回 × 3set`
+- 変更後:
+  - A60 `Hip Adduction` を `61kg × 12回 × 最大2set` に表記正規化
+  - B60 `Lat Pulldown` を `40kg × 12回 × 4set` に更新
+  - B60 `Row Machine` を `40kg × 12回 × 4set` に更新
+  - B60 `Abdominal` を `42.5kg × 12回 × 3set` に更新
+- 差分概要:
+  - design philosophy は変更なし
+  - A60 は実質据え置き
+  - A60 `Hip Adduction` のみ、`data/machines/weight-options/hip-abduction-inward.md` の表示値に合わせて `61kg` 表記へ正規化
+  - A日の 2026-04-09 は 2026-03-28 より有酸素主導として弱かったが、今回は処方変更ではなく様子見
+  - A日 `Leg Press 115kg` と `Abdominal 42.5kg` は維持
+  - B60 は `Lat Pulldown / Row Machine / Abdominal` を候補レンジ内で更新
+  - B日の machine Avg HR は、主観的に限界近さが出ていれば致命的な問題とは扱わない方針を維持
+  - B60 の実測 66〜72分は当面許容し、今回はレスト・種目数・トレッドミルは変更しない
+  - 厳密に60分へ寄せたい要求が将来強くなった場合は、まず cooldown のばらつきと種目間移動の実測を揃えるべきであり、現段階で筋刺激側を削るべきではない
+  - B60 という名称自体は変更しない
+  - 不確実性:
+    - 2026-04-09 `A_full` は主観メモ不足のため、A日の machine 側刺激妥当性は強く断定していない
+    - 2026-04-11 `B_full` は翌日以降の張り・筋肉痛が未記録のため、今回の重量更新は最小限の前進として扱う
+    - Garmin 上にマシンごとの重量・回数・セット実績が残っていないため、B日の評価は数値だけでなく主観重視で扱う
+  - 次回以降のログで追加したい主観メモ:
+    - 各主要マシンの最終setの RPE または RIR
+    - どの部位に最も張りが入ったか
+    - 翌日朝〜翌々日の軽い筋肉痛/張りの有無と部位
+    - treadmill_main を処方どおり完遂できたか
+    - warmup / cooldown が長くなった理由
+
 ## 2026-03-28（A60微修正）
 
 - 種別: メニュー微修正

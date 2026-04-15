@@ -70,7 +70,7 @@
 
 ## ⑥ Hip Adduction
 
-- 60kg × 12回 × 最大2set
+- 61kg × 12回 × 最大2set
 - 張りが強ければ 1setで終了
 - rest 30秒
 
@@ -112,14 +112,14 @@
 
 ## ② Lat Pulldown
 
-- 33kg × 12回 × 4set
+- 40kg × 12回 × 4set
 - トップで1秒静止
 - rest 45秒
 - 最終setは限界近くまで
 
 ## ③ Row Machine
 
-- 33kg × 12回 × 4set
+- 40kg × 12回 × 4set
 - 引き切り1秒保持
 - rest 45秒
 - 反動なし
@@ -143,7 +143,7 @@
 
 ## ⑦ Abdominal
 
-- 35kg × 12回 × 3set
+- 42.5kg × 12回 × 3set
 - 下ろし3秒
 - rest 30秒
 

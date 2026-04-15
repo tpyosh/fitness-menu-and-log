@@ -1,6 +1,6 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-03-28時点）
+## 最新メニュー Quick Reference（2026-04-11時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
@@ -11,19 +11,19 @@
 - Leg Extension: 40kg x 12回 x 3set, rest 30秒
 - Seated Leg Curl: 40kg x 12回 x 3set, rest 30秒
 - Hip Abduction: 61kg x 15回 x 2set, rest 30秒
-- Hip Adduction: 60kg x 12回 x 最大2set, 張りが強ければ1setで終了, rest 30秒
+- Hip Adduction: 61kg x 12回 x 最大2set, 張りが強ければ1setで終了, rest 30秒
 - Abdominal: 42.5kg x 12回 x 3set, rest 30秒
 - トレッドミル 18分: 6.2 km/h・12% x 6分 → 6.3 km/h・13% x 6分 → 6.2 km/h・14% x 6分
 
 ### B60
 
 - WU 8分: 6.3 km/h, 傾斜 11%
-- Lat Pulldown: 33kg x 12回 x 4set, rest 45秒
-- Row Machine: 33kg x 12回 x 4set, rest 45秒
+- Lat Pulldown: 40kg x 12回 x 4set, rest 45秒
+- Row Machine: 40kg x 12回 x 4set, rest 45秒
 - Chest Press: 26kg x 12回 x 3set, rest 45秒
 - Shoulder Press: 15kg x 10回 x 3set, rest 45秒
 - Torso Rotation: 50kg 左右12回 x 2set, rest 30秒
-- Abdominal: 35kg x 12回 x 3set, rest 30秒
+- Abdominal: 42.5kg x 12回 x 3set, rest 30秒
 - トレッドミル 16分: 6.2 km/h・11% x 6分 → 6.3 km/h・11% x 6分 → 6.2 km/h・12% x 4分
 
 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` を参照する。
