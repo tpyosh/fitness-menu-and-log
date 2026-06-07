@@ -27,6 +27,13 @@ soreness_next_day:
 machine_order_changed:
 menu_deviation:
 notes:
+machine_adjustments:
+  - machine:
+    planned_weight_kg:
+    actual_weight_kg:
+    adjustment: one_step_heavier | one_step_lighter | other
+    resolution_basis:
+    subjective_comment:
 subjective_notes:
   machine_feedback:
     lat_pulldown:
@@ -117,7 +124,7 @@ segments:
 
 ## 転記時のルール
 
-- 画像で読める値だけを埋める
+- Garmin画像やユーザのテキストから確認できる値だけを埋める
 - 分からない項目は空欄または `unknown`
 - `session_type` は必ず分類ルールに従う
 - `segments` は存在するものだけ残し、不要な雛形は削ってよい
@@ -126,3 +133,7 @@ segments:
 - `notes` に、画像ファイル名や転記時の補足を残してよい
 - B日は `subjective_notes` をできるだけ埋める
 - 手動ラップを使う場合は、cooldown に入るとき負荷を下げた瞬間にラップを切る
+- 「1段重い」「1段軽い」「次の重量」「ピンを1つ上/下」などの相対重量表現がある場合は、`data/menus/current-menus.md` の現行メニュー重量と、対象マシンの `data/machines/weight-options/*.md` の表示重量順を照合する
+- 相対重量を一意に解決できる場合は、`unknown` にせず具体重量を記録する。これは推測ではなく、レポジトリ内の参照情報からの確定値として扱う
+- 相対重量を解決した場合は、`machine_adjustments` に対象マシン、予定重量、実施重量、増減種別、根拠、体感を残す。単発ログの実施重量変更だけで現行メニューは更新しない
+- 相対重量を一意に解決できない場合は、元の相対表現と未解決理由を `notes` に残す

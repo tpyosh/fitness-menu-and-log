@@ -10,6 +10,8 @@
 - 画像解析そのものを勝手に進めず、ユーザが渡したGarmin情報を正確にテキスト化して残す
 - ChatGPTは外部レビュアーであり、提案をそのまま正解扱いしない
 - 推測で重量、回数、セット数、傾斜、速度、意図を改変しない
+- `data/machines/weight-options/*.md` は、ジムマシンの重量スタック表示の正本として扱う
+- ユーザが「1段重い」「1段軽い」「次の重量」などの相対表現を使った場合、対象マシンの現行メニュー重量と `data/machines/weight-options/*.md` から一意に解決できる重量は、推測ではなく参照確定値として扱う
 
 ## 更新ルール
 
@@ -21,6 +23,7 @@
 - レビュー結果や提案文を保存する場合は `data/logs/reviews/` 配下に日付つきMarkdownで残す
 - `README.md` 冒頭のQuick Referenceは `data/menus/current-menus.md` の数値と順序を要約したものとして維持し、推測で補わない
 - メニュー更新後は `README.md` と `data/menus/current-menus.md` の重量、回数、セット数、レスト、速度、傾斜、順序が一致しているか確認する
+- ログ入力で相対的な重量変更が出た場合は、`data/menus/current-menus.md` と対象マシンの `data/machines/weight-options/*.md` を確認してから、CSV/YAMLに具体重量を記録する
 
 ## 勝手に変えてはいけないもの
 
@@ -29,6 +32,7 @@
 - A/Bの役割分担の勝手な再解釈
 - Garminログの分類ルールの改変
 - `data/machines/gym-machines.yaml` にあるマシン一覧の無断編集
+- 単発ログで現行メニューと違う重量を使っただけの場合の、現行メニュー本体の自動更新
 
 ## ログ記録ルール
 
@@ -39,6 +43,9 @@
 - CSVは1行1セッションの要約、YAMLは1セッションごとの詳細とセグメント情報を保持する
 - マシンのみで終えた日は、フルメニュー達成として扱わない
 - ログに不明値がある場合は空欄または `unknown` とし、推測値を入れない
+- 「1段重い」「1段軽い」「前回より1段」「ピンを1つ上/下」などの相対重量表現がある場合は、まず `data/menus/current-menus.md` の該当メニュー重量を基準値として確認し、次に対象マシンの `data/machines/weight-options/*.md` で隣接する重量を特定する
+- 相対重量表現を具体重量に解決できた場合は、CSVの `menu_deviation` / `notes` と、YAMLの `menu_deviation` / `subjective_notes` / `machine_adjustments` に、基準重量、実施重量、体感、解決根拠を残す
+- 対象マシン、基準重量、重量スタック表のいずれかが曖昧で一意に解決できない場合だけ、`unknown` または元の相対表現のまま残し、未解決理由を `notes` に書く
 
 ## レビュー運用
 

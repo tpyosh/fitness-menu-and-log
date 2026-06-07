@@ -371,3 +371,98 @@ sessions:
         max_hr: 153
         calories: 26
         notes: Lap 4。元の表示時間は9:48.1。
+  - date: 2026-06-07
+    start_time: "14:30"
+    session_type: B_full
+    segment_type: full_session
+    duration_min: 68.7
+    avg_hr: 134
+    max_hr: 168
+    aerobic_te: 3.3
+    anaerobic_te: 0.3
+    exercise_load: 76
+    calories: 273
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: 30.6
+    zone1_time: "7:11"
+    zone2_time: "30:34"
+    zone3_time: "17:25"
+    zone4_time: "13:32"
+    zone5_time: "0:00"
+    subjective_fatigue: チェストプレス33kgとアブドリミナル50kgで十分
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: チェストプレスを26kgから33kg、アブドリミナルを42.5kgから50kgにして実施
+    notes: Garminテキストから転記。Today @ 14:30は2026-06-07 14:30として記録。ラップ1-4をwarmup machine treadmill_main cooldownとして記録。ラップ別カロリー合計は272だがSummaryは273のためセッション合計はSummary値を採用。主観として、チェストプレスは26kgから33kg、アブドリミナルは42.5kgから50kgにして実施し、体感としては十分。
+    subjective_notes:
+      exercise_feedback:
+        chest_press: 26kgから33kgにして実施。体感としては十分。
+        abdominal: 42.5kgから50kgにして実施。体感としては十分。
+      post_session:
+        overall_comment: チェストプレスは26kgから33kg、アブドリミナルは42.5kgから50kgにして実施し、体感としては十分。
+      next_day:
+        soreness_areas: unknown
+        fatigue_level: unknown
+    machine_adjustments:
+      - machine: chest_press
+        planned_weight_kg: 26
+        actual_weight_kg: 33
+        adjustment: one_step_heavier
+        resolution_basis: data/menus/current-menus.md のB60 Chest Press 26kgと、data/machines/weight-options/chest-press.md の次段33から確定。
+        subjective_comment: 体感としては十分。
+      - machine: abdominal
+        planned_weight_kg: 42.5
+        actual_weight_kg: 50
+        adjustment: one_step_heavier
+        resolution_basis: data/menus/current-menus.md のB60 Abdominal 42.5kgと、data/machines/weight-options/abdominal-machine.md の次段50から確定。
+        subjective_comment: 体感としては十分。
+    nutrition_hydration:
+      resting_calories: 58
+      active_calories: 215
+      total_calories_burned: 273
+      calories_consumed: unknown
+      calories_net: -273
+      estimated_sweat_loss_ml: 963
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -963
+    intensity_minutes:
+      moderate_min: 35
+      vigorous_min_times_two: 20
+      total_min: 75
+    workout_details:
+      total_reps: unknown
+      total_sets: 1
+      volume_kg: unknown
+    temperature:
+      avg_c: 30.6
+      min_c: 29.0
+      max_c: 31.0
+    segments:
+      - segment_type: warmup
+        duration_min: 7.4
+        avg_hr: 145
+        max_hr: 168
+        calories: 40
+        avg_temp: 30.0
+        notes: Lap 1。元の表示時間は7:24.1。
+      - segment_type: machine
+        duration_min: 39.28
+        avg_hr: 127
+        max_hr: 162
+        calories: 134
+        avg_temp: 31.0
+        notes: Lap 2。元の表示時間は39:17。チェストプレスは26kgから33kg、アブドリミナルは42.5kgから50kgにして実施し、体感としては十分。
+      - segment_type: treadmill_main
+        duration_min: 15.98
+        avg_hr: 151
+        max_hr: 164
+        calories: 86
+        avg_temp: 30.0
+        notes: Lap 3。元の表示時間は15:59。
+      - segment_type: cooldown
+        duration_min: 6.03
+        avg_hr: 122
+        max_hr: 159
+        calories: 12
+        avg_temp: 30.0
+        notes: Lap 4。元の表示時間は6:01.7。

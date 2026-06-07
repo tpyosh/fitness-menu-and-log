@@ -37,6 +37,7 @@
   - `soreness_next_day`
   - `machine_order_changed`
   - `menu_deviation`
+  - `machine_adjustments`
 
 ## セッション分類ルール
 
@@ -110,6 +111,28 @@ B日は Garmin だけでは主評価を確定しにくいので、可能なら�
 - 翌日〜翌々日
   - 軽い筋肉痛の部位
   - だるさ: `なし` / `軽い` / `強い`
+
+## 相対重量表現の扱い
+
+ユーザが「1段重い」「1段軽い」「次の重量」「ピンを1つ上/下」などの相対表現で実施重量を伝えた場合は、推測で `unknown` にしない。
+
+1. `data/menus/current-menus.md` で、その日の現行メニュー上の対象マシン重量を確認する
+2. 対象マシンの `data/machines/weight-options/*.md` で、重量スタック上の隣接値を確認する
+3. 一意に決まる場合は、CSV/YAMLに具体重量として記録する
+4. YAMLでは可能な限り `machine_adjustments` に構造化して残す
+5. 単発ログで現行メニューより重い/軽い重量を使っただけでは、現行メニュー本体は更新しない
+
+例:
+
+```yaml
+machine_adjustments:
+  - machine: chest_press
+    planned_weight_kg: 26
+    actual_weight_kg: 33
+    adjustment: one_step_heavier
+    resolution_basis: current-menus.md のB60 Chest Press 26kgと、chest-press.md の次段33から確定。
+    subjective_comment: 体感としては十分。
+```
 
 ## 転記の考え方
 
