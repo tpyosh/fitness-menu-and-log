@@ -126,24 +126,24 @@
 
 ## ④ Chest Press
 
-- 26kg × 12回 × 3set
+- 33kg × 12回 × 3set
 - rest 45秒
 - 最終setは丁寧に限界近くまで
 
 ## ⑤ Shoulder Press
 
-- 15kg × 10回 × 3set
+- 20kg × 10回 × 3set
 - rest 45秒
 - フォーム優先
 
 ## ⑥ Torso Rotation
 
-- 50kg 左右12回 × 2set
+- 57.5kg 左右12回 × 2set
 - rest 30秒
 
 ## ⑦ Abdominal
 
-- 42.5kg × 12回 × 3set
+- 50kg × 12回 × 3set
 - 下ろし3秒
 - rest 30秒
 

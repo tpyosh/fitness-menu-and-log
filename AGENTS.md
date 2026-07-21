@@ -51,6 +51,10 @@
 
 - ChatGPTレビュー依頼時は、現行メニュー、設計思想、対象ログ、ユーザ主観、評価してほしい点を揃える
 - 依頼文には「必要であればメニューを修正してください」を含める
+- オンデマンドGarminコーチングレビュー依頼時は、`data/prompts/garmin-coach-review-request.md` と `scripts/generate_garmin_coach_review_prompt.py` を優先して使う
+- オンデマンドGarminコーチングレビュー依頼メタデータは `data/logs/reviews/review-request-history.jsonl` に残し、ChatGPT回答本文とは分離する
+- ChatGPTからGarminコーチングレビュー結果が貼られた場合は、`data/prompts/apply-garmin-coach-feedback.md` に沿って具体的で根拠のある変更だけを抽出する
+- 「メニュー変更なし」「現行継続」「データ不足」は有効なレビュー結論として扱い、変更根拠がない場合はメニュー本体を更新しない
 - ChatGPTの提案を採用した場合は、変更理由と差分概要を `data/menus/menu-history.md` に残す
 - ChatGPTの提案を採用してメニューを変えた場合は、`README.md` 冒頭のQuick Referenceも同じ更新で同期する
 

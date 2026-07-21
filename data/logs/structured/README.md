@@ -130,7 +130,7 @@ machine_adjustments:
     planned_weight_kg: 26
     actual_weight_kg: 33
     adjustment: one_step_heavier
-    resolution_basis: current-menus.md のB60 Chest Press 26kgと、chest-press.md の次段33から確定。
+    resolution_basis: セッション時点のcurrent-menus.mdにあるB60 Chest Press 26kgと、chest-press.mdの次段33から確定。
     subjective_comment: 体感としては十分。
 ```
 

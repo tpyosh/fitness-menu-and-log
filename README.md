@@ -1,6 +1,6 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-04-11時点）
+## 最新メニュー Quick Reference（2026-07-19時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
@@ -20,10 +20,10 @@
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Lat Pulldown: 40kg x 12回 x 4set, rest 45秒
 - Row Machine: 40kg x 12回 x 4set, rest 45秒
-- Chest Press: 26kg x 12回 x 3set, rest 45秒
-- Shoulder Press: 15kg x 10回 x 3set, rest 45秒
-- Torso Rotation: 50kg 左右12回 x 2set, rest 30秒
-- Abdominal: 42.5kg x 12回 x 3set, rest 30秒
+- Chest Press: 33kg x 12回 x 3set, rest 45秒
+- Shoulder Press: 20kg x 10回 x 3set, rest 45秒
+- Torso Rotation: 57.5kg 左右12回 x 2set, rest 30秒
+- Abdominal: 50kg x 12回 x 3set, rest 30秒
 - トレッドミル 16分: 6.2 km/h・11% x 6分 → 6.3 km/h・11% x 6分 → 6.2 km/h・12% x 4分
 
 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` を参照する。
@@ -61,6 +61,30 @@
 6. ChatGPTの回答を採用する場合は、`README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
 7. 設計思想そのものが変わる場合のみ、`data/menus/design-philosophy.md` も更新する
 
+## オンデマンドGarminコーチングレビュー
+
+前回レビュー依頼以降のGarminログをまとめてChatGPTに見せたい場合は、以下を使う。
+
+```sh
+python3 scripts/generate_garmin_coach_review_prompt.py
+```
+
+このコマンドは以下を行う。
+
+- `data/logs/reviews/review-request-history.jsonl` から前回レビュー依頼日時を確認する
+- `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` から、前回依頼以降のログを抽出する
+- 件数が少ない場合に備えて、直前の数セッションを比較用ベースラインとして添える
+- ChatGPTへ貼る依頼文を `data/logs/reviews/YYYY-MM-DD_garmin-coach-review-request.md` に保存する
+- 今回のレビュー依頼メタデータを `data/logs/reviews/review-request-history.jsonl` に追記する
+
+履歴を更新せずに内容だけ確認する場合は、以下を使う。
+
+```sh
+python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
+```
+
+生成されたMarkdown本文をChatGPTに貼り付ける。ChatGPTの回答をCodexに貼り戻して反映したい場合は、`data/prompts/apply-garmin-coach-feedback.md` のテンプレートに沿って依頼する。Codexは、具体的で根拠のある変更だけを抽出し、変更不要という結論ならメニュー本体を更新しない。
+
 ## 正本ファイル
 
 - ユーザ向け最新メニューQuick Reference: `README.md` 冒頭
@@ -71,6 +95,9 @@
 - セッション要約一覧の正本: `data/logs/structured/sessions.csv`
 - セッション詳細ログの正本: `data/logs/structured/sessions.yaml`
 - ChatGPTレビュー用テンプレートの正本: `data/prompts/chatgpt-review-template.md`
+- オンデマンドGarminレビュー依頼テンプレート: `data/prompts/garmin-coach-review-request.md`
+- ChatGPTレビュー反映テンプレート: `data/prompts/apply-garmin-coach-feedback.md`
+- レビュー依頼メタデータ履歴: `data/logs/reviews/review-request-history.jsonl`
 
 ## ディレクトリ概要
 
@@ -83,7 +110,7 @@
 - `data/logs/structured/`
   - Garminログの転記結果
 - `data/logs/reviews/`
-  - ChatGPTのレビュー結果や改定提案の保管場所
+  - ChatGPTのレビュー依頼、レビュー結果、改定提案、レビュー依頼メタデータの保管場所
 - `data/prompts/`
   - Codexが使うテンプレート
 - `scripts/`
