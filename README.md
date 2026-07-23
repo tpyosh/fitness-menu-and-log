@@ -28,13 +28,14 @@
 
 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` を参照する。
 
-このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、必要なときだけChatGPTへレビュー依頼できる運用基盤を作ることです。
+このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
 
 ## このリポジトリの役割
 
 - `README.md` 冒頭で、ユーザ向けの最新A/BメニューQuick Referenceを確認できるようにする
 - `data/menus/current-menus.md` で、LLM参照用の完全なA/Bメニューを管理する
 - Garminログ画像から転記した内容を、検索しやすいテキストとして蓄積する
+- 新しいログごとに、同種の直近履歴との比較、日本語フィードバック、`keep` / `adjust` / `defer` のメニュー判断を残す
 - ChatGPTへ送るレビュー依頼プロンプトのテンプレートを保持する
 - ChatGPTから返ってきた提案を、そのまま鵜呑みにせずレビュー履歴として保存する
 
@@ -57,13 +58,16 @@
 2. 必要に応じて画像ファイルを `data/logs/raw/` 配下のルールに沿って置く、または参照元を明記する
 3. Codexが `data/prompts/log-intake-template.md` を使って画像内容をテキスト化する
 4. Codexが `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` を同時更新する
-5. メニュー見直しが必要なときだけ、`data/prompts/chatgpt-review-template.md` をもとにChatGPTへ送るレビュー依頼文を作る
-6. ChatGPTの回答を採用する場合は、`README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
-7. 設計思想そのものが変わる場合のみ、`data/menus/design-philosophy.md` も更新する
+5. Codexが直近8週間の同種セッションを新しい順に最大3件確認し、事実、解釈、仮説を分けて日本語フィードバックを作る
+6. Codexが現行メニューを `keep` / `adjust` / `defer` のいずれかで判断し、フィードバックとともに新規セッションのYAMLへ保存する
+7. `adjust` は原則として少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がない場合だけ採用する。採用時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
+8. 設計思想そのものが変わる場合のみ、`data/menus/design-philosophy.md` も更新する
+
+ログ取り込みは手順6まで終わるまで完了扱いにしない。通常の単発好成績、1回だけの重量変更、Garminスコアだけを根拠に恒久メニューを変更しない。明示的な痛みや異常症状など安全上の懸念は、単発でも中止、保留、負荷低減の理由にできる。
 
 ## オンデマンドGarminコーチングレビュー
 
-前回レビュー依頼以降のGarminログをまとめてChatGPTに見せたい場合は、以下を使う。
+通常取り込みで行う内蔵フィードバックとは別に、前回レビュー依頼以降のGarminログをまとめてChatGPTに見せたい場合は、以下を使う。
 
 ```sh
 python3 scripts/generate_garmin_coach_review_prompt.py

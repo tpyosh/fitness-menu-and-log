@@ -10,7 +10,7 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 - まず、今回更新するファイルと変更理由を明示する
 - `README.md` 冒頭の最新メニューQuick Referenceを更新する
 - `data/menus/current-menus.md` を完全版として更新する
-- `data/menus/menu-history.md` に変更理由と差分概要を追記する
+- `data/menus/menu-history.md` にprevious version、new version、正確なbefore/after、日付つき根拠、意図する効果、再評価条件、rollbackまたは再検討条件を記録する
 - 設計思想が変わる場合だけ `data/menus/design-philosophy.md` も更新する
 - `README.md` には、ジムで見やすい要約だけを書く
 - 重量、回数、セット数、レスト、速度、傾斜、種目順は推測で補わず、`data/menus/current-menus.md` と一致させる
@@ -29,8 +29,10 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 ## 更新前チェック
 
 1. 変更の根拠を確認する
-2. 何を更新するかを先に明示する
-3. 推測で重量、回数、セット数、傾斜、速度を補わない
+2. 恒久変更では、原則として直近8週間の少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がないことを確認する
+3. 明示的なユーザ要件と推定トレンドが衝突する場合は、衝突を隠さず、目的と手段を再評価する
+4. 何を更新するかを先に明示する
+5. 推測で重量、回数、セット数、傾斜、速度を補わない
 
 ## 変更内容整理テンプレート
 
@@ -39,6 +41,12 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 
 - 変更理由:
   {{change_reason}}
+
+- Previous version:
+  {{previous_version}}
+
+- New version:
+  {{new_version}}
 
 - 更新するファイル:
   - README.md
@@ -56,13 +64,27 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 
 - この変更が必要な理由:
   {{why_this_change}}
+
+- 日付つき根拠:
+  {{dated_evidence}}
+
+- 意図する効果:
+  {{intended_effect}}
+
+- 再評価条件:
+  {{review_conditions}}
+
+- Rollback / 再検討条件:
+  {{rollback_conditions}}
 ```
 
 ## 実更新ルール
 
 - `README.md` 冒頭のQuick Referenceを最新状態に更新する
 - `data/menus/current-menus.md` を最新状態に更新する
-- `data/menus/menu-history.md` に変更日、理由、差分概要を残す
+- `data/menus/menu-history.md` にprevious/new version、正確なbefore/after、日付つき根拠、理由、意図する効果、再評価条件、rollbackまたは再検討条件を残す
+- メニューバージョンは改定日を使い、同日に複数改定する場合は `YYYY-MM-DD-2` のように連番を付ける
+- 通常は重量、回数、セット数、レスト、速度、傾斜、時間のうち主な1次元だけを変更し、負荷・ボリューム・有酸素強度を同時に上げない
 - 設計思想に影響するなら `data/menus/design-philosophy.md` も更新する
 - ChatGPTレビュー文そのものを残す場合は `data/logs/reviews/` に保存する
 

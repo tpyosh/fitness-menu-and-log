@@ -9,7 +9,7 @@
   - 日付、分類、主要Garmin指標、メモを素早く見返すために使う
 - `sessions.yaml`
   - 1セッションごとの詳細記録
-  - ラップ情報、主観メモ、メニュー逸脱、補足説明を残すために使う
+  - ラップ情報、主観メモ、メニュー逸脱、補足説明に加え、取り込み後のフィードバックとメニュー判断を残すために使う
 
 ## Garmin画像から最低限転記する項目
 
@@ -38,6 +38,13 @@
   - `machine_order_changed`
   - `menu_deviation`
   - `machine_adjustments`
+
+## 取り込み後に必須の項目
+
+Garminからの転記事実とは別に、新規ログごとに以下を `sessions.yaml` へ保存する。
+
+- `feedback`
+- `menu_decision`
 
 ## セッション分類ルール
 
@@ -151,3 +158,28 @@ machine_adjustments:
 - 不明値は推測せず空欄または `unknown` を使う
 - セグメントが不明な場合でも、`notes` に「どこまで判別できたか」を残す
 - 詳細な主観メモは、YAMLの `notes` または追加の補足キーとして残してよい
+- 新規ログには、Garmin転記事実や取り込みメタデータと分けて `feedback` と `menu_decision` を追加する。既存ログへの一括バックフィルは不要
+- `feedback` は簡潔な日本語で、実施内容、予定との差、根拠のある良い点・注意点、同種の直近比較、次回への意味を残す
+- `menu_decision.outcome` は `keep` / `adjust` / `defer` のいずれかとし、事実、解釈、仮説、根拠ログ、反証確認、再評価条件を区別する
+- 比較は原則として直近8週間の同種セッションを新しい順に最大3件使う。比較対象が1件しかない通常結果をトレンドと呼ばない
+- 恒久的な `adjust` は原則として少なくとも2回の比較可能な完遂セッションで同方向の根拠が続く場合に限る。痛みなど明確な安全上の懸念による単発の中止・保留・負荷低減は例外とする
+
+追加キーの例:
+
+```yaml
+feedback:
+  completed: "確認できた事実だけを書く。"
+  positives: "今回ログまたはユーザ主観に結びつける。"
+  concerns: "欠損や予定との差も明記する。"
+  recent_comparison: "YYYY-MM-DDの同種ログと比較。比較不能なら理由を書く。"
+  next_workout: "次回に維持・観察・回避する点。"
+menu_decision:
+  outcome: keep
+  fact: "直接確認できる事実。"
+  interpretation: "事実から妥当に読めること。"
+  hypothesis: "追加確認が必要な可能性。なければnone。"
+  rationale: "判断理由と反証確認。"
+  evidence:
+    - "YYYY-MM-DD session_type"
+  review_conditions: "判断を見直す条件。"
+```
