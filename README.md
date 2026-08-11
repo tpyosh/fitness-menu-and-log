@@ -1,32 +1,37 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-07-19時点）
+## 最新メニュー Quick Reference（2026-08-11時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
-### A60
+### A（Lower emphasis + Upper）
 
 - WU 8分: 6.3 km/h, 傾斜 11%
-- Seated Leg Press: 115kg x 15回 x 4set, rest 45〜60秒
-- Leg Extension: 40kg x 12回 x 3set, rest 30秒
-- Seated Leg Curl: 40kg x 12回 x 3set, rest 30秒
-- Hip Abduction: 61kg x 15回 x 2set, rest 30秒
-- Hip Adduction: 61kg x 12回 x 最大2set, 張りが強ければ1setで終了, rest 30秒
-- Abdominal: 42.5kg x 12回 x 3set, rest 30秒
+- Seated Leg Press: 125kg（参考）x 12〜15回 x 3set, RIR 2〜3, rest 90秒
+- Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
+- Leg Extension: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
+- Lat Pulldown: 40kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
+- Chest Press: 33kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
+- Hip Abduction: 61kg（参考）x 12〜15回 x 2set, RIR 2〜3, rest 60秒
+- Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 18分: 6.2 km/h・12% x 6分 → 6.3 km/h・13% x 6分 → 6.2 km/h・14% x 6分
 
-### B60
+### B（Upper emphasis + Lower）
 
 - WU 8分: 6.3 km/h, 傾斜 11%
-- Lat Pulldown: 40kg x 12回 x 4set, rest 45秒
-- Row Machine: 40kg x 12回 x 4set, rest 45秒
-- Chest Press: 33kg x 12回 x 3set, rest 45秒
-- Shoulder Press: 20kg x 10回 x 3set, rest 45秒
-- Torso Rotation: 57.5kg 左右12回 x 2set, rest 30秒
-- Abdominal: 50kg x 12回 x 3set, rest 30秒
+- Lat Pulldown: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
+- Row Machine: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
+- Chest Press: 33kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
+- Shoulder Press: 20kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
+- Seated Leg Press: 115kg（参考）x 12〜15回 x 2set, RIR 3, rest 90秒
+- Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
+- Torso Rotation: 57.5kg（参考）左右10〜12回 x 1set, RIR 3, rest 60秒
+- Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 16分: 6.2 km/h・11% x 6分 → 6.3 km/h・11% x 6分 → 6.2 km/h・12% x 4分
 
 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` を参照する。
+
+全種目はDouble Progressionで運用する。全setで上限回数を指定RIR・良好なフォーム・痛みなしで達成した種目だけ、次回1段上げる。Optional Cは20〜40分のeasy cardio中心で、行かなくてもA/Bだけで完結する。
 
 このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
 

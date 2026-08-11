@@ -934,3 +934,143 @@ sessions:
         calories: 13
         avg_temp: unknown
         notes: Lap 4。元の表示時間は6:01.2。
+  - date: 2026-07-25
+    start_time: "09:41"
+    session_type: B_full
+    segment_type: full_session
+    duration_min: 69.81
+    avg_hr: 124
+    max_hr: 163
+    aerobic_te: 2.8
+    anaerobic_te: 0.5
+    exercise_load: 59
+    calories: 246
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: "24:51"
+    zone2_time: "19:05"
+    zone3_time: "21:45"
+    zone4_time: "2:27"
+    zone5_time: "0:00"
+    subjective_fatigue: Lat PulldownとRow Machineはキツい。Chest Pressは全体的に楽だが最終set後半だけキツい。Shoulder Pressはキツく、後半にフォームが崩れた。Torso Rotationは心地よい負荷。Abdominalはフォーム見直し後にキツく、42.5kgへ変更。WUと後半トレッドミルは余裕。
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: Abdominalを現行B60の50kgから42.5kgへ変更。treadmill_mainは15:49.9で処方16分より10.1秒短い。
+    notes: 添付のPhoto 1.jpg〜Photo 6.jpgから転記。2026-07-25 09:41開始。GarminのLaps合計1:09:48.6を69.81分として記録し、Overviewの表示は1:09:49。ラップ1-4をwarmup machine treadmill_main cooldownとして記録。Abdominalの42.5kgはユーザ明示値で、現行B60の50kgとweight-options上で隣接する1段軽い重量。単発のフォーム見直し結果のため現行メニュー本体は更新しない。
+    subjective_notes:
+      exercise_feedback:
+        warmup_treadmill: 6.3km/h・傾斜11%の8分は余裕。
+        lat_pulldown: 40kg × 12回 × 4setはキツい。
+        row_machine: 40kg × 12回 × 4setはキツい。
+        chest_press: 33kg × 12回 × 3setは全体的に楽で、最終set後半だけキツかった。
+        shoulder_press: 20kg × 10回 × 3setはキツく、後半にフォームが崩れた。
+        torso_rotation: 57.5kg・左右12回 × 2setは心地よい負荷。
+        abdominal: フォームを見直すと50kgではキツかったため、42.5kgへ変更した。
+        treadmill_main: 処方どおりの速度・傾斜で余裕が残った。
+      post_session:
+        overall_comment: 背中2種目と肩はキツく、Chest Pressは最終set後半で負荷を感じた。Abdominalはフォーム見直しを優先して42.5kgへ下げ、後半トレッドミルには余裕が残った。
+      next_day:
+        soreness_areas: unknown
+        fatigue_level: unknown
+    machine_adjustments:
+      - machine: abdominal
+        planned_weight_kg: 50
+        actual_weight_kg: 42.5
+        adjustment: one_step_lighter
+        change_timing: unknown
+        resolution_basis: data/menus/current-menus.mdにあるB60 Abdominal 50kgと、data/machines/weight-options/abdominal-machine.mdで隣接する42.5から確認。実施重量42.5kgはユーザ明示値。
+        subjective_comment: フォームを見直すと50kgではキツかったため42.5kgにした。何set目から変更したかは未指定。
+    feedback:
+      completed: >-
+        現行B60のWU、6種のマシン、後半トレッドミル、cooldownまで実施してB_fullとして完遂した。
+        Abdominalのみ50kgから42.5kgへ下げ、treadmill_mainは15:49.9で処方16分より10.1秒短かった。
+      positives: >-
+        Lat PulldownとRow Machineは40kgでキツさがあり、Chest Press 33kgも全体は楽でも最終set後半でキツさが出た。
+        Torso Rotation 57.5kgは心地よい負荷だった。treadmill_mainは平均心拍146bpmで余裕を残して終了した。
+      concerns: >-
+        Shoulder Press 20kgは後半にフォームが崩れ、今日の状態では全repを同じ品質で行えなかった。
+        Abdominal 50kgはフォームを見直すとキツく42.5kgへ下げた。痛みの申告はないが、翌日以降の張り・筋肉痛は未確認。
+      recent_comparison: >-
+        直近8週間のB_fullを新しい順に3件比較した。2026-07-19はtreadmill_main 16:04.8・平均145bpm・Aerobic TE 2.7・Load 59、
+        2026-07-11は16:09.1・平均146bpm・Aerobic TE 2.9・Load 59で、今回は15:49.9・平均146bpm・Aerobic TE 2.8・Load 59のため、
+        後半トレッドミルとGarmin負荷は直近2件と近い。machineは今回は40:23.6で、2026-07-19の34:12.0と2026-07-11の32:56.1より長い。
+        2026-06-20は同じB_fullだがtreadmill_mainが19:17と処方より長く、比較条件が一部異なる。
+        2026-07-11と2026-07-19はShoulder Press 20kg・Abdominal 50kgを安定実施と記録している一方、詳細なフォーム・RIRと翌日所見は未記録。
+      next_workout: >-
+        Lat Pulldown 40kg、Row Machine 40kg、Chest Press 33kg、Torso Rotation 57.5kgと後半トレッドミル処方は維持する。
+        Shoulder Press 20kgはフォームを優先し、崩れ始めるrepとsetを記録する。Abdominalは42.5kgで同じ厳格フォームを再確認し、
+        最終setの余力を記録する試行とする。いずれも単発結果だけで恒久変更せず、翌日〜翌々日の肩・腹・背中・胸の張りも確認する。
+    menu_decision:
+      outcome: defer
+      fact: >-
+        2026-07-25はShoulder Press 20kgの後半でフォームが崩れ、Abdominalはフォーム見直し後に50kgから42.5kgへ下げた。
+        一方、2026-07-11と2026-07-19は20kgと50kgを安定実施と記録している。
+      interpretation: >-
+        B60全体と有酸素処方は成立しているが、厳格フォームでのShoulder Press 20kgとAbdominal 50kgの再現性は今回ログだけでは確定できない。
+        Chest Press 33kgは最終set後半でキツさが出ており、現時点で増量を急ぐ根拠はない。
+      hypothesis: >-
+        Abdominalはフォーム見直しによって同じ50kgでも実効的な負荷が上がった可能性がある。
+        Shoulder Pressのフォーム崩れが恒常的な重量不適合か、その日の疲労によるものかは追加確認が必要。
+      rationale: >-
+        今日の主観はフォーム品質に関する意味のある新規根拠だが、同方向の比較可能な結果はまだ1回だけで、
+        直前2回の安定実施という反証もある。痛みや異常症状の申告もないため恒久変更はせず、
+        次回の厳格フォーム試行まで判断を保留する。
+      evidence:
+        - 2026-07-25 B_full
+        - 2026-07-19 B_full
+        - 2026-07-11 B_full
+        - 2026-06-20 B_full
+      review_conditions: >-
+        次回以降の比較可能なB_fullでShoulder Press 20kgのフォーム崩れが同方向に再現した場合、
+        またはAbdominal 42.5kgを厳格フォームで全set行って最終setが適正負荷となり、今回の50kg不成立と合わせて減量方向の根拠が続いた場合に、
+        最小限の重量調整を再検討する。明確な痛みや異常症状が出た場合は回数を待たず中止・負荷低減を検討する。
+    nutrition_hydration:
+      resting_calories: 61
+      active_calories: 185
+      total_calories_burned: 246
+      calories_consumed: unknown
+      calories_net: -246
+      estimated_sweat_loss_ml: 903
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -903
+    intensity_minutes:
+      moderate_min: 22
+      vigorous_min_times_two: 19
+      total_min: 60
+    workout_details:
+      total_reps: 0
+      total_sets: 0
+      volume_kg: unknown
+    temperature:
+      avg_c: unknown
+      min_c: unknown
+      max_c: unknown
+    segments:
+      - segment_type: warmup
+        duration_min: 8.26
+        avg_hr: 141
+        max_hr: unknown
+        calories: 45
+        avg_temp: unknown
+        notes: Lap 1。元の表示時間は8:15.8。実施処方は6.3km/h・傾斜11% × 8分。主観は余裕。
+      - segment_type: machine
+        duration_min: 40.39
+        avg_hr: 112
+        max_hr: unknown
+        calories: 105
+        avg_temp: unknown
+        notes: Lap 2。元の表示時間は40:23.6。Lat Pulldown 40kg、Row Machine 40kg、Chest Press 33kg、Shoulder Press 20kg、Torso Rotation 57.5kg、Abdominalは50kgから42.5kgへ変更。各種目の主観はsubjective_notesに記録。
+      - segment_type: treadmill_main
+        duration_min: 15.83
+        avg_hr: 146
+        max_hr: unknown
+        calories: 85
+        avg_temp: unknown
+        notes: Lap 3。元の表示時間は15:49.9。処方16分より10.1秒短い。主観は余裕が残る。
+      - segment_type: cooldown
+        duration_min: 5.32
+        avg_hr: 115
+        max_hr: unknown
+        calories: 11
+        avg_temp: unknown
+        notes: Lap 4。元の表示時間は5:19.3。
