@@ -1,6 +1,6 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-08-11時点）
+## 最新メニュー Quick Reference（2026-08-29時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
@@ -12,7 +12,7 @@
 - Leg Extension: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
 - Lat Pulldown: 40kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
 - Chest Press: 33kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
-- Hip Abduction: 61kg（参考）x 12〜15回 x 2set, RIR 2〜3, rest 60秒
+- Hip Abduction (Outward / 外向き): 61kg（参考）x 12〜15回 x 2set, RIR 2〜3, rest 60秒
 - Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 18分: 6.2 km/h・12% x 6分 → 6.3 km/h・13% x 6分 → 6.2 km/h・14% x 6分
 

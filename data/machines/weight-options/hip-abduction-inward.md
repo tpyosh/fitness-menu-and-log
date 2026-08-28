@@ -2,6 +2,11 @@
 
 `Hip Abduction内向き` として共有されたマシンの重量スタック表示を、画像からそのまま転記した記録。
 
+- machine_id: `hip_adduction_inward`
+- display_name: `Hip Adduction (Inward / 内向き)`
+- station_name: `Hip Abduction`
+- movement: `hip_adduction`
+- direction: `inward`
 - source_image: `B00E9DFF-FD7B-4D97-99FE-A8991374B287.heic`
 - recorded_on: `2026-04-11`
 - transcription_basis: 左右の表示列を見比べて確認。上部の一部はピンとコードで部分的に隠れている。

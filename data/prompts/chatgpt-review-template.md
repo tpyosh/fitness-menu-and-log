@@ -41,6 +41,7 @@
 - Garmin指標を過大評価しすぎず、主観や筋刺激も含めて判断してください
 - 必要であればメニューを修正してください
 - 重量を修正する場合は、現在値だけでなく、上に示した近傍候補のどれを採るかも明記してください
+- ヒップ系マシンは内向き/外向きを必ず明記し、対応する重量表を混同しないでください
 - 近傍候補の外を提案する場合は、その必要性も理由つきで明記してください
 - 修正する場合は、どこをどう変えるか、理由つきで具体的に示してください
 
@@ -104,10 +105,10 @@
   - nearby options: 26kg / 33kg / 40kg
   - note: `data/machines/weight-options/lat-pulldown.md` に基づく。40kgはユーザ実施あり
 
-- Hip Adduction
+- Hip Adduction (Inward / 内向き)
   - current: 60kg
   - nearby options: 54kg / 61kg / 68kg
-  - note: `data/machines/weight-options/hip-abduction-inward.md` に基づく。現行メニューの60kgとSSOT表示値61の差は要確認
+  - note: machine_idは`hip_adduction_inward`。`data/machines/weight-options/hip-abduction-inward.md` に基づく。現行メニューの60kgとSSOT表示値61の差は要確認
 ```
 
 上の数値は書き方の実例です。実際の差し込みでは、対象種目ごとに対応する `weight-options` ファイルを確認して埋めます。

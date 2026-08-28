@@ -136,8 +136,8 @@ sessions:
         seated_leg_press: やや消化不良
         leg_extension: 各セット最後は限界
         seated_leg_curl: 各セット最後は限界
-        hip_abduction: 各セット最後は限界
-        hip_adduction: 各セット最後は限界
+        hip_abduction_outward: 各セット最後は限界
+        hip_adduction_inward: 各セット最後は限界
         abdominal: やや消化不良
       post_session:
         overall_comment: レッグプレスとアブドリミナルはやや消化不良。他は各セット最後は限界。
@@ -793,8 +793,8 @@ sessions:
         seated_leg_press: 115kgでは物足りない。
         leg_extension: 40kgで最終セットの後半だけきつかった。
         seated_leg_curl: 40kgでちょうどよい。
-        hip_abduction: unknown
-        hip_adduction: unknown
+        hip_abduction_outward: unknown
+        hip_adduction_inward: unknown
         abdominal: 現行A60より1段重い50kgで十分。
       post_session:
         overall_comment: レッグプレスは物足りず、レッグエクステンションは最終セット後半だけきつかった。レッグカールはちょうどよく、アブドミナルは50kgで十分だった。
@@ -1104,7 +1104,7 @@ sessions:
         leg_extension: 40kg・2setを実施。各setの正確なrepsとRIRはunknown。
         lat_pulldown: 40kg・2setを実施。各setの正確なrepsとRIRはunknown。
         chest_press: 33kg・2setを実施。各setの正確なrepsとRIRはunknown。
-        hip_abduction: 61kg・2setを実施。各setの正確なrepsとRIRはunknown。
+        hip_abduction_outward: 61kg・2setを実施。各setの正確なrepsとRIRはunknown。
         abdominal: 42.5kg・2setを実施。各setの正確なrepsとRIRはunknown。
       post_session:
         overall_comment: セット数を減らしていることもあり、あまり筋肉に負荷がかかった感じがせず不安。
@@ -1161,7 +1161,7 @@ sessions:
         max_hr: 141
         calories: 130
         avg_temp: unknown
-        notes: Lap 2。元の表示時間は39:02。現行A60のSeated Leg Press 125kg × 3set、Seated Leg Curl 40kg × 2set、Leg Extension 40kg × 2set、Lat Pulldown 40kg × 2set、Chest Press 33kg × 2set、Hip Abduction 61kg × 2set、Abdominal 42.5kg × 2setの全15setを実施。各setの正確なrepsとRIRはunknown。各setの最後だけはキツかったが、改定で従来よりset数を減らしたため筋肉への負荷不足を本人が懸念。
+        notes: Lap 2。元の表示時間は39:02。現行A60のSeated Leg Press 125kg × 3set、Seated Leg Curl 40kg × 2set、Leg Extension 40kg × 2set、Lat Pulldown 40kg × 2set、Chest Press 33kg × 2set、Hip Abduction (Outward / 外向き) 61kg × 2set、Abdominal 42.5kg × 2setの全15setを実施。各setの正確なrepsとRIRはunknown。各setの最後だけはキツかったが、改定で従来よりset数を減らしたため筋肉への負荷不足を本人が懸念。
       - segment_type: treadmill_main
         duration_min: 17.88
         avg_hr: 151

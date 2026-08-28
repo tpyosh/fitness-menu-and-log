@@ -61,6 +61,14 @@ subjective_notes:
       last_set_reps_in_reserve:
       form_quality:
       target_muscle_feel:
+    hip_adduction_inward:
+      last_set_reps_in_reserve:
+      form_quality:
+      target_muscle_feel:
+    hip_abduction_outward:
+      last_set_reps_in_reserve:
+      form_quality:
+      target_muscle_feel:
     torso_rotation:
       last_set_reps_in_reserve:
       form_quality:
@@ -160,6 +168,8 @@ segments:
 - ユーザから明示的に指定がない限り、A60 / B60 のラップは `Lap 1 = warmup`、`Lap 2 = machine`、`Lap 3 = treadmill_main`、`Lap 4 = cooldown` として転記する
 - `notes` に、画像ファイル名や転記時の補足を残してよい
 - B日は `subjective_notes` をできるだけ埋める
+- ヒップマシンは裸の `hip_abduction` / `Hip Abduction` を使わず、内向きは `hip_adduction_inward` / `Hip Adduction (Inward / 内向き)`、外向きは `hip_abduction_outward` / `Hip Abduction (Outward / 外向き)` と記録する
+- ユーザ入力や画像から方向を特定できない場合は、どちらかへ推測で割り当てず `hip_abduction_direction_unknown` とし、元表現を `notes` に残す
 - 手動ラップを使う場合は、cooldown に入るとき負荷を下げた瞬間にラップを切る
 - 「1段重い」「1段軽い」「次の重量」「ピンを1つ上/下」などの相対重量表現がある場合は、`data/menus/current-menus.md` の現行メニュー重量と、対象マシンの `data/machines/weight-options/*.md` の表示重量順を照合する
 - 相対重量を一意に解決できる場合は、`unknown` にせず具体重量を記録する。これは推測ではなく、レポジトリ内の参照情報からの確定値として扱う

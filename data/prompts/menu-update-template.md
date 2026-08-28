@@ -14,6 +14,7 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 - 設計思想が変わる場合だけ `data/menus/design-philosophy.md` も更新する
 - `README.md` には、ジムで見やすい要約だけを書く
 - 重量、回数、セット数、レスト、速度、傾斜、種目順は推測で補わず、`data/menus/current-menus.md` と一致させる
+- ヒップ系マシンは `data/machines/gym-machines.yaml` のIDと表示名を使い、内向き/外向きを省略しない
 - 更新後に `README.md` と `data/menus/current-menus.md` の数値、順序、A/B区分が一致しているか確認する
 - 最後に、更新したファイルと変更内容を要約して報告する
 ```
@@ -25,6 +26,7 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 - `README.md` には、種目順、重量、回数、セット数、レスト、トレッドミル条件などの要点を載せる
 - 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` に残す
 - `README.md` の要約は `data/menus/current-menus.md` から転記し、独自解釈を加えない
+- ヒップ系マシンは、内向きなら `Hip Adduction (Inward / 内向き)`、外向きなら `Hip Abduction (Outward / 外向き)` と表示する
 
 ## 更新前チェック
 

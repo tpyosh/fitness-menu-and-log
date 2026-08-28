@@ -2,6 +2,11 @@
 
 `Hip Abduction外向き` として共有されたマシンの重量スタック表示を、画像からそのまま転記した記録。
 
+- machine_id: `hip_abduction_outward`
+- display_name: `Hip Abduction (Outward / 外向き)`
+- station_name: `Hip Abduction`
+- movement: `hip_abduction`
+- direction: `outward`
 - source_image: `7695E428-D0DC-4BE9-8A5B-861303832D6B.heic`
 - recorded_on: `2026-04-11`
 - transcription_basis: 左右の表示列を見比べて確認。`33` 付近の一部はピンとコードで部分的に隠れている。

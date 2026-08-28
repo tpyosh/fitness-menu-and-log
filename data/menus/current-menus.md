@@ -77,9 +77,10 @@
 - 肩が前に抜けず、押す軌道を再現できる範囲で行う
 - 増量条件: 2setとも12回を指定RIRとフォームで達成
 
-## ⑦ Hip Abduction
+## ⑦ Hip Abduction (Outward / 外向き)
 
 - 参考重量: 61kg
+- マシンID: `hip_abduction_outward`
 - 12〜15回 × 2set
 - RIR 2〜3
 - rest 60秒

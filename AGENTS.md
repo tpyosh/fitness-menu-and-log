@@ -12,6 +12,8 @@
 - ChatGPTは外部レビュアーであり、提案をそのまま正解扱いしない
 - 推測で重量、回数、セット数、傾斜、速度、意図を改変しない
 - `data/machines/weight-options/*.md` は、ジムマシンの重量スタック表示の正本として扱う
+- ヒップ系マシンは方向を必須情報とする。構造化データでは内向き（股関節内転）を `hip_adduction_inward`、外向き（股関節外転）を `hip_abduction_outward` とし、裸の `hip_abduction` / `hip_adduction` を新規生成しない
+- 人向けのメニュー・説明では `Hip Adduction (Inward / 内向き)` / `Hip Abduction (Outward / 外向き)` と表記し、方向不明なら推測せず `hip_abduction_direction_unknown` として原文を残す
 - ユーザが「1段重い」「1段軽い」「次の重量」などの相対表現を使った場合、対象マシンの現行メニュー重量と `data/machines/weight-options/*.md` から一意に解決できる重量は、推測ではなく参照確定値として扱う
 - メニュー判断に必要なクリティカル情報が欠けている場合は、欠損だけを理由に判断を放棄せず、ユーザへ1〜3個の短い質問をしてから判断を確定する
 

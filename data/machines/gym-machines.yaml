@@ -1,13 +1,48 @@
+schema_version: 2
+
+naming_rules:
+  structured_data: id
+  menu_display: display_name
+  hip_station_note: ジムでは内向き・外向きともHip Abductionと案内されるため、方向を省略しない。
+
 machines:
-  - name: Seated Leg Press
-  - name: Leg Extension
-  - name: Seated Leg Curl
-  - name: Hip Adduction
-  - name: Hip Abduction
-  - name: Torso Rotation
-  - name: Abdominal Machine
-  - name: Row Machine
-  - name: Lat Pulldown
-  - name: Shoulder Press
-  - name: Chest Press
-  - name: Treadmill (incline available)
+  - id: seated_leg_press
+    display_name: Seated Leg Press
+  - id: leg_extension
+    display_name: Leg Extension
+  - id: seated_leg_curl
+    display_name: Seated Leg Curl
+  - id: hip_adduction_inward
+    display_name: Hip Adduction (Inward / 内向き)
+    station_name: Hip Abduction
+    movement: hip_adduction
+    direction: inward
+    weight_options_file: data/machines/weight-options/hip-abduction-inward.md
+    aliases:
+      - Hip Abduction Inward
+      - Hip Abduction 内向き
+      - Hip Adduction
+  - id: hip_abduction_outward
+    display_name: Hip Abduction (Outward / 外向き)
+    station_name: Hip Abduction
+    movement: hip_abduction
+    direction: outward
+    weight_options_file: data/machines/weight-options/hip-abduction-outward.md
+    aliases:
+      - Hip Abduction Outward
+      - Hip Abduction 外向き
+      - Hip Abduction
+  - id: torso_rotation
+    display_name: Torso Rotation
+  - id: abdominal
+    display_name: Abdominal Machine
+  - id: row_machine
+    display_name: Row Machine
+  - id: lat_pulldown
+    display_name: Lat Pulldown
+  - id: shoulder_press
+    display_name: Shoulder Press
+  - id: chest_press
+    display_name: Chest Press
+  - id: treadmill
+    display_name: Treadmill (incline available)

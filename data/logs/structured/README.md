@@ -151,6 +151,19 @@ machine_adjustments:
     subjective_comment: 体感としては十分。
 ```
 
+## ヒップマシンの識別ルール
+
+ジム内では内向き・外向きの両方が `Hip Abduction` と案内されるため、表示名だけを識別子にしない。
+
+| 動作 | 構造化ID | メニュー表示名 | 重量表 |
+| --- | --- | --- | --- |
+| 内向き（股関節内転） | `hip_adduction_inward` | `Hip Adduction (Inward / 内向き)` | `hip-abduction-inward.md` |
+| 外向き（股関節外転） | `hip_abduction_outward` | `Hip Abduction (Outward / 外向き)` | `hip-abduction-outward.md` |
+
+- YAMLの `exercise_feedback`、`machine_adjustments.machine`、比較対象の識別には構造化IDを使う
+- メニューや人向け文章では方向つき表示名を使い、裸の `Hip Abduction` を新規作成しない
+- 方向が確認できない過去・新規データは推測で内向き/外向きへ寄せず、`hip_abduction_direction_unknown` として元表現を残す
+
 ## 転記の考え方
 
 - フル版
