@@ -19,6 +19,9 @@
 
 ## 更新ルール
 
+- ユーザが「今日のメニューをAppleのNoteに出力して」と依頼したら、会話中にA/B/Cのどれを行うか明確な場合は `scripts/export_today_menu_to_apple_notes.py --menu <A|B|C>` を実行する。明確でない場合は推測せず、A/B/Cのどれかを1問だけ確認してから実行する
+- Apple Notesへの出力先は固定タイトル `今日のトレーニングメニュー` の1枚とし、日付ごとのノートを増やさない。これはスナップショットなので、実行時は既存本文を毎回すべて置換してよい
+- Apple Notesへ出力する内容は `data/menus/current-menus.md` の該当メニューを正本とし、出力時に重量、回数、セット数、レスト、速度、傾斜、順序を推測または改変しない
 - メニュー更新時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
 - 設計思想が変わった場合は `data/menus/design-philosophy.md` も更新する
 - Garminログを追加したら `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` の両方を更新する
