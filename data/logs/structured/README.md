@@ -46,6 +46,16 @@ Garminからの転記事実とは別に、新規ログごとに以下を `sessio
 - `feedback`
 - `menu_decision`
 
+## ユーザの最小入力
+
+詳細なreps・RIRは任意とし、通常は次の短い主観だけを確認する。
+
+- 全体または種目別の負荷感: `軽い` / `適正` / `重い` / `混在`
+- 筋肉痛: `なし` / `軽い` / `強い` と部位
+- 運動中の痛みまたは明確なフォーム問題: `なし` / `あり` と内容
+
+判断に必要な項目が欠けている場合、CodexはGarmin事実の保存を進めつつ、判断確定前に1〜3問だけユーザへ確認する。未質問の欠損を理由に `defer` としない。
+
 ## セッション分類ルール
 
 - `A_full`
@@ -161,6 +171,8 @@ machine_adjustments:
 - 新規ログには、Garmin転記事実や取り込みメタデータと分けて `feedback` と `menu_decision` を追加する。既存ログへの一括バックフィルは不要
 - `feedback` は簡潔な日本語で、実施内容、予定との差、根拠のある良い点・注意点、同種の直近比較、次回への意味を残す
 - `menu_decision.outcome` は `keep` / `adjust` / `defer` のいずれかとし、事実、解釈、仮説、根拠ログ、反証確認、再評価条件を区別する
+- `menu_decision.status` は回答待ちの `pending_user_input` と確定済みの `final` を区別する。`pending_user_input` では `outcome` を無理に確定しない
+- 正本判断と次回行動を分け、`next_session_action` は `maintain` / `trial_one_step` / `reduce` / `stop` を使う。正本を維持して次回だけ試す場合は `outcome: keep` と `next_session_action: trial_one_step` を併記する
 - 比較は原則として直近8週間の同種セッションを新しい順に最大3件使う。比較対象が1件しかない通常結果をトレンドと呼ばない
 - 恒久的な `adjust` は原則として少なくとも2回の比較可能な完遂セッションで同方向の根拠が続く場合に限る。痛みなど明確な安全上の懸念による単発の中止・保留・負荷低減は例外とする
 
@@ -174,7 +186,10 @@ feedback:
   recent_comparison: "YYYY-MM-DDの同種ログと比較。比較不能なら理由を書く。"
   next_workout: "次回に維持・観察・回避する点。"
 menu_decision:
+  status: final
   outcome: keep
+  next_session_action: maintain
+  trial_targets: none
   fact: "直接確認できる事実。"
   interpretation: "事実から妥当に読めること。"
   hypothesis: "追加確認が必要な可能性。なければnone。"

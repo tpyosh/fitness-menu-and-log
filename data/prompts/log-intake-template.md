@@ -27,6 +27,15 @@ soreness_next_day:
 machine_order_changed:
 menu_deviation:
 notes:
+minimum_subjective:
+  overall_load: light | appropriate | heavy | mixed
+  muscle_soreness:
+    status: none | light | strong
+    areas: []
+    timing: pre_session | post_session | next_day
+  pain_or_form_issue:
+    status: none | present
+    details:
 machine_adjustments:
   - machine:
     planned_weight_kg:
@@ -76,7 +85,10 @@ feedback:
   recent_comparison:
   next_workout:
 menu_decision:
+  status: pending_user_input | final
   outcome: keep | adjust | defer
+  next_session_action: maintain | trial_one_step | reduce | stop
+  trial_targets:
   fact:
   interpretation:
   hypothesis:
@@ -140,6 +152,8 @@ segments:
 
 - Garmin画像やユーザのテキストから確認できる値だけを埋める
 - 分からない項目は空欄または `unknown`
+- 通常の最小主観入力は `minimum_subjective` の負荷感、筋肉痛、運動中の痛み・明確なフォーム問題とする。詳細なreps・RIRは任意
+- メニュー判断に必要な最小主観が欠けている場合は、ユーザへ1〜3問だけ短く確認する。未質問の欠損だけで `defer` にしない
 - `session_type` は必ず分類ルールに従う
 - `segments` は存在するものだけ残し、不要な雛形は削ってよい
 - A/Bのマシンパート、後半トレッドミル、追加トレッドミルが分かるなら分割して記録する
@@ -162,10 +176,12 @@ segments:
 4. 今回の事実、解釈、仮説、反証またはデータ限界を分ける
 5. `feedback` に、完遂内容、予定との差、良い点、注意点、日付つき直近比較、次回への意味を簡潔な日本語で保存する
 6. `menu_decision.outcome` を `keep` / `adjust` / `defer` から1つ選び、根拠と再評価条件を保存する
-7. 同じフィードバックと判断の要点をユーザへ日本語で返す
+7. 正本判断と分けて `next_session_action` を決める。正本を維持した次回試行は `outcome: keep`、`next_session_action: trial_one_step` とする
+8. 判断に必要なクリティカル情報が欠ける場合は `status: pending_user_input` と質問を保存し、回答後に `status: final` として判断を確定する
+9. 同じフィードバックと判断の要点をユーザへ日本語で返す
 
 `feedback` はGarmin転記値や取り込み元メモとは別の解釈レイヤーである。一般的な称賛は避け、各結論を今回ログ、ユーザコメント、または日付つき比較ログへ結びつける。
 
-恒久的な `adjust` は、原則として直近8週間の少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がなく、具体的な変更値を確定できる場合だけにする。通常の単発結果は `keep` または `defer` とする。明示的な痛みや異常症状など安全上の懸念は単発でも中止、保留、負荷低減の根拠にできるが、安定トレンドとは呼ばない。
+恒久的な `adjust` は、原則として直近8週間の少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がなく、具体的な変更値を確定できる場合だけにする。反復する「軽い」という所感と問題なしの簡易主観があれば、詳細なreps・RIRがなくても次回試行を提案できる。通常の単発結果は正本変更とせず、必要に応じて `keep + trial_one_step` とする。明示的な痛みや異常症状など安全上の懸念は単発でも中止、保留、負荷低減の根拠にできるが、安定トレンドとは呼ばない。
 
 `adjust` の場合は、最小の1次元だけを変更し、`README.md`、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同期する。履歴にはprevious/new version、before/after、日付つき根拠、理由、意図する効果、再評価条件、rollbackまたは再検討条件を残す。

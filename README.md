@@ -31,7 +31,7 @@
 
 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` を参照する。
 
-全種目はDouble Progressionで運用する。全setで上限回数を指定RIR・良好なフォーム・痛みなしで達成した種目だけ、次回1段上げる。Optional Cは20〜40分のeasy cardio中心で、行かなくてもA/Bだけで完結する。
+全種目はDouble Progressionで運用する。詳細を記録できる場合はreps・RIR・フォームで進行を判定する。通常ログでは負荷感、筋肉痛、運動中の痛み・明確なフォーム問題を最小主観入力とし、反復する「軽い」という所感に重大な反証がなければ、正本を変える前に次回だけ1段上を試せる。Optional Cは20〜40分のeasy cardio中心で、行かなくてもA/Bだけで完結する。
 
 このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
 
@@ -62,13 +62,14 @@
 1. ユーザがGarminログ画像を取得する
 2. 必要に応じて画像ファイルを `data/logs/raw/` 配下のルールに沿って置く、または参照元を明記する
 3. Codexが `data/prompts/log-intake-template.md` を使って画像内容をテキスト化する
-4. Codexが `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` を同時更新する
-5. Codexが直近8週間の同種セッションを新しい順に最大3件確認し、事実、解釈、仮説を分けて日本語フィードバックを作る
-6. Codexが現行メニューを `keep` / `adjust` / `defer` のいずれかで判断し、フィードバックとともに新規セッションのYAMLへ保存する
-7. `adjust` は原則として少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がない場合だけ採用する。採用時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
-8. 設計思想そのものが変わる場合のみ、`data/menus/design-philosophy.md` も更新する
+4. ユーザが短い主観として、負荷感、筋肉痛の有無・部位・程度、運動中の痛みまたは明確なフォーム問題を伝える。判断に必要な情報が欠ける場合はCodexが1〜3問だけ確認する
+5. Codexが `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` を同時更新する
+6. Codexが直近8週間の同種セッションを新しい順に最大3件確認し、事実、解釈、仮説を分けて日本語フィードバックを作る
+7. Codexが正本の `keep` / `adjust` / `defer` と、次回行動の `maintain` / `trial_one_step` / `reduce` / `stop` を分けて判断し、YAMLへ保存する
+8. `adjust` は原則として少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がない場合だけ採用する。採用時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
+9. 設計思想そのものが変わる場合のみ、`data/menus/design-philosophy.md` も更新する
 
-ログ取り込みは手順6まで終わるまで完了扱いにしない。通常の単発好成績、1回だけの重量変更、Garminスコアだけを根拠に恒久メニューを変更しない。明示的な痛みや異常症状など安全上の懸念は、単発でも中止、保留、負荷低減の理由にできる。
+判断に必要な情報が欠ける場合は `pending_user_input` として質問し、未質問の欠損を理由に `defer` へ送らない。通常の単発好成績、1回だけの重量変更、Garminスコアだけを根拠に恒久メニューを変更しないが、正本を維持した次回試行とは区別する。明示的な痛みや異常症状など安全上の懸念は、単発でも中止、保留、負荷低減の理由にできる。
 
 ## オンデマンドGarminコーチングレビュー
 

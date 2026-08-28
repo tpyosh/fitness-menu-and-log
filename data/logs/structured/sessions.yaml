@@ -1074,3 +1074,286 @@ sessions:
         calories: 11
         avg_temp: unknown
         notes: Lap 4。元の表示時間は5:19.3。
+  - date: 2026-08-11
+    start_time: "10:16"
+    session_type: A_full
+    segment_type: full_session
+    duration_min: 71.02
+    avg_hr: 119
+    max_hr: 163
+    aerobic_te: 3.1
+    anaerobic_te: 0.4
+    exercise_load: 74
+    calories: 368
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: "29:21"
+    zone2_time: "7:02"
+    zone3_time: "13:07"
+    zone4_time: "10:28"
+    zone5_time: "0:00"
+    subjective_fatigue: 各セットの最後だけはキツかったが、セット数を減らしていることもあり、あまり筋肉に負荷がかかった感じがせず不安。
+    soreness_next_day: unknown
+    machine_order_changed: false
+    menu_deviation: warmupは7:51.2で処方8分より8.8秒短く、treadmill_mainは17:53で処方18分より7秒短い。マシンは現行A60の全7種目・計15setを実施。
+    notes: Garminテキストから転記。Today @ 10:16は2026-08-11 10:16として記録。現行A60の全工程を実施したA_full。ラップ1-4をwarmup machine treadmill_main cooldownとして記録。ラップ別カロリー合計は369だがSummaryは368のためセッション合計はSummary値を採用。Garmin表示のTotal Reps --・Total Sets 1は端末側の不完全な集計として保持せず、メニュー正本に基づく実施set数15を採用。各setの正確なrepsとRIRはunknown。現行A60改定後の初回所感のためメニュー変更は保留。
+    subjective_notes:
+      exercise_feedback:
+        seated_leg_press: 125kg・3setを実施。各setの正確なrepsとRIRはunknown。
+        seated_leg_curl: 40kg・2setを実施。各setの正確なrepsとRIRはunknown。
+        leg_extension: 40kg・2setを実施。各setの正確なrepsとRIRはunknown。
+        lat_pulldown: 40kg・2setを実施。各setの正確なrepsとRIRはunknown。
+        chest_press: 33kg・2setを実施。各setの正確なrepsとRIRはunknown。
+        hip_abduction: 61kg・2setを実施。各setの正確なrepsとRIRはunknown。
+        abdominal: 42.5kg・2setを実施。各setの正確なrepsとRIRはunknown。
+      post_session:
+        overall_comment: セット数を減らしていることもあり、あまり筋肉に負荷がかかった感じがせず不安。
+      next_day:
+        soreness_areas: unknown
+        fatigue_level: unknown
+    nutrition_hydration:
+      resting_calories: 85
+      active_calories: 283
+      total_calories_burned: 368
+      calories_consumed: unknown
+      calories_net: -368
+      estimated_sweat_loss_ml: 886
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -886
+    intensity_minutes:
+      moderate_min: 13
+      vigorous_min_times_two: 24
+      total_min: 61
+    body_battery:
+      net_impact: -8
+    workout_details:
+      total_reps: unknown
+      total_sets: 15
+      volume_kg: unknown
+    feedback:
+      completed: 現行A60の全7種目・計15setと前後のトレッドミルを実施してA_fullとして完遂。warmup 7:51.2、machine 39:02、treadmill_main 17:53、cooldown 6:14.7で、warmupは処方8分より8.8秒、treadmill_mainは処方18分より7秒短かった。各setの正確なrepsとRIRはunknown。
+      positives: treadmill_mainは17:53で処方18分との差が7秒に収まり、平均151bpm・最大163bpmだった。セッション全体のAerobic TE 3.1、Exercise Load 74は、比較した2026-07-22と2026-07-20のA_fullより高い。
+      concerns: 現行A60の全15setを実施し、各setの最後だけはキツかった一方、従来よりset数を減らした構成では筋肉への負荷が不足するのではないかと本人が懸念している。これは2026-08-11改定メニューの初回所感であり、各setの正確なreps・RIRと翌日以降の反応は未確認。
+      recent_comparison: 直近8週間のA_fullは2件。2026-07-22はmachine 35:33.1・Aerobic TE 2.5・Load 44、2026-07-20はmachine 35:04.3・Aerobic TE 2.9・Load 63、今回はmachine 39:02・Aerobic TE 3.1・Load 74。ただし前2件は2026-08-11改定前のA60で種目・set配分が異なるため、筋刺激の直接比較には使えない。現行構成との比較実績は今回1件のみ。
+      next_workout: 次回Aも現行の全15set、重量、rep range、指定RIRを維持し、各setのreps、最終set RIR、フォーム、痛み、翌日〜翌々日の張りを記録する。現行構成はFailure依存を減らしつつA/B両日へ刺激を分散する設計なので、A単日だけでなく次回Bの同部位パフォーマンスと回復も合わせて確認する。
+    menu_decision:
+      outcome: defer
+      fact: 現行A60の全7種目・計15setを実施し、各setの最後だけはキツかったが、従来よりset数を減らした構成では筋肉への負荷が不足するのではないかと本人が懸念した。各setの正確なrepsとRIRは記録されていない。
+      interpretation: 予定setの省略ではなく、2026-08-11改定で意図的にA/Bへ週内ボリュームを再配分した構成に対する初回所感。A単日の局所的な疲労感が以前より弱い可能性はあるが、週単位の刺激不足や進行不成立を示す反復データはまだない。
+      hypothesis: Failure依存を減らしたことで直後の負荷感が弱くなった可能性と、実際に一部種目の週内ボリュームが不足する可能性の両方があり、A/Bを通したreps・RIR・回復・次回パフォーマンスで確認が必要。
+      rationale: 負荷不足の主観は重要だが、現行構成の実施は今回が初回で、同じ構成による2回目のAや対応するB、翌日反応がない。改定目的はA単日の追い込みではなく週2回への刺激分散と反復品質の確保であるため、初回の直後感だけでsetを戻すと設計意図を検証できない。心肺指標は筋刺激の十分性の根拠には用いない。
+      evidence:
+        - 2026-08-11 A_full
+        - 2026-07-22 A_full
+        - 2026-07-20 A_full
+      review_conditions: 現行構成で次回Aまで実施し、A/Bを通した種目別reps・最終set RIR・フォーム・痛み・翌日反応・次回パフォーマンスを確認する。比較可能な2回のAで同じ種目の不足根拠が続き、B日の補完を含めても重大な反証がなければ、その種目について重量・reps・set数のうち1次元だけ見直す。
+    segments:
+      - segment_type: warmup
+        duration_min: 7.85
+        avg_hr: 129
+        max_hr: 149
+        calories: 57
+        avg_temp: unknown
+        notes: Lap 1。元の表示時間は7:51.2。現行A60の処方8分より8.8秒短い。
+      - segment_type: machine
+        duration_min: 39.03
+        avg_hr: 102
+        max_hr: 141
+        calories: 130
+        avg_temp: unknown
+        notes: Lap 2。元の表示時間は39:02。現行A60のSeated Leg Press 125kg × 3set、Seated Leg Curl 40kg × 2set、Leg Extension 40kg × 2set、Lat Pulldown 40kg × 2set、Chest Press 33kg × 2set、Hip Abduction 61kg × 2set、Abdominal 42.5kg × 2setの全15setを実施。各setの正確なrepsとRIRはunknown。各setの最後だけはキツかったが、改定で従来よりset数を減らしたため筋肉への負荷不足を本人が懸念。
+      - segment_type: treadmill_main
+        duration_min: 17.88
+        avg_hr: 151
+        max_hr: 163
+        calories: 159
+        avg_temp: unknown
+        notes: Lap 3。元の表示時間は17:53。現行A60の処方18分より7秒短い。
+      - segment_type: cooldown
+        duration_min: 6.25
+        avg_hr: 121
+        max_hr: 163
+        calories: 23
+        avg_temp: unknown
+        notes: Lap 4。元の表示時間は6:14.7。
+  - date: 2026-08-23
+    start_time: "09:08"
+    session_type: A_full
+    segment_type: full_session
+    duration_min: 73.50
+    avg_hr: 135
+    max_hr: 174
+    aerobic_te: 3.7
+    anaerobic_te: 2.0
+    exercise_load: 139
+    calories: 515
+    primary_benefit: Threshold (High Aerobic)
+    avg_temp: unknown
+    zone1_time: "4:49"
+    zone2_time: "33:08"
+    zone3_time: "11:27"
+    zone4_time: "14:01"
+    zone5_time: "10:02"
+    subjective_fatigue: 現行メニューならマシン重量を全体的にもう1段上げてもよいと感じた。
+    soreness_next_day: なし（2026-08-24確認）
+    machine_order_changed: unknown
+    menu_deviation: 実施した種目別重量・reps・RIRは未記録。warmupは8:13.5で処方8分より13.5秒長く、treadmill_mainは17:19で処方18分より41秒短い。
+    notes: Garminテキストから転記。Today @ 09:08は2026-08-23 09:08として記録。ユーザ指定のA60としてラップ1-4をwarmup、machine、treadmill_main、cooldownに対応。ジム前に自転車4kmと約20分の低負荷ランニングを実施しており、A60単独の心拍反応ではない。ラップ別カロリー合計はSummaryと同じ515。心拍Zone合計は1:13:27でTotal Timeより3秒短いためGarmin表示値をそのまま保持。Garmin表示のTotal Reps --・Total Sets 1は端末側の不完全な集計とみられるため、実際のrepsとset数はunknownとした。重量増の所感は進行シグナルとして記録し、筋肉痛と運動中の痛み・明確なフォーム問題への回答後に次回試行を確定する。
+    pre_session_activity:
+      cycling:
+        distance_km: 4
+        duration_min: unknown
+        intensity: unknown
+      running:
+        duration_min: approximately_20
+        intensity: low
+      recovery_interval_before_gym_min: unknown
+      notes: ユーザの事後申告。自転車で4km走って公園へ行き、約20分の低負荷ランニングをした後にジムへ行った。各活動の心拍、速度、気温、発汗、給水、ジムまでの休憩時間はunknown。
+    subjective_notes:
+      exercise_feedback: 種目別の実施重量・reps・RIRと運動中の痛みはunknown。ユーザ認識では明確なフォーム崩れなし。現行メニューなら重量を全体的にもう1段上げてもよいとの所感。
+      post_session:
+        overall_comment: 現行メニューならマシン重量を全体的にもう1段上げてもよいと感じた。
+      next_day:
+        soreness_areas: none
+        fatigue_level: unknown
+    minimum_subjective:
+      overall_load: light
+      muscle_soreness:
+        status: none
+        areas: []
+        timing: next_day
+        confirmed_on: 2026-08-24
+      pain_or_form_issue:
+        status: pending_user_input
+        pain:
+          status: pending_user_input
+          details: unknown
+        form_issue:
+          status: none
+          details: ユーザ認識では明確なフォーム崩れなし。
+    prospective_weight_candidates:
+      status: not_applied
+      resolution_basis: data/menus/current-menus.mdのA参考重量と各data/machines/weight-options/*.mdの隣接値から一意に解決。今日の実施重量またはメニュー変更値ではなく、ユーザ所感を具体化した次段候補。
+      machines:
+        - machine: seated_leg_press
+          current_weight_kg: 125
+          one_step_heavier_kg: 135
+        - machine: seated_leg_curl
+          current_weight_kg: 40
+          one_step_heavier_kg: 47
+        - machine: leg_extension
+          current_weight_kg: 40
+          one_step_heavier_kg: 47
+        - machine: lat_pulldown
+          current_weight_kg: 40
+          one_step_heavier_kg: 47
+        - machine: chest_press
+          current_weight_kg: 33
+          one_step_heavier_kg: 40
+        - machine: hip_abduction_outward
+          current_weight_kg: 61
+          one_step_heavier_kg: 68
+        - machine: abdominal
+          current_weight_kg: 42.5
+          one_step_heavier_kg: 50
+    nutrition_hydration:
+      resting_calories: 88
+      active_calories: 427
+      total_calories_burned: 515
+      calories_consumed: unknown
+      calories_net: -515
+      estimated_sweat_loss_ml: 1079
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -1079
+    intensity_minutes:
+      moderate_min: 36
+      vigorous_min_times_two: 32
+      total_min: 100
+    body_battery:
+      net_impact: -12
+    workout_details:
+      total_reps: unknown
+      total_sets: unknown
+      garmin_displayed_total_sets: 1
+      volume_kg: unknown
+    feedback:
+      completed: >-
+        A60としてwarmup 8:13.5、machine 41:24、treadmill_main 17:19、cooldown 6:33.2を記録し、4区間を含むA_fullとして完遂した。
+        warmupは処方8分より13.5秒長く、treadmill_mainは処方18分より41秒短かった。種目別の実施重量・reps・RIR・フォーム・痛みはunknown。
+      positives: >-
+        machine区間は平均121bpmで、後半treadmill_mainは平均164bpm・最大174bpmまで上がり、マシン刺激と心肺刺激を分ける構成は心拍上でも明瞭だった。
+        Aerobic TE 3.7、Primary BenefitはThreshold (High Aerobic)で、設計目的の心肺刺激と登坂耐性への刺激は十分に得られたと考えられる。
+      concerns: >-
+        warmup平均146bpm・最大164bpmはWUとしては高めで、treadmill_main平均164bpmはGarmin Zone 4上限付近、最大174bpmはZone 5だった。
+        全体のZone 4+5は24:03、Exercise Loadは139で、2026-08-11の74より大幅に高い。今日は設計意図を外れたと断定できないが、毎回Zone 4以上を増やさず再現可能な刺激にする方針に対して上限寄りのセッションだった。
+        ただしジム前に自転車4kmと約20分の低負荷ランニングを行っているため、この上振れをA60処方だけの結果とは扱えない。
+        cooldownも平均134bpm・最大173bpmで、心拍が十分下がるまでの推移はラップ要約だけでは確認できない。
+      recent_comparison: >-
+        直近8週間のA_fullを新しい順に3件比較した。2026-08-11はtreadmill_main 17:53・平均151bpm・最大163bpm・Aerobic TE 3.1・Load 74、
+        2026-07-22は16:04.5・平均140bpm・Aerobic TE 2.5・Load 44、2026-07-20は17:33.8・平均147bpm・Aerobic TE 2.9・Load 63だった。
+        今回は17:19・平均164bpm・最大174bpm・Aerobic TE 3.7・Load 139で、時間は近い一方、心拍とGarmin負荷は3件すべてより高い。
+        現行A構成との直接比較は2026-08-11の1件のみ。今回は直前に自転車4kmと約20分の低負荷ランニングがあり、前3件の事前活動はunknownのため比較条件が異なる。
+        気温、睡眠、疲労、給水、主観的呼吸強度、事前活動からジムまでの休憩時間も未記録で、事前運動が上昇幅のどこまでを説明するかは特定できない。
+      next_workout: >-
+        次回Aではトレッドミルの速度・傾斜・時間を増やさず、WUはRPE 4〜5を守り、会話不能または脚の先行疲労があれば速度か傾斜を下げる。
+        心拍比較を行う回は可能なら同等の事前活動条件に揃え、事前運動をする場合は内容、終了時刻、給水、ジム開始までの間隔を記録する。
+        後半は現行処方を維持し、同じ心拍上振れが再現するか、呼吸の主観、膝の状態、翌日回復と合わせて確認する。
+        マシンは今回と2026-08-11の負荷余地の所感を進行シグナルとして扱う。筋肉痛と運動中の痛み・明確なフォーム問題への回答後、過去にきつさやフォーム問題の反証がない種目を選び、次回だけの1段増量試行を具体化する。
+    menu_decision:
+      status: pending_user_input
+      critical_questions:
+        - 運動中の痛みの有無と、ある場合は部位または種目を確認する。
+      fact: >-
+        2026-08-23は現行メニューなら重量を全体的にもう1段上げてもよいとの所感があり、2026-08-11にも筋肉への負荷感が少ないとの所感があった。
+        両日とも種目別の正確なrepsとRIRはないが、これは任意の高精度データとして扱う。2026-08-24時点で翌日の筋肉痛はなく、ユーザ認識では明確なフォーム崩れもない。運動中の痛みと実施重量は未確認。ジム前に自転車4kmと約20分の低負荷ランニングを行い、
+        心肺負荷はtreadmill_main平均164bpm、Aerobic TE 3.7、Load 139と直近Aより高かった。
+      interpretation: >-
+        現行Aで負荷余地を感じたという同方向の主観は2回続いており、次回試行を検討する意味のある進行シグナルである。
+        全7種目が一律に次段へ進めるとは限らないが、詳細なreps・RIRの欠損だけで試行判断を止める必要はない。心肺側は今回かなり強い刺激だったが、筋重量とは別に扱う。
+      hypothesis: >-
+        Failure依存を減らした現行構成に慣れ、少なくとも一部種目では増量条件へ近づいている可能性がある。
+        一方、warmupからの心拍上振れには事前の自転車とランニングによる体温、累積運動時間、発汗などが寄与した可能性が高い。
+        寄与の大きさは休憩時間、給水、環境、事前運動中の心拍がないため未確定で、回復状態、呼吸強度、測定誤差など他の要因も除外できない。
+      rationale: >-
+        2回続く負荷余地の主観は次回試行を検討する条件を満たす。詳細なrep rangeとRIRは任意の精度向上情報であり、欠損だけでは判断を保留しない。
+        2026-07-20にはLeg Curl 40kgはちょうどよく、Leg Extension 40kgは最終set後半だけきついという反証もある。
+        さらに2026-07-25のBではLat Pulldown 40kgがきつく、Abdominal 50kgはフォーム見直し後に42.5kgへ戻した反証があるため、全種目一括ではなく対象を選ぶ必要がある。
+        今回は翌日の筋肉痛なしと明確なフォーム崩れなしを確認できた。残るクリティカル情報である運動中の痛みだけをユーザへ確認中であり、回答後に正本判断と次回行動を確定する。
+      evidence:
+        - 2026-08-23 A_full
+        - 2026-08-11 A_full
+        - 2026-07-22 A_full
+        - 2026-07-20 A_full
+      review_conditions: >-
+        運動中の痛みについてユーザ回答を得たら、`status: final`、`outcome`、`next_session_action`、`trial_targets` を確定する。
+        次回試行では詳細なreps・RIRを必須とせず、新重量が軽い・適正・重いのどれだったか、筋肉痛、痛み・フォーム問題を確認して正本反映を判断する。
+        同一トレッドミル処方で平均心拍の大幅な上振れ、Zone 5滞在、回復遅延が再現する場合は、呼吸主観と膝・翌日回復を確認して有酸素処方を再評価する。
+    segments:
+      - segment_type: warmup
+        duration_min: 8.23
+        avg_hr: 146
+        max_hr: 164
+        calories: 77
+        avg_temp: unknown
+        notes: Lap 1。元の表示時間は8:13.5。現行A60の処方8分より13.5秒長い。平均146bpmはGarmin Zone 3上限、最大164bpmはZone 4。
+      - segment_type: machine
+        duration_min: 41.40
+        avg_hr: 121
+        max_hr: 159
+        calories: 224
+        avg_temp: unknown
+        notes: Lap 2。元の表示時間は41:24。種目別の実施重量・reps・RIR・フォーム・痛みはunknown。ユーザ所感は、現行メニューなら重量を全体的にもう1段上げてもよい。
+      - segment_type: treadmill_main
+        duration_min: 17.32
+        avg_hr: 164
+        max_hr: 174
+        calories: 183
+        avg_temp: unknown
+        notes: Lap 3。元の表示時間は17:19。現行A60の処方18分より41秒短い。平均164bpmはGarmin Zone 4上限付近、最大174bpmはZone 5で、直近A_full 3件より強い心拍応答。
+      - segment_type: cooldown
+        duration_min: 6.55
+        avg_hr: 134
+        max_hr: 173
+        calories: 31
+        avg_temp: unknown
+        notes: Lap 4。元の表示時間は6:33.2。平均134bpmはGarmin Zone 3。最大173bpmは前区間からの移行直後または区間内スパイクの可能性があるが、ラップ要約だけでは時点と原因を特定できない。
