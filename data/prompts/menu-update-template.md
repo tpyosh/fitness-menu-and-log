@@ -15,7 +15,7 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 - `README.md` には、ジムで見やすい要約だけを書く
 - 重量、回数、セット数、レスト、速度、傾斜、種目順は推測で補わず、`data/menus/current-menus.md` と一致させる
 - ヒップ系マシンは `data/machines/gym-machines.yaml` のIDと表示名を使い、内向き/外向きを省略しない
-- 更新後に `README.md` と `data/menus/current-menus.md` の数値、順序、A/B区分が一致しているか確認する
+- 更新後に `README.md` と `data/menus/current-menus.md` の数値、順序、A/B/C区分が一致しているか確認する
 - 最後に、更新したファイルと変更内容を要約して報告する
 ```
 
@@ -92,7 +92,7 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 
 ## 更新後チェック
 
-- `README.md` 冒頭と `current-menus.md` の数値、順序、A/B区分が一致しているか
+- `README.md` 冒頭と `current-menus.md` の数値、順序、A/B/C区分が一致しているか
 - `current-menus.md` と `menu-history.md` の内容が一致しているか
 - 設計思想とメニューの整合性が取れているか
-- A/Bの評価軸が更新内容と矛盾していないか
+- A/B/Cの評価軸が更新内容と矛盾していないか

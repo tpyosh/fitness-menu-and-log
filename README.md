@@ -1,6 +1,6 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-08-29時点）
+## 最新メニュー Quick Reference（2026-08-30時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
@@ -29,16 +29,24 @@
 - Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 16分: 6.2 km/h・11% x 6分 → 6.3 km/h・11% x 6分 → 6.2 km/h・12% x 4分
 
+### C（Incline Treadmill）
+
+- `Recovery`: 30分（アップ5分 + メイン20分 + ダウン5分）、RPE 2〜3
+- `Standard`: 45分（アップ5分 + メイン35分 + ダウン5分）、RPE 3〜4、会話可能
+- `Endurance`: 60分（アップ5分 + メイン50分 + ダウン5分）、RPE 3〜4、会話可能
+- まず目的と時間を選び、その時間を目標RPEで完遂できるよう速度・傾斜を決める。6.0 km/h・傾斜8%は固定値にしない
+- 傾斜トレッドミルだけで完結し、A/Bの代替や不足分の埋め合わせにはしない
+
 詳細なフォーム指示、評価軸、補足意図は `data/menus/current-menus.md` を参照する。
 
-全種目はDouble Progressionで運用する。詳細を記録できる場合はreps・RIR・フォームで進行を判定する。通常ログでは負荷感、筋肉痛、運動中の痛み・明確なフォーム問題を最小主観入力とし、反復する「軽い」という所感に重大な反証がなければ、正本を変える前に次回だけ1段上を試せる。Optional Cは20〜40分のeasy cardio中心で、行かなくてもA/Bだけで完結する。
+マシン種目はDouble Progressionで運用する。詳細を記録できる場合はreps・RIR・フォームで進行を判定する。通常ログでは負荷感、筋肉痛、運動中の痛み・明確なフォーム問題を最小主観入力とし、反復する「軽い」という所感に重大な反証がなければ、正本を変える前に次回だけ1段上を試せる。Cは目的別に30分・45分・60分から選ぶ傾斜トレッドミルのみの任意日で、行わなくてもA/Bだけで完結する。Cのログは同じモードの直近履歴と比較し、フィードバックとメニュー判断を残す。
 
 このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
 
 ## このリポジトリの役割
 
-- `README.md` 冒頭で、ユーザ向けの最新A/BメニューQuick Referenceを確認できるようにする
-- `data/menus/current-menus.md` で、LLM参照用の完全なA/Bメニューを管理する
+- `README.md` 冒頭で、ユーザ向けの最新A/B/CメニューQuick Referenceを確認できるようにする
+- `data/menus/current-menus.md` で、LLM参照用の完全なA/B/Cメニューを管理する
 - Garminログ画像から転記した内容を、検索しやすいテキストとして蓄積する
 - 新しいログごとに、同種の直近履歴との比較、日本語フィードバック、`keep` / `adjust` / `defer` のメニュー判断を残す
 - ChatGPTへ送るレビュー依頼プロンプトのテンプレートを保持する
@@ -49,7 +57,7 @@
 - `README.md`
   - GitHubアプリですぐ見るための最新メニューQuick Reference
 - `data/menus/current-menus.md`
-  - 現在の最新A60 / B60の完全版
+  - 現在の最新A / B / Cの完全版
 - `data/menus/design-philosophy.md`
   - なぜそのメニュー構成なのか
 - `data/logs/structured/README.md`
@@ -143,5 +151,5 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 - このリポジトリは、まず人間が読めることを優先する
 - 推測で重量、回数、意図を補わない
 - マシンは筋刺激、トレッドミルは心肺、という現行思想を基準に扱う
-- Garminの数値は重要だが、A日とB日で評価の重みづけを変える
+- Garminの数値は重要だが、A日、B日、C日で評価軸を分ける
 - マシンのみで終えた日は、正規A/Bとは別カテゴリとして記録する

@@ -14,7 +14,7 @@
 
 {{current_design_philosophy}}
 
-# 2. 現在のA/Bメニュー
+# 2. 現在のA/B/Cメニュー
 
 {{current_menus}}
 
@@ -37,7 +37,7 @@
 # 7. 依頼
 
 - 現在の設計思想に照らして、今回のログが狙い通りか評価してください
-- A日/B日それぞれの評価軸に沿って見てください
+- A日/B日/C日それぞれの評価軸に沿って見てください
 - Garmin指標を過大評価しすぎず、主観や筋刺激も含めて判断してください
 - 必要であればメニューを修正してください
 - 重量を修正する場合は、現在値だけでなく、上に示した近傍候補のどれを採るかも明記してください
@@ -63,7 +63,7 @@
   - 採用する重量が候補レンジのどれか
   - 候補レンジ外を採る場合の理由
   - 推測で重量、回数、セット数、レスト、速度、傾斜を補わないこと
-  - 更新後に `README.md` と `data/menus/current-menus.md` の数値・順序・A/B区分を一致確認すること
+  - 更新後に `README.md` と `data/menus/current-menus.md` の数値・順序・A/B/C区分を一致確認すること
 - メニュー更新が不要と判断した場合も、Codex向けプロンプトとして返してください
   - その場合は、メニュー更新不要の理由
   - 必要なら `data/logs/reviews/` にレビュー結果を保存すること
@@ -74,7 +74,7 @@
 ## 差し込み時の注意
 
 - `{{current_design_philosophy}}` には `data/menus/design-philosophy.md` の relevant 部分を入れる
-- `{{current_menus}}` には `data/menus/current-menus.md` のA60 / B60を入れる
+- `{{current_menus}}` には `data/menus/current-menus.md` のA / B / Cを入れる
 - `{{nearby_weight_options}}` には、現行メニューの重量に対して、`data/machines/weight-options/*.md` をSSOTとして近傍の選択肢を種目ごとに入れる
   - 形式は「現在値」と「近傍候補」が一目で分かる形にする
   - 候補は、重量スタックSSOTの前後値を基本にし、最近の実施実績やユーザ明示の重量があれば `note` で補足する

@@ -6,7 +6,8 @@ Garmin画像からテキスト転記するときのテンプレートです。�
 
 ```yaml
 date: YYYY-MM-DD
-session_type: A_full | B_full | A_machine_only | B_machine_only | treadmill_only | extra_treadmill
+session_type: A_full | B_full | A_machine_only | B_machine_only | C_treadmill | treadmill_only | extra_treadmill
+c_mode: recovery | standard | endurance | not_applicable
 segment_type: full_session
 duration_min:
 avg_hr:
@@ -44,6 +45,14 @@ machine_adjustments:
     resolution_basis:
     subjective_comment:
 subjective_notes:
+  treadmill_feedback:
+    selected_c_mode:
+    selection_purpose:
+    main_rpe:
+    conversation_possible:
+    actual_speed_and_incline:
+    knee_pain_or_discomfort:
+    next_day_impact_on_a_b_or_daily_activity:
   machine_feedback:
     lat_pulldown:
       last_set_reps_in_reserve:
@@ -166,6 +175,9 @@ segments:
 - `segments` は存在するものだけ残し、不要な雛形は削ってよい
 - A/Bのマシンパート、後半トレッドミル、追加トレッドミルが分かるなら分割して記録する
 - ユーザから明示的に指定がない限り、A60 / B60 のラップは `Lap 1 = warmup`、`Lap 2 = machine`、`Lap 3 = treadmill_main`、`Lap 4 = cooldown` として転記する
+- 現行Cとして実施したログは `session_type = C_treadmill` とし、`c_mode = recovery | standard | endurance` を必ず記録する。ユーザから明示的な指定がない限り `Lap 1 = warmup`、`Lap 2 = treadmill_main`、`Lap 3 = cooldown` として転記する。C以外の任意のトレッドミルのみ実施は `treadmill_only` とし、`c_mode = not_applicable` とする
+- Cの速度・傾斜は正本上の固定値ではない。ユーザ入力またはGarmin情報から確認できる実際の設定だけを記録し、不明なら推測しない
+- CのCSV行では、専用列を追加せず `notes` に `c_mode: recovery | standard | endurance` を明記する。YAMLではトップレベルの `c_mode` に保存する
 - `notes` に、画像ファイル名や転記時の補足を残してよい
 - B日は `subjective_notes` をできるだけ埋める
 - ヒップマシンは裸の `hip_abduction` / `Hip Abduction` を使わず、内向きは `hip_adduction_inward` / `Hip Adduction (Inward / 内向き)`、外向きは `hip_abduction_outward` / `Hip Abduction (Outward / 外向き)` と記録する
@@ -180,9 +192,9 @@ segments:
 
 新規ログの取り込みは、CSV/YAMLへの事実保存だけでは完了しない。別のレビュー依頼を待たず、次も同じ作業で行う。
 
-1. `data/menus/current-menus.md` と `data/menus/design-philosophy.md` で予定メニューとA/Bの評価軸を確認する
+1. `data/menus/current-menus.md` と `data/menus/design-philosophy.md` で予定メニューとA/B/Cの評価軸を確認する
 2. `sessions.csv` と `sessions.yaml` から、直近8週間の同種セッションを新しい順に最大3件確認する
-3. AはA、BはB、同じマシン、同等のトレッドミル処方を優先して比較する
+3. AはA、BはB、Cは同じ `c_mode` の `C_treadmill` 同士、同じマシン、同等のトレッドミル処方を優先して比較する
 4. 今回の事実、解釈、仮説、反証またはデータ限界を分ける
 5. `feedback` に、完遂内容、予定との差、良い点、注意点、日付つき直近比較、次回への意味を簡潔な日本語で保存する
 6. `menu_decision.outcome` を `keep` / `adjust` / `defer` から1つ選び、根拠と再評価条件を保存する
@@ -193,5 +205,7 @@ segments:
 `feedback` はGarmin転記値や取り込み元メモとは別の解釈レイヤーである。一般的な称賛は避け、各結論を今回ログ、ユーザコメント、または日付つき比較ログへ結びつける。
 
 恒久的な `adjust` は、原則として直近8週間の少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がなく、具体的な変更値を確定できる場合だけにする。反復する「軽い」という所感と問題なしの簡易主観があれば、詳細なreps・RIRがなくても次回試行を提案できる。通常の単発結果は正本変更とせず、必要に応じて `keep + trial_one_step` とする。明示的な痛みや異常症状など安全上の懸念は単発でも中止、保留、負荷低減の根拠にできるが、安定トレンドとは呼ばない。
+
+Cはモード選択理由、完遂状況、実際の速度・傾斜、RPE、会話可能性、心拍推移、膝・局所疲労、翌日疲労を評価する。速度・傾斜は所定時間を目標RPEで完遂するための調整値として扱う。Cを恒久変更する場合も、同じ `c_mode` の比較可能な完遂2回以上を原則とし、モードの時間または目標RPEの主な1項目だけを変更する。
 
 `adjust` の場合は、最小の1次元だけを変更し、`README.md`、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同期する。履歴にはprevious/new version、before/after、日付つき根拠、理由、意図する効果、再評価条件、rollbackまたは再検討条件を残す。

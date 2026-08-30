@@ -25,9 +25,13 @@ class ExportTodayMenuTests(unittest.TestCase):
         self.assertIn("## ② Seated Leg Press", menu_a)
         self.assertNotIn("# B（", menu_a)
 
-    def test_extracts_optional_c_without_following_section(self):
+    def test_extracts_c_without_following_section(self):
         menu_c = MODULE.extract_menu(self.source, "C")
-        self.assertTrue(menu_c.startswith("# Optional Day C（"))
+        self.assertTrue(menu_c.startswith("# C（"))
+        self.assertIn("## ② メイン（モード別）", menu_c)
+        self.assertIn("`Recovery`", menu_c)
+        self.assertIn("`Standard`", menu_c)
+        self.assertIn("`Endurance`", menu_c)
         self.assertNotIn("# 8〜12週間の運用とDeload", menu_c)
 
     def test_note_body_keeps_fixed_title_as_first_heading(self):

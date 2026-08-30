@@ -28,7 +28,7 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 生成するChatGPT向けプロンプトには、少なくとも以下を含める。
 
 - 現在の設計思想
-- 現在のA60 / B60メニュー
+- 現在のA / B / Cメニュー
 - 現在のレビュー依頼日時
 - 前回レビュー依頼日時
 - レビュー対象のログ範囲

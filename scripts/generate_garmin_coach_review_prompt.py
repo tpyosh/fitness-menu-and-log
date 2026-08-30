@@ -406,7 +406,7 @@ def render_prompt(
 
 {read_markdown(DESIGN_PHILOSOPHY)}
 
-# 4. 現在のA/Bメニュー
+# 4. 現在のA/B/Cメニュー
 
 {read_markdown(CURRENT_MENUS)}
 

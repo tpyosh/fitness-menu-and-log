@@ -18,7 +18,7 @@ NOTE_TITLE = "今日のトレーニングメニュー"
 SECTION_STARTS = {
     "A": re.compile(r"^# A（"),
     "B": re.compile(r"^# B（"),
-    "C": re.compile(r"^# Optional Day C（"),
+    "C": re.compile(r"^# C（"),
 }
 
 APPLE_SCRIPT = r'''
@@ -49,7 +49,7 @@ end run
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Export an A, B, or Optional C menu to one fixed Apple Notes note. "
+            "Export an A, B, or C menu to one fixed Apple Notes note. "
             "The existing note body is replaced in full."
         )
     )
