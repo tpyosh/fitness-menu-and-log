@@ -11,6 +11,7 @@ python3 scripts/export_today_menu_to_apple_notes.py --menu A
 ```
 
 - `--menu` は `A` / `B` / `C` のいずれかを指定する
+- Cのモードが決まっている場合は、`--c-mode recovery` / `--c-mode standard` / `--c-mode endurance` を併記すると選択したモードだけを出力する
 - 固定ノートがなければ、Apple Notesのデフォルトアカウント・デフォルトフォルダに新規作成する
 - 固定ノートがあれば、本文を今回のスナップショットで完全に置換する
 - 同名ノートが複数ある場合は、意図しないノートを更新しないようエラーにする
@@ -20,6 +21,12 @@ Apple Notesを変更せず、出力内容だけ確認する場合:
 
 ```sh
 python3 scripts/export_today_menu_to_apple_notes.py --menu B --dry-run
+```
+
+CのStandardだけを出力する場合:
+
+```sh
+python3 scripts/export_today_menu_to_apple_notes.py --menu C --c-mode standard
 ```
 
 ## Garminコーチングレビュー依頼生成

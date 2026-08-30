@@ -21,6 +21,12 @@ SECTION_STARTS = {
     "C": re.compile(r"^# C（"),
 }
 
+C_MODE_LABELS = {
+    "recovery": "Recovery",
+    "standard": "Standard",
+    "endurance": "Endurance",
+}
+
 APPLE_SCRIPT = r'''
 on run argv
     set noteTitle to item 1 of argv
@@ -65,6 +71,11 @@ def parse_args() -> argparse.Namespace:
         help="Snapshot date in YYYY-MM-DD format. Defaults to today.",
     )
     parser.add_argument(
+        "--c-mode",
+        choices=tuple(C_MODE_LABELS),
+        help="For Menu C, export only Recovery, Standard, or Endurance.",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Print the snapshot without opening or changing Apple Notes.",
@@ -97,6 +108,57 @@ def extract_menu(markdown: str, menu: str) -> str:
         len(lines),
     )
     return "\n".join(lines[start:end]).strip()
+
+
+def extract_c_mode(menu_markdown: str, c_mode: str) -> str:
+    lines = menu_markdown.splitlines()
+    label = C_MODE_LABELS[c_mode]
+    first_section = next(
+        (index for index, line in enumerate(lines) if line.startswith("## ")),
+        len(lines),
+    )
+    mode_start = next(
+        (
+            index
+            for index, line in enumerate(lines)
+            if line.startswith(f"## {label}（")
+        ),
+        None,
+    )
+    if mode_start is None:
+        raise SystemExit(f"Menu C mode {label} was not found in {CURRENT_MENUS}")
+    mode_end = next(
+        (
+            index
+            for index in range(mode_start + 1, len(lines))
+            if lines[index].startswith("## ")
+        ),
+        len(lines),
+    )
+    common_start = next(
+        (
+            index
+            for index, line in enumerate(lines)
+            if line == "## 共通の実施・中止基準"
+        ),
+        None,
+    )
+    if common_start is None:
+        raise SystemExit(f"Menu C common rules were not found in {CURRENT_MENUS}")
+    common_end = next(
+        (
+            index
+            for index in range(common_start + 1, len(lines))
+            if lines[index].startswith("## ")
+        ),
+        len(lines),
+    )
+    selected = (
+        lines[:first_section]
+        + lines[mode_start:mode_end]
+        + lines[common_start:common_end]
+    )
+    return "\n".join(selected).strip()
 
 
 def markdown_line_to_html(line: str) -> str:
@@ -143,17 +205,23 @@ def write_apple_note(note_body: str) -> str:
 
 def main() -> None:
     args = parse_args()
+    if args.c_mode and args.menu != "C":
+        raise SystemExit("--c-mode can only be used with --menu C")
     snapshot_date = validate_date(args.date)
     source = CURRENT_MENUS.read_text(encoding="utf-8")
     menu_markdown = extract_menu(source, args.menu)
+    menu_label = args.menu
+    if args.c_mode:
+        menu_markdown = extract_c_mode(menu_markdown, args.c_mode)
+        menu_label = f"C / {C_MODE_LABELS[args.c_mode]}"
 
     if args.dry_run:
-        print(build_plaintext_preview(menu_markdown, args.menu, snapshot_date), end="")
+        print(build_plaintext_preview(menu_markdown, menu_label, snapshot_date), end="")
         return
 
-    note_body = build_note_body(menu_markdown, args.menu, snapshot_date)
+    note_body = build_note_body(menu_markdown, menu_label, snapshot_date)
     result = write_apple_note(note_body)
-    print(f"Apple Notes: {result} '{NOTE_TITLE}' with Menu {args.menu}")
+    print(f"Apple Notes: {result} '{NOTE_TITLE}' with Menu {menu_label}")
 
 
 if __name__ == "__main__":

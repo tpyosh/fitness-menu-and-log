@@ -20,6 +20,7 @@
 ## 更新ルール
 
 - ユーザが「今日のメニューをAppleのNoteに出力して」と依頼したら、会話中にA/B/Cのどれを行うか明確な場合は `scripts/export_today_menu_to_apple_notes.py --menu <A|B|C>` を実行する。明確でない場合は推測せず、A/B/Cのどれかを1問だけ確認してから実行する
+- CをApple Notesへ出力するとき、会話中に `Recovery` / `Standard` / `Endurance` が明確なら `--c-mode <recovery|standard|endurance>` も指定し、選択したモードだけを出力する。Cは明確だがモードが不明な場合だけ1問確認する
 - Apple Notesへの出力先は固定タイトル `今日のトレーニングメニュー` の1枚とし、日付ごとのノートを増やさない。これはスナップショットなので、実行時は既存本文を毎回すべて置換してよい
 - Apple Notesへ出力する内容は `data/menus/current-menus.md` の該当メニューを正本とし、出力時に重量、回数、セット数、レスト、速度、傾斜、順序を推測または改変しない
 - メニュー更新時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新する
@@ -46,7 +47,7 @@
 ## ログ記録ルール
 
 - `session_type` は `A_full` / `B_full` / `A_machine_only` / `B_machine_only` / `C_treadmill` / `treadmill_only` / `extra_treadmill` を使う。現行Cとして実施した傾斜トレッドミルは `C_treadmill`、C以外の任意のトレッドミルのみの日は `treadmill_only` とする
-- `C_treadmill` では `c_mode` を必須とし、`recovery` / `standard` / `endurance` のいずれかを記録する。時間と目標RPEは現行Cを参照し、速度・傾斜は固定値として推測せず実際の設定を記録する
+- `C_treadmill` では `c_mode` を必須とし、`recovery` / `standard` / `endurance` のいずれかを記録する。時間、予定速度、予定傾斜、目標RPEは現行Cを参照し、実際に下方調整した場合は予定値と実績値を分けて記録する
 - `segment_type` は少なくとも `warmup` / `machine` / `treadmill_main` / `cooldown` / `extra_treadmill` を使える形で保持する
 - ユーザから明示的に指定がない限り、A60 / B60 のラップ解釈は `Lap 1 = warmup`、`Lap 2 = machine`、`Lap 3 = treadmill_main`、`Lap 4 = cooldown` とする
 - 上記の日本語対応は、1ラップ目 = トレッドミルアップ、2ラップ目 = マシン、3ラップ目 = トレッドミル心肺刺激、4ラップ目 = トレッドミルダウンとする
@@ -109,6 +110,7 @@
 - 詳細なreps・RIRがなくても、比較可能な2回以上で「軽い」「1段上げられそう」など同方向の明示的な主観が続き、筋肉痛・痛み・フォーム問題に重大な反証がなければ、正本を維持したまま次回の個別1段増量試行を提案できる
 - 増量試行が成立し、ユーザが新重量を適正負荷かつ問題なしと評価した場合は、詳細なreps・RIRがなくても、過去の反復所感と合わせて正本変更を検討できる
 - Cの恒久変更は、同じ `c_mode` の比較可能な完遂2回以上でRPE、会話可能性、心拍推移、膝・局所疲労、翌日疲労が同じ方向を示す場合に限る。速度・傾斜は目標RPEを成立させる調整値として扱い、モードの時間または目標RPEを変える場合は主な1項目だけを変更する
+- Cでは「Codexが具体的な初期処方を提示 → ユーザが実施 → Garminログと主観を記録 → Codexが次回処方を具体化」を毎回のフィードバックループとする。単発結果でも次回だけの `trial_one_step`、`reduce`、`stop` は判断できるが、恒久的な正本変更とは区別する
 - 単に「楽だった」、Garminスコアが良かった、現行より重い重量を1回実施できた、というだけでは恒久的な増量をしない
 - 栄養の静的な参照YAMLだけから、回復状態、エネルギー充足、または運動適応を推論しない
 

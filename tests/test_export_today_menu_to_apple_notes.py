@@ -28,11 +28,19 @@ class ExportTodayMenuTests(unittest.TestCase):
     def test_extracts_c_without_following_section(self):
         menu_c = MODULE.extract_menu(self.source, "C")
         self.assertTrue(menu_c.startswith("# C（"))
-        self.assertIn("## ② メイン（モード別）", menu_c)
-        self.assertIn("`Recovery`", menu_c)
-        self.assertIn("`Standard`", menu_c)
-        self.assertIn("`Endurance`", menu_c)
+        self.assertIn("## Recovery（30分）", menu_c)
+        self.assertIn("## Standard（45分）", menu_c)
+        self.assertIn("## Endurance（60分）", menu_c)
         self.assertNotIn("# 8〜12週間の運用とDeload", menu_c)
+
+    def test_extracts_only_selected_c_mode_and_common_rules(self):
+        menu_c = MODULE.extract_menu(self.source, "C")
+        standard = MODULE.extract_c_mode(menu_c, "standard")
+        self.assertIn("## Standard（45分）", standard)
+        self.assertIn("6.0 km/h・傾斜8%", standard)
+        self.assertIn("## 共通の実施・中止基準", standard)
+        self.assertNotIn("## Recovery（30分）", standard)
+        self.assertNotIn("## Endurance（60分）", standard)
 
     def test_note_body_keeps_fixed_title_as_first_heading(self):
         menu_b = MODULE.extract_menu(self.source, "B")

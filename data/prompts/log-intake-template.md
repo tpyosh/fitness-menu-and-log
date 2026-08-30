@@ -48,6 +48,7 @@ subjective_notes:
   treadmill_feedback:
     selected_c_mode:
     selection_purpose:
+    planned_speed_and_incline:
     main_rpe:
     conversation_possible:
     actual_speed_and_incline:
@@ -176,7 +177,7 @@ segments:
 - A/Bのマシンパート、後半トレッドミル、追加トレッドミルが分かるなら分割して記録する
 - ユーザから明示的に指定がない限り、A60 / B60 のラップは `Lap 1 = warmup`、`Lap 2 = machine`、`Lap 3 = treadmill_main`、`Lap 4 = cooldown` として転記する
 - 現行Cとして実施したログは `session_type = C_treadmill` とし、`c_mode = recovery | standard | endurance` を必ず記録する。ユーザから明示的な指定がない限り `Lap 1 = warmup`、`Lap 2 = treadmill_main`、`Lap 3 = cooldown` として転記する。C以外の任意のトレッドミルのみ実施は `treadmill_only` とし、`c_mode = not_applicable` とする
-- Cの速度・傾斜は正本上の固定値ではない。ユーザ入力またはGarmin情報から確認できる実際の設定だけを記録し、不明なら推測しない
+- Cの予定速度・傾斜は正本の該当モードから転記する。ユーザ入力またはGarmin情報から確認できる実際の設定を別に記録し、不明なら推測しない
 - CのCSV行では、専用列を追加せず `notes` に `c_mode: recovery | standard | endurance` を明記する。YAMLではトップレベルの `c_mode` に保存する
 - `notes` に、画像ファイル名や転記時の補足を残してよい
 - B日は `subjective_notes` をできるだけ埋める
@@ -206,6 +207,8 @@ segments:
 
 恒久的な `adjust` は、原則として直近8週間の少なくとも2回の比較可能な完遂セッションで同方向の根拠が続き、重大な反証がなく、具体的な変更値を確定できる場合だけにする。反復する「軽い」という所感と問題なしの簡易主観があれば、詳細なreps・RIRがなくても次回試行を提案できる。通常の単発結果は正本変更とせず、必要に応じて `keep + trial_one_step` とする。明示的な痛みや異常症状など安全上の懸念は単発でも中止、保留、負荷低減の根拠にできるが、安定トレンドとは呼ばない。
 
-Cはモード選択理由、完遂状況、実際の速度・傾斜、RPE、会話可能性、心拍推移、膝・局所疲労、翌日疲労を評価する。速度・傾斜は所定時間を目標RPEで完遂するための調整値として扱う。Cを恒久変更する場合も、同じ `c_mode` の比較可能な完遂2回以上を原則とし、モードの時間または目標RPEの主な1項目だけを変更する。
+Cはモード選択理由、完遂状況、予定と実際の速度・傾斜、RPE、会話可能性、心拍推移、膝・局所疲労、翌日疲労を評価する。Cを恒久変更する場合も、同じ `c_mode` の比較可能な完遂2回以上を原則とし、時間、速度、傾斜、目標RPEの主な1項目だけを変更する。
+
+Cの取り込みでは、フィードバックを一般論で終わらせず、`feedback.next_workout` と `menu_decision.trial_targets` に次回同モードの時間・速度・傾斜を具体的に残す。単発ログからの次回限定試行・低減と、2回以上の根拠による正本変更を区別する。
 
 `adjust` の場合は、最小の1次元だけを変更し、`README.md`、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同期する。履歴にはprevious/new version、before/after、日付つき根拠、理由、意図する効果、再評価条件、rollbackまたは再検討条件を残す。
