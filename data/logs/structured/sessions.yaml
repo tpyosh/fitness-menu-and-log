@@ -1357,3 +1357,181 @@ sessions:
         calories: 31
         avg_temp: unknown
         notes: Lap 4。元の表示時間は6:33.2。平均134bpmはGarmin Zone 3。最大173bpmは前区間からの移行直後または区間内スパイクの可能性があるが、ラップ要約だけでは時点と原因を特定できない。
+  - date: 2026-08-29
+    start_time: "09:13"
+    session_type: B_machine_only
+    segment_type: full_session
+    duration_min: 52.45
+    avg_hr: 113
+    max_hr: 153
+    aerobic_te: 2.0
+    anaerobic_te: 2.1
+    exercise_load: 46
+    calories: 280
+    primary_benefit: Anaerobic Capacity (Anaerobic)
+    avg_temp: unknown
+    zone1_time: "17:34"
+    zone2_time: "29:46"
+    zone3_time: "2:49"
+    zone4_time: "0:18"
+    zone5_time: "0:00"
+    subjective_fatigue: >-
+      Lat Pulldown 40kgとRow Machine 40kgは各12回×3set・RIR 4、Shoulder Press 20kgは12回×2set・RIR 2、
+      Torso Rotation 57.5kgは左右12回×1set・RIR 4+。Abdominalは42.5kg×15回でRIR 4+、50kg×15回でRIR 1。
+    soreness_next_day: 上半身に程よい筋肉痛（部位詳細未指定）
+    machine_order_changed: unknown
+    menu_deviation: >-
+      膝痛対応でSeated Leg Press、Seated Leg Curl、高傾斜歩行を省略。Chest Pressはマシンが空いておらず0set。
+      Abdominalは1set目を現行Bの42.5kg、2set目を1段重い50kgで実施した。
+    notes: >-
+      Garminテキストから転記。Today @ 09:13は2026-08-29 09:13として記録。ユーザが実施した膝痛対応・B上半身中心の一日限定版として、
+      ラップ1-4をwarmup、machine、treadmill_main、cooldownに対応。低傾斜歩行を含むが、現行Bの下半身2種目を省略しChest Pressも未実施のため、
+      B_fullではなくB_machine_onlyとして分類した。速度・傾斜の実績値は明示されていないためunknown。Zone合計50:27はTotal Time 52:27より2分短く、
+      Garmin表示値をそのまま保持。Garmin表示のTotal Reps --・Total Sets 1は端末側の不完全な集計とみなし、実績から11setを記録した。
+      ユーザ回答により運動中・終了後の膝痛なしを確認。2026-08-30に上半身へ程よい筋肉痛あり。明確なフォーム問題または他部位の痛みの有無はunknown。
+    subjective_notes:
+      exercise_feedback:
+        warmup_treadmill: 5分予定に対して5:06.9実施。速度・傾斜と膝痛の変化はunknown。
+        lat_pulldown: 40kg × 12回 × 3set、RIR 4。
+        row_machine: 40kg × 12回 × 3set、RIR 4。
+        chest_press: マシンが空いておらず0set。
+        shoulder_press: 20kg × 12回 × 2set、RIR 2。
+        torso_rotation: 57.5kg・左右12回 × 1set、RIR 4+で余裕あり。
+        abdominal: 1set目は42.5kg × 15回・RIR 4+で余裕あり。2set目は50kg × 15回・RIR 1でギリギリだった。
+        treadmill_main: 10〜15分予定に対して15:11実施。速度・傾斜と膝痛の変化はunknown。
+        cooldown: 3〜5分予定に対して4:38.7実施。速度と膝痛の変化はunknown。
+      post_session:
+        overall_comment: >-
+          膝痛対応で下半身ウェイトと高傾斜歩行を外した。背中2種目とTorso Rotationには余裕があり、Shoulder Pressは指定どおりRIR 2。
+          Abdominalは42.5kgでは余裕があったが、50kgではRIR 1だった。Chest Pressは混雑で実施できなかった。
+      next_day:
+        soreness_areas:
+          - upper_body_unspecified
+        soreness_degree: moderate_appropriate
+        soreness_comment: 1日後に上半身へ程よい筋肉痛。具体的な部位は未指定。
+        fatigue_level: unknown
+    minimum_subjective:
+      overall_load: exercise_specific
+      muscle_soreness:
+        status: present
+        areas:
+          - upper_body_unspecified
+        degree: moderate_appropriate
+        timing: next_day
+        confirmed_on: 2026-08-30
+      pain_or_form_issue:
+        status: partial
+        pain:
+          status: none
+          details: 2026-08-29のユーザ回答により、トレッドミル歩行を含む今回セッションで膝への痛みなし。
+        form_issue:
+          status: unknown
+          details: 明確なフォーム問題または他部位の痛みの有無はユーザ回答なし。
+    machine_adjustments:
+      - machine: abdominal
+        planned_weight_kg: 42.5
+        actual_weight_kg:
+          set_1: 42.5
+          set_2: 50
+        adjustment: second_set_one_step_heavier
+        change_timing: set_2
+        resolution_basis: >-
+          data/menus/current-menus.mdの現行B参考重量42.5kgと、data/machines/weight-options/abdominal-machine.mdで隣接する次段50kgを確認。
+          両方の実施重量、set順、reps、RIRはユーザ明示値。
+        subjective_comment: 1set目42.5kgは15回・RIR 4+で余裕あり。2set目50kgは15回・RIR 1でギリギリだった。
+    nutrition_hydration:
+      resting_calories: 63
+      active_calories: 217
+      total_calories_burned: 280
+      calories_consumed: unknown
+      calories_net: -280
+      estimated_sweat_loss_ml: 644
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -644
+    body_battery:
+      net_impact: -2
+    workout_details:
+      total_reps: unknown
+      total_sets: 11
+      garmin_displayed_total_sets: 1
+      volume_kg: unknown
+    feedback:
+      completed: >-
+        膝痛対応・B上半身中心の一日限定版として、warmup 5:06.9、machine 27:30、低傾斜のtreadmill_main 15:11、cooldown 4:38.7を実施した。
+        上半身・体幹は予定14set中、混雑でChest Press 3setを除く11setを実施。現行BのSeated Leg PressとSeated Leg Curl、高傾斜歩行は膝痛対応として計画的に外したため、B_fullではない。
+      positives: >-
+        Shoulder Press 20kgは12回×2setを指定どおりRIR 2で実施した。2026-07-25には20kg・3set目後半でフォーム崩れがあったが、今回は2set構成で所定の余力まで完遂した。
+        Lat PulldownとRow Machineは各40kg・12回×3setでRIR 4、Torso Rotation 57.5kgは左右12回×1setでRIR 4+と、反復品質を保つ余地があった。
+        それでも2026-08-30には上半身へ程よい筋肉痛があり、Failure近くまで追い込まずに上半身へ刺激を入れられた。低傾斜歩行は15:11行い、treadmill_mainの平均心拍124bpm、最大140bpmだった。
+      concerns: >-
+        warmup、15:11の歩行、cooldownを含めて膝への痛みはなかった。ただし今回1回だけの低傾斜歩行であり、通常の高傾斜処方や下半身ウェイト再開の安全性まで確認した結果ではない。
+        Chest Pressは混雑で未実施のため、Bの主要な押す刺激はShoulder Pressのみとなった。Abdominal 50kgは15回できたもののRIR 1で、現行目標RIR 2〜3より追い込んでおり、恒久増量の成立とは扱わない。
+      recent_comparison: >-
+        直近8週間の比較対象はB_full 3件で、2026-07-25、2026-07-19、2026-07-11を確認した。3件はいずれも通常の高傾斜treadmill_mainを約16分実施し、
+        平均心拍は146、145、146bpm、Exercise Loadはいずれも59だった。今回は低傾斜15:11・平均124bpm・Load 46で、処方と膝の条件が異なるため心肺能力の直接比較には使えない。
+        machine区間も今回は27:30で、3件の40:23.6、34:12.0、32:56.1より短いが、下半身2種目とChest Pressを省いた影響がある。
+        2026-07-25はLat PulldownとRow Machineが旧4set構成でキツかったのに対し、今回は現行3set・休憩90秒で両方RIR 4だったため、現行構成での余力を示す初回データとして扱う。
+      next_workout: >-
+        次回開始時に膝痛が残っていれば下半身ウェイトと高傾斜歩行を避け、休養、上半身のみ、または今回と同じ低傾斜歩行を選ぶ。痛みがなくても再開時は現行重量・処方を増やさない。
+        Lat PulldownとRow Machineは40kgの現行重量を維持し、次回も12回×3setの最終RIRとフォームを記録する。単発のRIR 4だけでは増量しない。
+        程よい筋肉痛が次回まで残らなければ、Shoulder Pressは20kg・2setを維持する。Abdominalは42.5kg・2setで15回時のRIRと厳格フォームを再確認し、50kgは今回RIR 1だったため次回標準にはしない。
+        Chest Pressは空いていれば現行33kg・3setを通常どおり実施する。
+    menu_decision:
+      status: final
+      outcome: keep
+      next_session_action: maintain
+      trial_targets: none
+      fact: >-
+        2026-08-29は膝痛対応として下半身ウェイトと高傾斜歩行を外し、低傾斜歩行を含む52:27を実施した。
+        Lat PulldownとRow Machineは40kg・12回×3setでRIR 4、Shoulder Pressは20kg・12回×2setでRIR 2、Torso Rotationは57.5kg・左右12回×1setでRIR 4+だった。
+        Abdominalは42.5kg・15回でRIR 4+、50kg・15回でRIR 1。Chest Pressは混雑で未実施。ユーザ回答により運動中・終了後の膝痛なしを確認し、翌2026-08-30には上半身へ程よい筋肉痛があった。明確なフォーム問題の有無はunknown。
+      interpretation: >-
+        上半身と体幹の短縮セッションは概ね成立した。背中2種目とTorso Rotationには現行重量で余力があるが、比較可能な現行構成の結果は今回1件であり、増量の反復根拠には足りない。
+        翌日の程よい筋肉痛は上半身へ刺激が入ったことと整合するが、刺激量の最適性や増量可否を単独で示すものではない。Abdominal 42.5kgは軽い可能性がある一方、次段50kgでは目標よりRIRが低く、現行42.5kgを恒久変更する条件は満たしていない。
+      hypothesis: >-
+        Lat PulldownとRow Machineの余力増加には、旧Bの4set・短い休憩から現行3set・90秒休憩へ変わった影響と、適応の両方が考えられる。
+        今回の低傾斜歩行は膝症状を悪化させない一日限定の有酸素代替として成立した可能性がある。ただし1回のため、通常の高傾斜処方や下半身ウェイト再開の判断には追加確認が必要。
+      rationale: >-
+        明示的な膝痛は単発でも負荷低減の根拠になるため、下半身と高傾斜を外した今回対応は妥当で、今回の低傾斜歩行中・終了後には膝痛がなかった。
+        翌日に上半身へ程よい筋肉痛があったため、RIRを残した短縮構成でも刺激は得られたと解釈できる。ただし単発の筋肉痛は増量根拠ではなく、Lat PulldownとRow MachineのRIR 4は現行構成で1回のみ、Abdominal 50kgはRIR 1という反証があり、Chest Pressは未実施だったため、正本はkeep、次回はmaintainとする。
+      evidence:
+        - 2026-08-29 B_machine_only
+        - 2026-07-25 B_full
+        - 2026-07-19 B_full
+        - 2026-07-11 B_full
+      review_conditions: >-
+        次回開始時に膝痛が残る、低傾斜歩行でも痛みが出る、腫れ・不安定感が出る場合は、下半身ウェイトと高傾斜を再び外し、必要に応じて休養または医療専門家への相談を検討する。
+        次回以降、比較可能な現行BでLat PulldownまたはRow MachineのRIR 4前後が明確なフォーム問題なく反復する場合は、該当種目だけ1段増量試行を検討する。
+        Abdominalは42.5kg・2setを同じ厳格フォームで再確認し、2setとも15回・目標RIR 2〜3を満たした結果が続いた場合にのみ再評価する。
+    segments:
+      - segment_type: warmup
+        duration_min: 5.12
+        avg_hr: 102
+        max_hr: 120
+        calories: 25
+        avg_temp: unknown
+        notes: Lap 1。元の表示時間は5:06.9。提案5分より6.9秒長い。距離、速度、傾斜はGarmin表示およびユーザ実績に具体値がないためunknown。
+      - segment_type: machine
+        duration_min: 27.50
+        avg_hr: 109
+        max_hr: 153
+        calories: 141
+        avg_temp: unknown
+        notes: >-
+          Lap 2。元の表示時間は27:30。Lat Pulldown 40kg × 12回 × 3set・RIR 4、Row Machine 40kg × 12回 × 3set・RIR 4、
+          Shoulder Press 20kg × 12回 × 2set・RIR 2、Torso Rotation 57.5kg・左右12回 × 1set・RIR 4+、
+          Abdominalは42.5kg × 15回・RIR 4+と50kg × 15回・RIR 1を実施。Chest Pressはマシンが空いておらず0set。
+      - segment_type: treadmill_main
+        duration_min: 15.18
+        avg_hr: 124
+        max_hr: 140
+        calories: 96
+        avg_temp: unknown
+        notes: Lap 3。元の表示時間は15:11。提案10〜15分より11秒長い。距離、速度、傾斜は具体値がないためunknown。ユーザ回答により膝への痛みなし。
+      - segment_type: cooldown
+        duration_min: 4.65
+        avg_hr: 112
+        max_hr: 124
+        calories: 18
+        avg_temp: unknown
+        notes: Lap 4。元の表示時間は4:38.7。提案3〜5分の範囲内。速度はunknown。ユーザ回答により膝への痛みなし。
