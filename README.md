@@ -1,6 +1,6 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-08-30時点）
+## 最新メニュー Quick Reference（2026-09-11時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
@@ -18,6 +18,12 @@
 
 ### B（Upper emphasis + Lower）
 
+- **次回Bのみの増量試行（2026-09-11ログに基づく。恒久的な参考重量は未変更）**
+  - Lat Pulldown: **47kg**（通常40kgから1段増）
+  - Row Machine: **47kg**（通常40kgから1段増）
+  - Chest Press: **40kg**（通常33kgから1段増）
+  - Shoulder Press: **25kg**（通常20kgから1段増）
+  - 各種目はRIR 1〜2を目安にし、上限回数に固執しない。痛み・フォーム崩れが出る前に終了する。
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Lat Pulldown: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
 - Row Machine: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒

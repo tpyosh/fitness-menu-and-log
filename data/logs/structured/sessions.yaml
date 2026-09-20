@@ -1535,3 +1535,292 @@ sessions:
         calories: 18
         avg_temp: unknown
         notes: Lap 4。元の表示時間は4:38.7。提案3〜5分の範囲内。速度はunknown。ユーザ回答により膝への痛みなし。
+  - date: 2026-08-30
+    start_time: "19:00"
+    session_type: C_treadmill
+    c_mode: standard
+    segment_type: full_session
+    duration_min: 45.07
+    distance_km: 4.32
+    avg_pace_min_per_km: "10:26"
+    avg_moving_pace_min_per_km: "10:00"
+    best_pace_min_per_km: "9:59"
+    avg_hr: 126
+    max_hr: 145
+    aerobic_te: 2.8
+    anaerobic_te: 0.0
+    exercise_load: 52
+    calories: 303
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: "5:59"
+    zone2_time: "11:51"
+    zone3_time: "26:51"
+    zone4_time: "0:00"
+    zone5_time: "0:00"
+    subjective_fatigue: かなり軽かった。会話可能で疲労感なし
+    soreness_next_day: unknown
+    machine_order_changed: not_applicable
+    menu_deviation: >-
+      予定の速度・傾斜で実施したが、時間を間違えてメインを数分早く終了した。正確なメイン時間はunknown。合計は45:04。
+    notes: >-
+      Garminテキストから転記。2026-08-30 19:00開始。C Standardとして記録。心拍Zone合計44:41はTotal Time 45:04より23秒短いため、
+      Garmin表示値をそのまま保持。平均ペース10:26/kmと距離・時間からセッション平均速度は約5.75km/hと読めるが、
+      ユーザ回答により予定の速度・傾斜で実施したことを確認。メインは時間を間違えて数分短縮したが、正確な区間時間はunknown。
+      ユーザ所感は「かなり軽かった」で、会話可能かつ疲労感なし。
+    minimum_subjective:
+      overall_load: light
+      muscle_soreness:
+        status: unknown
+        areas: []
+        timing: next_day
+      pain_or_form_issue:
+        status: partial
+        details: 下腿・臀部・ハムストリングスを含め疲労感なし。膝痛・違和感は明示回答待ち。
+    subjective_notes:
+      treadmill_feedback:
+        selected_c_mode: standard
+        selection_purpose: 基礎持久力・健康維持・有酸素量の上積み
+        planned_speed_and_incline:
+          warmup: 5分・5.5km/h・傾斜5%
+          treadmill_main: 35分・6.0km/h・傾斜8%
+          cooldown: 5分・5.0km/h・傾斜2%
+        actual_speed_and_incline:
+          warmup: 5.5km/h・傾斜5%
+          treadmill_main: 6.0km/h・傾斜8%
+          cooldown: 5.0km/h・傾斜2%
+          duration_note: メインを数分早く終了。正確なメイン時間はunknown。
+        main_rpe: かなり軽かった（数値RPEはunknown）
+        conversation_possible: true
+        knee_pain_or_discomfort: unknown
+        local_fatigue: none
+        next_day_impact_on_a_b_or_daily_activity: unknown
+    nutrition_hydration:
+      resting_calories: 54
+      active_calories: 249
+      total_calories_burned: 303
+      calories_consumed: unknown
+      calories_net: -303
+      estimated_sweat_loss_ml: 350
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -350
+    stamina:
+      beginning_potential_percent: 100
+      ending_potential_percent: 89
+      minimum_percent: 89
+    body_battery:
+      net_impact: -5
+    movement:
+      moving_time: "43:11"
+      elapsed_time: "45:04"
+      run_time: "0:07"
+      walk_time: "43:51"
+      idle_time: "1:06.0"
+      avg_power_w: 97
+      max_power_w: 123
+      avg_cadence_spm: 119
+      max_cadence_spm: 143
+      avg_stride_length_m: 0.77
+      avg_vertical_ratio_percent: 9.1
+      avg_vertical_oscillation_cm: 6.9
+      avg_ground_contact_time_ms: 444
+    intensity_minutes:
+      moderate_min: 11
+      vigorous_min: 25
+      total_weighted_min: 61
+    feedback:
+      completed: >-
+        C Standardの予定速度・傾斜で合計45:04、4.32kmを実施した。時間を間違えてメインを数分早く終了したため、予定メイン35分は未完遂。
+        平均心拍126bpm、最大145bpm、Zone 3は26:51、Zone 4・5は0:00、Aerobic TE 2.8、Anaerobic TE 0.0、Primary BenefitはBase (Low Aerobic)だった。
+      positives: >-
+        メインを数分短縮しても、合計45:04の中で心拍の59%をZone 3、26%をZone 2で過ごした。Aerobic TE 2.8とBase判定は、
+        Standardの目的である基礎持久力・健康維持・有酸素量の上積みと整合する。Zone 4・5はなく、Body Batteryは-5、Staminaは100%から89%で、
+        Garmin上は過度に追い込んだ形ではない。予定の速度・傾斜でも会話可能で、ユーザは疲労感なしと回答した。
+      concerns: >-
+        メインを数分短縮しているため、予定35分を完遂した場合の終盤反応は未確認。それでも予定の速度・傾斜で会話可能かつ疲労感なしだったため、
+        ユーザ所感の「かなり軽かった」はStandardの目標RPE 3〜4より低かった可能性を支持する。膝痛・違和感と翌日影響は回答待ち。
+      recent_comparison: >-
+        直近8週間に比較可能なC Standardは0件。今回はC Standardの初回ベースラインであり、単発結果をトレンドとは扱わない。
+        A/B内のトレッドミルは目的・直前の筋トレ・処方時間が異なるため、直接比較には使わない。
+      next_workout: >-
+        翌日反応と膝の状態への回答待ち。問題がなければ正本を維持したまま、次回Standardだけメインを6.0km/h・傾斜9%・35分で試す候補とする。
+        次回は時間を正確に35分実施し、RPE、会話可能性、心拍、局所疲労を比較する。
+    menu_decision:
+      status: pending_user_input
+      fact: >-
+        予定の速度・傾斜で合計45:04を実施したが、メインは時間を間違えて数分短縮した。平均心拍126bpm、最大145bpm、Zone 3は26:51、
+        Zone 4・5は0:00、Aerobic TE 2.8、Load 52だった。ユーザは「かなり軽かった」と評価し、会話可能で疲労感なしと回答した。
+      interpretation: >-
+        有酸素運動量の上積みとBase刺激は成立した。メイン短縮という制約はあるが、予定設定で会話可能・疲労感なしだったため、
+        主観強度はStandardの目標RPE 3〜4を下回った可能性が高まった。
+      hypothesis: >-
+        次回だけメイン傾斜を8%から9%へ上げ、35分を正確に実施する余地がある。膝の状態と翌日影響を確認して反証する必要がある。
+      rationale: >-
+        C Standard初回かつメイン短縮のため正本を恒久変更する根拠はない。一方、予定設定で会話可能・疲労感なしという回答は、
+        次回限定の傾斜9%試行を支持する。膝の状態と翌日反応への回答後に `keep + trial_one_step` または `keep + maintain` を確定する。
+      evidence:
+        - 2026-08-30 C_treadmill standard
+      questions:
+        - 運動中・終了後に膝痛や明確な違和感がなかったか。
+        - 翌日に疲労、筋肉痛、膝の違和感がA/Bまたは日常活動へ影響したか。
+      review_conditions: >-
+        膝の状態と翌日反応への回答後に今回の判断を確定する。次回限定の9%試行が成立した場合は、35分を正確に実施し、
+        RPE、心拍、会話可能性、膝・局所疲労、翌日影響を比較する。
+  - date: 2026-09-11
+    start_time: unknown
+    session_type: B_full
+    segment_type: full_session
+    duration_min: 78.74
+    avg_hr: 130
+    max_hr: 165
+    aerobic_te: 3.3
+    anaerobic_te: 2.1
+    exercise_load: 112
+    calories: 337
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: "6:11"
+    zone2_time: "37:30"
+    zone3_time: "16:09"
+    zone4_time: "18:52"
+    zone5_time: "0:00"
+    subjective_fatigue: >-
+      全種目でメニュー上限回数を実施。上半身はRIR 4+で余力があり、RIR 1〜2程度を狙いたいと感じた。
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: 重量、種目別RIR、速度、傾斜はunknown。
+    notes: >-
+      Garminテキストから転記。ユーザ指定のメニューBとして、ラップ1-4をwarmup、machine、treadmill_main、cooldownに対応。
+      Garmin表示のTotal Reps --・Total Sets 1・Volume --kgは不完全な集計のため、具体的なreps・sets・volumeはunknown。
+      心拍Zone合計78:42はTotal Time 1:18:44より2秒短いため、Garmin表示値をそのまま保持する。
+      ユーザ申告により全種目でメニュー上限回数を実施し、上半身4種目はすべてRIR 4+だった。運動中・終了後の痛みと明確なフォーム問題はなく、翌日は心地よい程度の筋肉痛だった。
+    minimum_subjective:
+      overall_load: upper_body_too_light
+      muscle_soreness:
+        status: present
+        areas: []
+        degree: mild_appropriate
+        timing: next_day
+      pain_or_form_issue:
+        status: none
+        details: ユーザ回答により、運動中・終了後の痛みと明確なフォーム問題はなし。
+    subjective_notes:
+      exercise_feedback:
+        overall: 全種目でメニュー上限回数を実施。
+        upper_body: Lat Pulldown、Row Machine、Chest Press、Shoulder Pressの全4種目がRIR 4+で余力があり、RIR 1〜2程度を狙いたい。
+        machine_weights: unknown
+        machine_specific_rir: unknown
+        treadmill_speed_and_incline: unknown
+      post_session:
+        muscle_soreness: 翌日は心地よい程度。
+        pain: なし。
+        form_issue: なし。
+    nutrition_hydration:
+      resting_calories: 69
+      active_calories: 268
+      total_calories_burned: 337
+      calories_consumed: unknown
+      calories_net: -337
+      estimated_sweat_loss_ml: 1116
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -1116
+    body_battery:
+      net_impact: -7
+    workout_details:
+      total_reps: unknown
+      total_sets: unknown
+      garmin_displayed_total_sets: 1
+      volume_kg: unknown
+    intensity_minutes:
+      moderate_min: 43
+      vigorous_min: 23
+      total_weighted_min: 89
+    feedback:
+      completed: >-
+        メニューBを1:18:44実施した。Lap 1のwarmupは8:12.6、Lap 2のmachineは47:52、Lap 3のtreadmill_mainは16:02、Lap 4のcooldownは6:36.9だった。
+        ユーザ申告では全種目でメニュー上限回数を実施した。重量、種目別RIR、速度・傾斜は未記録である。
+      positives: >-
+        上半身がRIR 4+のままメニュー上限回数に達したという所感は、現行重量に余力があることを示す明確な進行シグナルである。
+        2026-08-29にもLat PulldownとRow Machineは各40kg・12回×3setでRIR 4だったため、少なくとも背中種目では同方向の所感が2回目となる。
+        treadmill_mainは16:02で現行Bの16分処方とほぼ一致し、Aerobic TE 3.3、Primary Benefit Base (Low Aerobic)だった。
+      concerns: >-
+        今回の実施重量は未記録だが、現行の4種目すべてでRIR 4+だった。種目ごとの正確なRIR、速度・傾斜は未記録である。
+        2026-07-25にはLat Pulldown、Row Machine、Shoulder Pressがきつく、Shoulder Press後半ではフォーム崩れもあったため、上半身を一括で増量する根拠にはしない。
+        運動中・終了後の痛みと明確なフォーム問題はなく、翌日の筋肉痛は心地よい程度だった。一方、次の増量時には7/25の反証があるShoulder Pressのフォームを特に確認する。
+      recent_comparison: >-
+        直近8週間のB系ログは2026-08-29のB_machine_only、2026-07-25、2026-07-19のB_fullの3件を確認した。
+        8/29は膝痛対応の短縮版だが、Lat PulldownとRow Machineが40kg・12回×3set・RIR 4で、今回の上半身RIR 4+と同方向である。
+        7/25はB_fullだが旧4set構成で、Lat Pulldown、Row Machine、Shoulder PressにきつさとShoulder Pressのフォーム崩れがあった。
+        7/19は現行より前の構成で種目別RIRがない。処方と詳細が異なるため、今回の全身心拍・所要時間を単純な能力トレンドとは扱わない。
+      next_workout: >-
+        正本の参考重量は維持したまま、次回だけLat Pulldownを40kgから47kg、Row Machineを40kgから47kg、Chest Pressを33kgから40kg、Shoulder Pressを20kgから25kgへ各1段増量して試す。
+        各種目で上限回数に固執せず、RIR 1〜2を目安に、フォームが崩れる・痛みが出る前に終了する。実施重量、最終setのRIR、フォーム、痛みを記録する。
+    menu_decision:
+      status: final
+      outcome: keep
+      next_session_action: trial_one_step
+      trial_targets:
+        - machine: lat_pulldown
+          planned_weight_kg: 40
+          trial_weight_kg: 47
+          target: 8〜12回 × 3set、RIR 1〜2、フォーム良好、痛みなし
+        - machine: row_machine
+          planned_weight_kg: 40
+          trial_weight_kg: 47
+          target: 8〜12回 × 3set、RIR 1〜2、フォーム良好、痛みなし
+        - machine: chest_press
+          planned_weight_kg: 33
+          trial_weight_kg: 40
+          target: 8〜12回 × 3set、RIR 1〜2、フォーム良好、痛みなし
+        - machine: shoulder_press
+          planned_weight_kg: 20
+          trial_weight_kg: 25
+          target: 8〜12回 × 2set、RIR 1〜2、フォーム良好、痛みなし。腰の反りや軌道の崩れが出る前に終了
+      fact: >-
+        2026-09-11のメニューBは1:18:44で、ユーザは全種目でメニュー上限回数を実施し、上半身はRIR 4+だったと報告した。
+        平均心拍130bpm、最大165bpm、Aerobic TE 3.3、Anaerobic TE 2.1、Exercise Load 112、treadmill_main 16:02だった。
+        2026-08-29にはLat PulldownとRow Machineが40kg・12回×3set・RIR 4だった。ユーザ回答により今回はLat Pulldown、Row Machine、Chest Press、Shoulder Pressの全4種目がRIR 4+で、運動中・終了後の痛みと明確なフォーム問題はなく、翌日は心地よい程度の筋肉痛だった。今回の実施重量と各種目の正確なRIRはunknown。
+      interpretation: >-
+        少なくとも背中種目については、比較可能な現行B系の2回で上限回数をRIR 4前後で行えた可能性があり、次回だけの1段増量試行を検討できる。
+        ただし今回の「上半身RIR 4+」は種目単位に分かれておらず、過去の反証もあるため、一律増量や正本の恒久変更は支持しない。
+      hypothesis: >-
+        次回だけ4種目を各1段増量すれば、RIR 1〜2に近づけられる可能性がある。Shoulder Pressは7/25のフォーム崩れを反証として継続監視する。
+      rationale: >-
+        直近の8/29と今回で、少なくともLat PulldownとRow Machineは余力が繰り返し観察された一方、7/25には同種目のきつさ、Shoulder Pressのフォーム崩れがあった。
+        今回は全4種目のRIR 4+、痛み・明確なフォーム問題なし、翌日の心地よい筋肉痛が確認できたため、正本を変えずに次回限定で4種目の各1段増量を試す。恒久変更には増量試行の結果を含む追加の比較可能な根拠が必要である。
+      evidence:
+        - 2026-09-11 B_full
+        - 2026-08-29 B_machine_only
+        - 2026-07-25 B_full
+        - 2026-07-19 B_full
+      review_conditions: >-
+        次回はLat Pulldown 47kg、Row Machine 47kg、Chest Press 40kg、Shoulder Press 25kgを各1回だけ試す。RIR 1〜2、フォーム良好、痛みなしで成立した場合でも、正本への恒久反映は追加の比較可能な結果で再評価する。
+    segments:
+      - segment_type: warmup
+        duration_min: 8.21
+        avg_hr: 142
+        max_hr: 159
+        calories: 48
+        avg_temp: unknown
+        notes: Lap 1。元の表示時間は8:12.6。速度・傾斜はunknown。
+      - segment_type: machine
+        duration_min: 47.87
+        avg_hr: 121
+        max_hr: 156
+        calories: 169
+        avg_temp: unknown
+        notes: Lap 2。元の表示時間は47:52。全種目でメニュー上限回数を実施。上半身4種目はすべてRIR 4+で、痛み・明確なフォーム問題なし。重量はunknown。
+      - segment_type: treadmill_main
+        duration_min: 16.03
+        avg_hr: 153
+        max_hr: 165
+        calories: 99
+        avg_temp: unknown
+        notes: Lap 3。元の表示時間は16:02。現行Bの16分処方より2秒長い。速度・傾斜はunknown。
+      - segment_type: cooldown
+        duration_min: 6.62
+        avg_hr: 129
+        max_hr: 159
+        calories: 20
+        avg_temp: unknown
+        notes: Lap 4。元の表示時間は6:36.9。速度・傾斜はunknown。
