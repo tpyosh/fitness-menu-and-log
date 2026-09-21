@@ -1824,3 +1824,145 @@ sessions:
         calories: 20
         avg_temp: unknown
         notes: Lap 4。元の表示時間は6:36.9。速度・傾斜はunknown。
+  - date: 2026-09-20
+    start_time: unknown
+    session_type: A_full
+    segment_type: full_session
+    duration_min: 70.40
+    avg_hr: 122
+    max_hr: 163
+    aerobic_te: 3.1
+    anaerobic_te: 2.0
+    exercise_load: 90
+    calories: 266
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: "26:49"
+    zone2_time: "17:24"
+    zone3_time: "9:21"
+    zone4_time: "16:16"
+    zone5_time: "0:00"
+    subjective_fatigue: >-
+      全種目でメニュー上限回数を実施。下半身はRIR 1〜2程度。Lat PulldownはRIR 4+で、ほぼ負荷を感じなかった。
+    soreness_next_day: なし
+    machine_order_changed: unknown
+    menu_deviation: 種目別の実施重量・上半身のRIR・速度・傾斜はunknown。
+    notes: >-
+      Garminテキストから転記。ユーザ指定のAメニューとして、ラップ1-4をwarmup、machine、treadmill_main、cooldownに対応。
+      Garmin表示のTotal Reps --・Total Sets 1・Volume --kgは不完全な集計のため、ユーザ申告の全種目上限回数実施と現行Aの処方から全7種目・計15setとして記録する。
+      心拍Zone合計は1:09:50でTotal Time 1:10:24より34秒短いため、Garmin表示値をそのまま保持する。
+      筋肉痛なし。ユーザ回答により、運動中・終了後の痛みと明確なフォーム問題はなし。
+    minimum_subjective:
+      overall_load: mixed
+      muscle_soreness:
+        status: none
+        areas: []
+        timing: unspecified
+      pain_or_form_issue:
+        status: none
+        details: ユーザ回答により、運動中・終了後の痛みと明確なフォーム問題はなし。
+    subjective_notes:
+      exercise_feedback:
+        overall: 全種目でメニュー上限回数を実施。
+        lower_body: Seated Leg Press、Seated Leg Curl、Leg Extension、Hip Abduction (Outward / 外向き)はRIR 1〜2程度。
+        lat_pulldown: RIR 4+で、ほぼ負荷を感じなかった。
+        chest_press: RIRはunknown。
+        abdominal: RIRはunknown。
+        machine_weights: unknown
+        treadmill_speed_and_incline: unknown
+      post_session:
+        muscle_soreness: なし。
+        pain: なし。
+        form_issue: なし。
+    nutrition_hydration:
+      resting_calories: 62
+      active_calories: 204
+      total_calories_burned: 266
+      calories_consumed: unknown
+      calories_net: -266
+      estimated_sweat_loss_ml: 935
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -935
+    body_battery:
+      net_impact: -8
+    workout_details:
+      total_reps: unknown
+      total_sets: 15
+      garmin_displayed_total_sets: 1
+      volume_kg: unknown
+    intensity_minutes:
+      moderate_min: 16
+      vigorous_min_times_two: 23
+      total_weighted_min: 62
+    feedback:
+      completed: >-
+        現行Aの全7種目・計15setを各メニュー上限回数で実施し、1:10:24でA_fullを完遂した。
+        warmupは8:04.2、machineは39:12、treadmill_mainは18:10、cooldownは4:58.1だった。種目別重量、Chest Press・AbdominalのRIR、速度・傾斜は未記録である。
+      positives: >-
+        下半身4種目は上限回数をRIR 1〜2程度で実施し、筋肉痛なしと報告された。treadmill_mainは18:10で現行Aの18分処方とほぼ一致し、Aerobic TE 3.1、Exercise Load 90だった。
+      concerns: >-
+        Lat Pulldownは上限回数でもRIR 4+かつ「ほぼ負荷なし」で、現行40kgが狙いのRIR 2〜3より軽い可能性がある。
+        実施重量は未記録だが、痛みと明確なフォーム問題はない。恒久変更は判断しない。
+      recent_comparison: >-
+        直近8週間のA_fullは2026-08-23、2026-08-11、2026-07-22の3件を確認した。
+        8/23は現行メニューなら全体的に1段増量してもよいという所感、8/11は全15setの最後だけはきつかったという所感だったが、種目別RIRは記録されていない。
+        7/22は改定前構成であり、処方とset配分が異なる。今回のLat Pulldownの余力を同種目で反復したトレンドとはまだ扱えない。
+      next_workout: >-
+        痛み・フォーム問題がなければ、次回AはLat Pulldownのみを40kgから重量スタック上の次の47kgへ1回限定で試し、上限回数に固執せずRIR 1〜2、フォーム良好、痛みなしを確認する。
+        下半身4種目は現行重量・回数・setを維持し、RIR 1〜2が続くか、膝を含む痛みやフォーム問題がないかを記録する。
+    menu_decision:
+      status: final
+      outcome: keep
+      next_session_action: trial_one_step
+      trial_targets:
+        - machine: lat_pulldown
+          planned_weight_kg: 40
+          candidate_trial_weight_kg: 47
+          target: 次回だけ8〜12回 × 2set、RIR 1〜2、フォーム良好、痛みなし。
+      fact: >-
+        2026-09-20のAメニューで全種目を上限回数まで行い、下半身4種目はRIR 1〜2程度、Lat PulldownはRIR 4+でほぼ負荷なしだった。
+        筋肉痛なし。ユーザ回答により、運動中・終了後の痛みと明確なフォーム問題はなし。
+      interpretation: >-
+        下半身は現行処方で高い努力度に達している一方、Lat Pulldownは狙いのRIR 2〜3を大きく上回る余力がある可能性がある。
+        実施重量は未記録だが、安全上の反証となる痛み・明確なフォーム問題はない。
+      hypothesis: Lat Pulldownを次回だけ1段増量すると、目標RIRに近づけられる可能性がある。
+      rationale: >-
+        8/23の全体的な増量所感と今回のLat Pulldown RIR 4+は進行シグナルだが、種目別の比較可能な反復結果は十分でない。
+        痛み・明確なフォーム問題なしを確認できたため、正本を維持したまま次回限定の1段増量試行とする。
+      evidence:
+        - 2026-09-20 A_full
+        - 2026-08-23 A_full
+        - 2026-08-11 A_full
+        - 2026-07-22 A_full
+      review_conditions: >-
+        次回AでLat Pulldown 47kgを1回だけ試し、RIR 1〜2、フォーム良好、痛みなしで成立したかを記録する。
+        成立しても正本への恒久反映は、追加の比較可能な結果で再評価する。明確な痛みやフォーム問題が出た場合は増量を中止し、負荷維持または低減を再評価する。
+    segments:
+      - segment_type: warmup
+        duration_min: 8.07
+        avg_hr: 144
+        max_hr: 163
+        calories: 49
+        avg_temp: unknown
+        notes: Lap 1。元の表示時間は8:04.2。速度・傾斜はunknown。
+      - segment_type: machine
+        duration_min: 39.20
+        avg_hr: 108
+        max_hr: 148
+        calories: 99
+        avg_temp: unknown
+        notes: Lap 2。元の表示時間は39:12。全7種目・計15setをメニュー上限回数で実施。下半身4種目はRIR 1〜2程度、Lat PulldownはRIR 4+でほぼ負荷なし。ユーザ回答により痛み・明確なフォーム問題なし。種目別重量と他種目のRIRはunknown。
+      - segment_type: treadmill_main
+        duration_min: 18.17
+        avg_hr: 145
+        max_hr: 162
+        calories: 106
+        avg_temp: unknown
+        notes: Lap 3。元の表示時間は18:10。現行Aの18分処方より10秒長い。速度・傾斜はunknown。
+      - segment_type: cooldown
+        duration_min: 4.97
+        avg_hr: 118
+        max_hr: 159
+        calories: 12
+        avg_temp: unknown
+        notes: Lap 4。元の表示時間は4:58.1。速度・傾斜はunknown。
