@@ -11,11 +11,13 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 - `README.md` 冒頭の最新メニューQuick Referenceを更新する
 - `data/menus/current-menus.md` を完全版として更新する
 - `data/menus/menu-history.md` にprevious version、new version、正確なbefore/after、日付つき根拠、意図する効果、再評価条件、rollbackまたは再検討条件を記録する
+- 通常処方の数値を変える場合は `data/menus/prescriptions.json` に新しい版を追加し、既存版を上書きしない。次回限定試行だけなら `data/menus/active-trials.json` の状態を更新する
 - 設計思想が変わる場合だけ `data/menus/design-philosophy.md` も更新する
 - `README.md` には、ジムで見やすい要約だけを書く
 - 重量、回数、セット数、レスト、速度、傾斜、種目順は推測で補わず、`data/menus/current-menus.md` と一致させる
 - ヒップ系マシンは `data/machines/gym-machines.yaml` のIDと表示名を使い、内向き/外向きを省略しない
 - 更新後に `README.md` と `data/menus/current-menus.md` の数値、順序、A/B/C区分が一致しているか確認する
+- `ruby scripts/validate_fitness_data.rb` と `python3 -m unittest discover -s tests` を実行する
 - 最後に、更新したファイルと変更内容を要約して報告する
 ```
 

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "trials": [
+    {
+      "id": "2026-09-11-B-upper-trial",
+      "menu": "B",
+      "created_on": "2026-09-11",
+      "source_session": "2026-09-11 B_full",
+      "status": "active",
+      "applies_to": "next_B_session",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47
+          }
+        },
+        {
+          "exercise_id": "row_machine",
+          "fields": {
+            "weight_kg": 47
+          }
+        },
+        {
+          "exercise_id": "chest_press",
+          "fields": {
+            "weight_kg": 40
+          }
+        },
+        {
+          "exercise_id": "shoulder_press",
+          "fields": {
+            "weight_kg": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-09-20-A-lat-trial",
+      "menu": "A",
+      "created_on": "2026-09-20",
+      "source_session": "2026-09-20 A_full",
+      "status": "declined",
+      "closed_on": "2026-10-04",
+      "closure_reason": "2026-10-04 A60 was performed at reference weights, including Lat Pulldown 40kg.",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-10-04-A-upper-trial",
+      "menu": "A",
+      "created_on": "2026-10-04",
+      "source_session": "2026-10-04 A_full",
+      "status": "active",
+      "applies_to": "next_A_session",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47
+          }
+        },
+        {
+          "exercise_id": "chest_press",
+          "fields": {
+            "weight_kg": 40
+          }
+        }
+      ]
+    }
+  ]
+}

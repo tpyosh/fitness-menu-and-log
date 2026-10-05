@@ -28,6 +28,16 @@ soreness_next_day:
 machine_order_changed:
 menu_deviation:
 notes:
+prescription_id:
+execution_basis: menu_completed | partial | replacement | unknown
+prescribed_workout:
+  source: data/menus/prescriptions.json
+  menu: A | B | C
+reported_deviations: []
+effective_execution:
+  # 処方から継承した値と直接申告・観測した値にprovenanceを付ける。
+  # 処方の回数範囲を、実際の正確な回数に変換しない。
+  exercises: []
 minimum_subjective:
   overall_load: light | appropriate | heavy | mixed
   muscle_soreness:
@@ -169,6 +179,9 @@ segments:
 ## 転記時のルール
 
 - Garmin画像やユーザのテキストから確認できる値だけを埋める
+- A/B/Cを実施した申告があれば、該当日の版付き処方を先に解決し、ユーザ入力を原則として差分と読む。`prescription_id`と`effective_execution`に継承元・上書き元のprovenanceを残す
+- Garminが重量・set数・速度を表示しないことだけを理由に、処方から継承できる実施基準を`unknown`へ戻さない。Garminが表示する不完全な集計は別に保持する
+- メニューが見つからない、入力が別メニューへの置換、または直接観測同士が矛盾する場合は、その範囲だけ確認する
 - 分からない項目は空欄または `unknown`
 - 通常の最小主観入力は `minimum_subjective` の負荷感、筋肉痛、運動中の痛み・明確なフォーム問題とする。詳細なreps・RIRは任意
 - メニュー判断に必要な最小主観が欠けている場合は、ユーザへ1〜3問だけ短く確認する。未質問の欠損だけで `defer` にしない

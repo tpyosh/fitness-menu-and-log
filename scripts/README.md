@@ -61,7 +61,18 @@ python3 scripts/generate_garmin_coach_review_prompt.py --notes "今回見てほ�
 
 ## 今後追加する可能性がある用途
 
-- CSVとYAMLの整合確認
 - ログ追加時の雛形生成
 
 追加するときも、このリポジトリの正本はあくまでテキストファイル本体です。スクリプトは補助に留めます。
+
+## 処方と実績の解釈
+
+`workout_feedback.py` は日付・A/B/Cから版付き処方と有効な次回限定試行を解決し、メニュー完遂の申告を受けた場合に処方を実施基準へ継承する。`--deviations-json`と`--observations-json`で種目・項目単位の差分を重ねられる。直接観測の矛盾や処方欠損はエラーになる。
+
+```sh
+python3 scripts/workout_feedback.py --date 2026-10-06 --menu A --completed
+ruby scripts/validate_fitness_data.rb
+python3 -m unittest discover -s tests
+```
+
+`validate_fitness_data.rb` はCSV/YAMLのセッション対応、処方ID、本文ハッシュ、試行参照、新形式ログの重量整合を検証する。

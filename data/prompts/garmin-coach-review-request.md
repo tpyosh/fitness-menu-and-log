@@ -36,6 +36,7 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 - 必要な場合のみ、前回レビュー依頼以前の近いベースラインログ
 - データ品質上の制約
 - ユーザ主観、メニュー逸脱、マシン重量変更が記録されている場合はその内容
+- `prescription_id`、処方から継承した実施基準、直接申告・観測した実績を区別するprovenance。継承値を直接観測値として扱わない
 - ヒップ系マシンは、内向き `hip_adduction_inward` と外向き `hip_abduction_outward` を別種目として比較する
 - 「必要であればメニューを修正してください」という依頼
 

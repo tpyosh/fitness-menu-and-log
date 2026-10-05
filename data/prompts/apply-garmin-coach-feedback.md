@@ -29,6 +29,7 @@
 - メニュー更新時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新してください
 - 設計思想が変わる場合だけ `data/menus/design-philosophy.md` も更新してください
 - 推測で重量、回数、セット数、レスト、速度、傾斜を補わないでください
+- ログに記録された処方継承値と直接観測値のprovenanceを区別し、実施日の `prescription_id` と有効だった試行状態を確認してください
 - 単発ログで現行メニューと違う重量を使っただけの場合、現行メニュー本体を自動更新しないでください
 - 更新後は `README.md` と `data/menus/current-menus.md` の数値、順序、A/B/C区分が一致しているか確認してください
 - 軽量チェックがあれば実行してください

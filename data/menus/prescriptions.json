@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "current_id": "2026-08-31-baseline",
+  "snapshots": [
+    {
+      "id": "2026-08-31-baseline",
+      "effective_from": "2026-08-31",
+      "source_file": "data/menus/current-menus.md",
+      "source_sha256": "31bf3824cdfbba20edaf447a336093a4035f7be674e021469d59a2fb485f91fe",
+      "menus": {
+        "A": [
+          {
+            "id": "warmup",
+            "kind": "treadmill",
+            "steps": [
+              {
+                "duration_min": 8,
+                "speed_kmh": 6.3,
+                "incline_percent": 11
+              }
+            ]
+          },
+          {
+            "id": "seated_leg_press",
+            "kind": "machine",
+            "weight_kg": 125,
+            "reps_min": 12,
+            "reps_max": 15,
+            "sets": 3,
+            "rir": "2-3"
+          },
+          {
+            "id": "seated_leg_curl",
+            "kind": "machine",
+            "weight_kg": 40,
+            "reps_min": 10,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "leg_extension",
+            "kind": "machine",
+            "weight_kg": 40,
+            "reps_min": 10,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "lat_pulldown",
+            "kind": "machine",
+            "weight_kg": 40,
+            "reps_min": 8,
+            "reps_max": 12,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "chest_press",
+            "kind": "machine",
+            "weight_kg": 33,
+            "reps_min": 8,
+            "reps_max": 12,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "hip_abduction_outward",
+            "kind": "machine",
+            "weight_kg": 61,
+            "reps_min": 12,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "abdominal",
+            "kind": "machine",
+            "weight_kg": 42.5,
+            "reps_min": 10,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "treadmill_main",
+            "kind": "treadmill",
+            "steps": [
+              {
+                "duration_min": 6,
+                "speed_kmh": 6.2,
+                "incline_percent": 12
+              },
+              {
+                "duration_min": 6,
+                "speed_kmh": 6.3,
+                "incline_percent": 13
+              },
+              {
+                "duration_min": 6,
+                "speed_kmh": 6.2,
+                "incline_percent": 14
+              }
+            ]
+          }
+        ],
+        "B": [
+          {
+            "id": "warmup",
+            "kind": "treadmill",
+            "steps": [
+              {
+                "duration_min": 8,
+                "speed_kmh": 6.3,
+                "incline_percent": 11
+              }
+            ]
+          },
+          {
+            "id": "lat_pulldown",
+            "kind": "machine",
+            "weight_kg": 40,
+            "reps_min": 8,
+            "reps_max": 12,
+            "sets": 3,
+            "rir": "2"
+          },
+          {
+            "id": "row_machine",
+            "kind": "machine",
+            "weight_kg": 40,
+            "reps_min": 8,
+            "reps_max": 12,
+            "sets": 3,
+            "rir": "2"
+          },
+          {
+            "id": "chest_press",
+            "kind": "machine",
+            "weight_kg": 33,
+            "reps_min": 8,
+            "reps_max": 12,
+            "sets": 3,
+            "rir": "2"
+          },
+          {
+            "id": "shoulder_press",
+            "kind": "machine",
+            "weight_kg": 20,
+            "reps_min": 8,
+            "reps_max": 12,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "seated_leg_press",
+            "kind": "machine",
+            "weight_kg": 115,
+            "reps_min": 12,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "3"
+          },
+          {
+            "id": "seated_leg_curl",
+            "kind": "machine",
+            "weight_kg": 40,
+            "reps_min": 10,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "torso_rotation",
+            "kind": "machine",
+            "weight_kg": 57.5,
+            "reps_min": 10,
+            "reps_max": 12,
+            "sets": 1,
+            "rir": "3"
+          },
+          {
+            "id": "abdominal",
+            "kind": "machine",
+            "weight_kg": 42.5,
+            "reps_min": 10,
+            "reps_max": 15,
+            "sets": 2,
+            "rir": "2-3"
+          },
+          {
+            "id": "treadmill_main",
+            "kind": "treadmill",
+            "steps": [
+              {
+                "duration_min": 6,
+                "speed_kmh": 6.2,
+                "incline_percent": 11
+              },
+              {
+                "duration_min": 6,
+                "speed_kmh": 6.3,
+                "incline_percent": 11
+              },
+              {
+                "duration_min": 4,
+                "speed_kmh": 6.2,
+                "incline_percent": 12
+              }
+            ]
+          }
+        ],
+        "C": {
+          "recovery": [
+            {
+              "id": "warmup",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 5,
+                  "speed_kmh": 5.0,
+                  "incline_percent": 3
+                }
+              ]
+            },
+            {
+              "id": "treadmill_main",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 20,
+                  "speed_kmh": 5.5,
+                  "incline_percent": 5
+                }
+              ]
+            },
+            {
+              "id": "cooldown",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 5,
+                  "speed_kmh": 4.8,
+                  "incline_percent": 1
+                }
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "id": "warmup",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 5,
+                  "speed_kmh": 5.5,
+                  "incline_percent": 5
+                }
+              ]
+            },
+            {
+              "id": "treadmill_main",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 35,
+                  "speed_kmh": 6.0,
+                  "incline_percent": 8
+                }
+              ]
+            },
+            {
+              "id": "cooldown",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 5,
+                  "speed_kmh": 5.0,
+                  "incline_percent": 2
+                }
+              ]
+            }
+          ],
+          "endurance": [
+            {
+              "id": "warmup",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 5,
+                  "speed_kmh": 5.2,
+                  "incline_percent": 4
+                }
+              ]
+            },
+            {
+              "id": "treadmill_main",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 50,
+                  "speed_kmh": 5.8,
+                  "incline_percent": 6
+                }
+              ]
+            },
+            {
+              "id": "cooldown",
+              "kind": "treadmill",
+              "steps": [
+                {
+                  "duration_min": 5,
+                  "speed_kmh": 5.0,
+                  "incline_percent": 2
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "baseline_verified_against_revision": "1d642ef",
+      "snapshot_captured_on": "2026-10-05"
+    }
+  ]
+}

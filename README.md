@@ -1,11 +1,15 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-09-11時点）
+## 最新メニュー Quick Reference（2026-10-05時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
 ### A（Lower emphasis + Upper）
 
+- **次回Aのみの増量試行（2026-10-04ログに基づく。通常の参考重量は未変更）**
+  - Lat Pulldown: **47kg**（通常40kgから1段増）
+  - Chest Press: **40kg**（通常33kgから1段増）
+  - 上限回数に固執せずRIR 1〜2を目安にし、フォーム崩れや痛みが出る前に終了する。
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Seated Leg Press: 125kg（参考）x 12〜15回 x 3set, RIR 2〜3, rest 90秒
 - Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
@@ -50,6 +54,8 @@
 
 このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
 
+ログ取り込みでは、実施日に有効な処方を読み、ユーザの変更申告とGarminの観測を差分として重ねる。処方から継承した実施基準と直接確認できた実績は、`sessions.yaml` で根拠を分ける。版付き処方は `data/menus/prescriptions.json`、次回限定試行の状態は `data/menus/active-trials.json` を参照する。
+
 ## このリポジトリの役割
 
 - `README.md` 冒頭で、ユーザ向けの最新A/B/CメニューQuick Referenceを確認できるようにする
@@ -65,6 +71,8 @@
   - GitHubアプリですぐ見るための最新メニューQuick Reference
 - `data/menus/current-menus.md`
   - 現在の最新A / B / Cの完全版
+- `data/menus/README.md`
+  - 版付き処方、次回限定試行、ログへの継承規則
 - `data/menus/design-philosophy.md`
   - なぜそのメニュー構成なのか
 - `data/logs/structured/README.md`
@@ -76,7 +84,7 @@
 
 1. ユーザがGarminログ画像を取得する
 2. 必要に応じて画像ファイルを `data/logs/raw/` 配下のルールに沿って置く、または参照元を明記する
-3. Codexが `data/prompts/log-intake-template.md` を使って画像内容をテキスト化する
+3. Codexが実施日の処方と有効な次回限定試行を解決し、`data/prompts/log-intake-template.md` を使ってGarmin観測と本人申告の差分を整理する
 4. ユーザが短い主観として、負荷感、筋肉痛の有無・部位・程度、運動中の痛みまたは明確なフォーム問題を伝える。判断に必要な情報が欠ける場合はCodexが1〜3問だけ確認する
 5. Codexが `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` を同時更新する
 6. Codexが直近8週間の同種セッションを新しい順に最大3件確認し、事実、解釈、仮説を分けて日本語フィードバックを作る

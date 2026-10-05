@@ -309,6 +309,11 @@ def format_session(row: dict[str, str], details: dict[tuple[str, str], dict[str,
                     ]
                 )
             )
+    if detail.get("prescription_id"):
+        lines.append(f"- Prescription id: {detail['prescription_id']}")
+    for field in ("prescribed_workout", "reported_deviations", "effective_execution"):
+        if field in detail:
+            lines.append(f"- {field}: {json.dumps(detail[field], ensure_ascii=False, default=str)}")
     raw_yaml_excerpt = detail.get("raw_yaml_excerpt")
     if raw_yaml_excerpt and not segments:
         lines.extend(["", "- Raw sessions.yaml excerpt:", "```yaml", str(raw_yaml_excerpt), "```"])
