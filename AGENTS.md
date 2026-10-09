@@ -11,11 +11,12 @@
 - `data/menus/active-trials.json`: 次回限定試行の有効状態。通常の参考重量とは別に管理する
 - `data/menus/design-philosophy.md`: 設計思想
 - `data/logs/structured/sessions.csv` / `sessions.yaml`: セッションの要約 / 詳細
-- `data/machines/gym-machines.yaml` と `data/machines/weight-options/`: マシン識別と重量スタック
+- `data/machines/gym-machines.yaml`: 利用可能設備、マシン識別、写真で確認した仕様・用途候補・未確認事項の正本。既存マシンの重量スタックは `data/machines/weight-options/`
 - `data/prompts/`、`data/logs/reviews/`、`scripts/`: 既存の手順・レビュー履歴・補助自動化
 
 ## 常時守る規約
 
+- メニューの生成・修正・代替種目の提案前に `data/machines/gym-machines.yaml` と必要な重量表を読む。設備の存在と種目の実施可能性を区別し、未掲載設備を不存在とみなさない。設備一覧は他の文書や生成プロンプトに複製せず正本を参照する。設備情報の追加だけでは現行メニューを変更しない。
 - ユーザ入力、Garmin表示、処方から継承した実施基準、推論を区別する。実施したA/B/Cメニューが特定でき、反対の報告がなければ、その日付に有効な処方を実施基準として継承する。これは直接観測した実績とは別のprovenanceで保存する。未指定の正確な回数、症状、意図を作らない。
 - ログ取り込み時は `scripts/workout_feedback.py` の解決順序（該当日付の処方→明示的な差分→観測値）を使う。Garminにない項目だけを理由に処方値をunknownにしない。矛盾、真の処方欠損、メニュー種別不明など判断が変わる場合だけ質問する。
 - `active-trials.json` の有効な試行は通常処方と区別し、実施・見送り・失効をセッションごとに更新する。試行提案を通常重量の恒久変更として扱わない。

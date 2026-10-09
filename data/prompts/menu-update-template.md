@@ -8,6 +8,7 @@ ChatGPTの修正案やユーザの指示を受けてメニュー更新すると�
 メニュー更新を行ってください。以下のルールに従ってください。
 
 - まず、今回更新するファイルと変更理由を明示する
+- 設備の選定は `data/machines/gym-machines.yaml` を正本として参照し、必要な重量表も読む。写真で確認した仕様、用途候補、未確認事項を区別し、設備の存在だけで種目の実施可能性を確定しない。設備一覧はこのプロンプトへ転記しない
 - `README.md` 冒頭の最新メニューQuick Referenceを更新する
 - `data/menus/current-menus.md` を完全版として更新する
 - `data/menus/menu-history.md` にprevious version、new version、正確なbefore/after、日付つき根拠、意図する効果、再評価条件、rollbackまたは再検討条件を記録する

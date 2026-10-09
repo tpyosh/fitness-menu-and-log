@@ -136,7 +136,7 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 - 最新メニュー完全版の正本: `data/menus/current-menus.md`
 - 設計思想の正本: `data/menus/design-philosophy.md`
 - メニュー変更履歴の正本: `data/menus/menu-history.md`
-- ジムにあるマシン一覧の正本: `data/machines/gym-machines.yaml`
+- 利用可能設備・確認済み仕様・用途候補・未確認事項の正本: `data/machines/gym-machines.yaml`（メニュー生成・修正時に参照。既存マシンの重量表は `data/machines/weight-options/`）
 - セッション要約一覧の正本: `data/logs/structured/sessions.csv`
 - セッション詳細ログの正本: `data/logs/structured/sessions.yaml`
 - ChatGPTレビュー用テンプレートの正本: `data/prompts/chatgpt-review-template.md`

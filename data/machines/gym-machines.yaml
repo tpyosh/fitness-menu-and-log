@@ -1,4 +1,27 @@
-schema_version: 2
+schema_version: 3
+
+# machines はマシンに加え、ベンチ・フリーウェイト・ケーブル設備も含む。
+# confirmed は写真で確認した事実、inferred_uses は用途候補、unconfirmed は選定に関わる未確認仕様。
+inventory_scope: 既存情報に写真で確認した設備を追加した一覧。網羅的な棚卸しではなく、未掲載・未撮影は設備がないことを意味しない。
+photo_evidence:
+  reviewed_on: "2026-10-10"
+  captured_on: null # 撮影日は未申告
+  source: 利用ジムで撮影したユーザー提供写真8枚。画像本体はリポジトリに保存しない。
+  files:
+    1: codex-clipboard-796a82d9-bd3a-457b-b969-e86c4a71fa52.jpg
+    2: codex-clipboard-62ad9361-dbb1-41bc-944c-f3bdc31540a5.jpg
+    3: codex-clipboard-64b491c5-a527-4fa2-ae13-3439140e85dc.jpg
+    4: codex-clipboard-6282bd4f-10cd-488c-92bd-7fe7497ab06f.jpg
+    5: codex-clipboard-13fc5e0c-f5a1-4d99-a6c2-a35268cc4e53.jpg
+    6: codex-clipboard-4b1ad38f-c4cf-4466-88ce-cd9fa5ff8fbb.jpg
+    7: codex-clipboard-73152a0b-f16e-4ba3-8708-5c0309d6c056.jpg
+    8: codex-clipboard-4a4e4a6d-c572-4818-bda0-d71eb7c4b220.jpg
+
+selection_rules:
+  - 設備の存在と、種目を適切な可動域・負荷で実施できることを区別する。inferred_uses は実施確認済み種目ではない。
+  - 重量は判読できた表示のみ記録する。記載値を全重量範囲や刻み幅とみなさず、欠けた値を補完しない。
+  - メーカー未記載は未確認。ラックのブランドを収納された器具へ引き継がない。
+  - 既存マシンの重量スタックは weight_options_file または data/machines/weight-options/ の対応ファイルを参照する。
 
 naming_rules:
   structured_data: id
@@ -46,3 +69,84 @@ machines:
     display_name: Chest Press
   - id: treadmill
     display_name: Treadmill (incline available)
+  - id: adjustable_bench
+    display_name: アジャスタブルベンチ
+    photo_refs: [1, 2, 3]
+    confirmed:
+      backrest_adjustable: true
+      flat_position_visible: true
+    inferred_uses:
+      - フラット・インクライン種目の支持台
+      - スミスマシンやパワーラックとの併用
+    unconfirmed:
+      - 背もたれ・座面の調整角度範囲、耐荷重
+  - id: smith_machine
+    display_name: スミスマシン
+    manufacturer: HAMMER STRENGTH
+    photo_refs: [2]
+    confirmed:
+      guided_bar: true
+      bench_present: true
+    inferred_uses:
+      - ガイド付きバーでのプレス・スクワット系種目
+    unconfirmed:
+      - バーの初期重量、軌道角度、セーフティの仕様
+  - id: power_rack
+    display_name: パワーラック
+    manufacturer: HAMMER STRENGTH
+    photo_refs: [3]
+    confirmed:
+      safeties_present: true
+      barbell_present: true
+      plates_present: true
+    inferred_uses:
+      - フリーのバーベルでのスクワット・プレス系種目
+    unconfirmed:
+      - バーの重量、ラック・セーフティの調整範囲と耐荷重
+  - id: dumbbells
+    display_name: ダンベル
+    manufacturer: Life Fitness
+    photo_refs: [7, 8]
+    confirmed:
+      weight_markings_kg: [12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+      weight_basis: ダンベル1個あたりの表示重量
+    inferred_uses:
+      - ダンベルでのプレス・ロー系種目
+    unconfirmed:
+      - 上記以外の重量、各重量の個数
+  - id: weight_plates
+    display_name: ウェイトプレート
+    photo_refs: [2, 3, 6]
+    confirmed:
+      multiple_barbell_plates_present: true
+    inferred_uses:
+      - 対応するバーベル・スミスマシンへの追加負荷
+    unconfirmed:
+      - 重量表示は判読できず、重量構成・枚数・穴径は未確認
+  - id: dual_adjustable_pulley
+    display_name: デュアル・アジャスタブル・プーリー
+    manufacturer: Life Fitness
+    photo_refs: [4, 5]
+    confirmed:
+      independent_left_right_cables: true
+      pulley_height_adjustable: true
+      multi_grip_pullup_bar: true
+      attachments:
+        - ロープ
+        - バー型アタッチメント
+        - ハンドル類
+    inferred_uses:
+      - ケーブルでのフライ・ロー・腕の種目
+      - 上部バーでの懸垂
+    unconfirmed:
+      - 重量スタックの表示値・刻み、滑車比による実効負荷、ケーブルの可動範囲
+      - アタッチメントの詳細仕様。ラットプル系・下半身種目を含む各用途の適合性は未確認
+  - id: fixed_weight_barbells
+    display_name: 固定重量バーベル
+    photo_refs: [6]
+    confirmed:
+      multiple_fixed_weight_bars_present: true
+    inferred_uses:
+      - バーベルカールなどの種目
+    unconfirmed:
+      - 重量表示は判読できず、重量構成は未確認
