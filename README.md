@@ -1,15 +1,16 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-10-05時点）
+## 最新メニュー Quick Reference（2026-10-10時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
 ### A（Lower emphasis + Upper）
 
-- **次回Aのみの増量試行（2026-10-04ログに基づく。通常の参考重量は未変更）**
+- **次回Aのみの増量試行（2026-10-10レビューで見直し。通常の参考重量は未変更）**
   - Lat Pulldown: **47kg**（通常40kgから1段増）
-  - Chest Press: **40kg**（通常33kgから1段増）
-  - 上限回数に固執せずRIR 1〜2を目安にし、フォーム崩れや痛みが出る前に終了する。
+  - Chest Press: **33kg**（10/7 Bで40kgが難しかったため、40kg試行は保留）
+  - Latは上限回数に固執せずRIR 1〜2を目安にし、フォーム崩れや痛みが出る前に終了する。
+  - Chestは8〜12回×2set・RIR 2〜3で確認する。40kgの再試行は困難の内容と33kgでの実績を確認してから判断する。
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Seated Leg Press: 125kg（参考）x 12〜15回 x 3set, RIR 2〜3, rest 90秒
 - Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
@@ -22,12 +23,14 @@
 
 ### B（Upper emphasis + Lower）
 
-- **次回Bのみの増量試行（2026-09-11ログに基づく。恒久的な参考重量は未変更）**
-  - Lat Pulldown: **47kg**（通常40kgから1段増）
-  - Row Machine: **47kg**（通常40kgから1段増）
-  - Chest Press: **40kg**（通常33kgから1段増）
-  - Shoulder Press: **25kg**（通常20kgから1段増）
-  - 各種目はRIR 1〜2を目安にし、上限回数に固執しない。痛み・フォーム崩れが出る前に終了する。
+- **次回Bのみの試行重量の継続確認（2026-10-07ログに基づく。通常の参考重量は未変更）**
+  - Lat Pulldown: **47kg**（通常40kg。今回重量を継続確認）
+  - Row Machine: **47kg**（通常40kg。今回重量を継続確認）
+  - Shoulder Press: **25kg**（通常20kg。今回重量を継続確認）
+  - Chest Press: **33kg**（40kgは無理だったため通常重量へ戻す）
+  - 追加増量せず、背中2種目はRIR 2、Shoulder PressはRIR 2〜3を目安にする。
+  - 下半身・体幹は通常重量を維持。Seated Leg Press・Torso RotationはRIR 3で止める。
+  - 痛み・フォーム崩れ・回数下限未達なら通常重量へ戻す。最終setの回数・RIR、翌日反応を記録する。
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Lat Pulldown: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
 - Row Machine: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
@@ -52,7 +55,7 @@
 
 マシン種目はDouble Progressionで運用する。詳細を記録できる場合はreps・RIR・フォームで進行を判定する。通常ログでは負荷感、筋肉痛、運動中の痛み・明確なフォーム問題を最小主観入力とし、反復する「軽い」という所感に重大な反証がなければ、正本を変える前に次回だけ1段上を試せる。Cは目的別に30分・45分・60分から選ぶ傾斜トレッドミルのみの任意日で、行わなくてもA/Bだけで完結する。Cのログは同じモードの直近履歴と比較し、フィードバックとメニュー判断を残す。
 
-このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、レビュー履歴をMarkdown / YAML / CSVで堅実に維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
+このリポジトリは、フィットネスメニューとGarminログをローカルなテキスト資産として管理するための正本です。目的は、最新メニュー、過去ログ、現在のレビュー判断と課題バックログをMarkdown / YAML / CSVで維持し、新しいログを記録するたびにフィードバックとメニュー判断まで完結させることです。ChatGPTへのオンデマンドレビューは、複数ログを外部視点で再検討したい場合の補助運用です。
 
 ログ取り込みでは、実施日に有効な処方を読み、ユーザの変更申告とGarminの観測を差分として重ねる。処方から継承した実施基準と直接確認できた実績は、`sessions.yaml` で根拠を分ける。版付き処方は `data/menus/prescriptions.json`、次回限定試行の状態は `data/menus/active-trials.json` を参照する。
 
@@ -63,7 +66,7 @@
 - Garminログ画像から転記した内容を、検索しやすいテキストとして蓄積する
 - 新しいログごとに、同種の直近履歴との比較、日本語フィードバック、`keep` / `adjust` / `defer` のメニュー判断を残す
 - ChatGPTへ送るレビュー依頼プロンプトのテンプレートを保持する
-- ChatGPTから返ってきた提案を、そのまま鵜呑みにせずレビュー履歴として保存する
+- ChatGPTから返ってきた提案を照合し、現在の判断と課題バックログを継続更新する
 
 ## 最初に見るファイル
 
@@ -116,19 +119,20 @@ python3 scripts/generate_garmin_coach_review_prompt.py
 
 このコマンドは以下を行う。
 
-- `data/logs/reviews/review-request-history.jsonl` から前回レビュー依頼日時を確認する
+- `data/logs/reviews/review-request-state.json` から前回レビュー依頼日時を確認する
 - `data/logs/structured/sessions.csv` と `data/logs/structured/sessions.yaml` から、前回依頼以降のログを抽出する
 - 件数が少ない場合に備えて、直前の数セッションを比較用ベースラインとして添える
-- ChatGPTへ貼る依頼文を `data/logs/reviews/YYYY-MM-DD_garmin-coach-review-request.md` に保存する
-- 今回のレビュー依頼メタデータを `data/logs/reviews/review-request-history.jsonl` に追記する
+- 現在の判断とバックログを本文へ埋め込む
+- ChatGPTへ貼る依頼文を固定の `data/logs/reviews/review-request.md` へ上書きする
+- 最新の依頼メタデータを `data/logs/reviews/review-request-state.json` へ上書きする
 
-履歴を更新せずに内容だけ確認する場合は、以下を使う。
+ファイルを更新せずに内容だけ確認する場合は、以下を使う。
 
 ```sh
 python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 ```
 
-生成されたMarkdown本文をChatGPTに貼り付ける。ChatGPTの回答をCodexに貼り戻して反映したい場合は、`data/prompts/apply-garmin-coach-feedback.md` のテンプレートに沿って依頼する。Codexは、具体的で根拠のある変更だけを抽出し、変更不要という結論ならメニュー本体を更新しない。
+生成されたMarkdown本文をChatGPTに貼り付ける。ChatGPTの回答をCodexに貼り戻して反映したい場合は、`data/prompts/apply-garmin-coach-feedback.md` のテンプレートに沿って依頼する。Codexは、具体的で根拠のある変更だけを抽出し、現在の判断とバックログの既存IDを継続更新する。日付付きレビュー結果は作らず、変更不要ならメニュー本体も更新しない。詳しい更新方法は `data/logs/reviews/README.md` を参照する。
 
 ## 正本ファイル
 
@@ -142,7 +146,9 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 - ChatGPTレビュー用テンプレートの正本: `data/prompts/chatgpt-review-template.md`
 - オンデマンドGarminレビュー依頼テンプレート: `data/prompts/garmin-coach-review-request.md`
 - ChatGPTレビュー反映テンプレート: `data/prompts/apply-garmin-coach-feedback.md`
-- レビュー依頼メタデータ履歴: `data/logs/reviews/review-request-history.jsonl`
+- 現在のレビュー判断の正本: `data/logs/reviews/current-assessment.md`
+- レビュー課題バックログの正本: `data/logs/reviews/backlog.md`
+- 最新のレビュー依頼メタデータ: `data/logs/reviews/review-request-state.json`
 
 ## ディレクトリ概要
 
@@ -155,7 +161,7 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 - `data/logs/structured/`
   - Garminログの転記結果
 - `data/logs/reviews/`
-  - ChatGPTのレビュー依頼、レビュー結果、改定提案、レビュー依頼メタデータの保管場所
+  - 現在のレビュー判断、課題バックログ、最新のレビュー依頼とメタデータ
 - `data/prompts/`
   - Codexが使うテンプレート
 - `scripts/`

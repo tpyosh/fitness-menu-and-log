@@ -1,59 +1,40 @@
-# Review Storage
+# レビューの運用
 
-このディレクトリには、ChatGPTレビュー結果やメニュー改定提案を保管します。
+レビュー結果は次の2ファイルを継続更新する。新しい回答のたびに日付付きの結果・採否メモ・統合メモを作らない。
 
-新規ログごとの通常フィードバックと `keep` / `adjust` / `defer` 判断はここへ別ファイルとして増やさず、対象セッションの `data/logs/structured/sessions.yaml` に保存します。このディレクトリはオンデマンドの外部レビューと改定提案の保管用です。
+| 正本 | 管理する内容 |
+| --- | --- |
+| [current-assessment.md](current-assessment.md) | 現在採用している判断、根拠、適用限界、再検討条件 |
+| [backlog.md](backlog.md) | 未解決の問い、優先度、次の確認、解決条件 |
 
-## 置くもの
+## 更新方法
 
-- ChatGPTへ送ったレビュー依頼文のコピー
-- ChatGPTから返ってきた提案
-- 提案を採用するかどうかの判断メモ
-- オンデマンドGarminコーチングレビューの依頼メタデータ履歴
+1. 2つの正本と対象ログ・処方・試行を読み、返却されたレビューと照合する。
+2. 確認済み事実・推論・未確認事項を分け、判断が変われば既存のJ-IDをその場で更新する。判断維持も有効な結果とする。更新日・日付付きの根拠・直接URL・確認範囲・適用限界を残す。
+3. 未解決の問いは既存のB-IDへ統合し、次の確認と解決条件を更新する。新しい問いだけ新規IDを付ける。情報が増えていない項目を解決済みにしない。
+4. 解決した課題は同じ項目を`resolved`にし、解決した根拠・結論を残して関連するJ-IDも更新する。再発なら同じIDを再開する。状態遷移の時系列追記はしない。
+5. 実行する通常処方と試行は従来の正本へ反映する。レビュー判断の更新だけを理由にメニュー数値や試行状態を変えない。
 
-## 命名ルールの目安
+J-IDは`J-001`形式、B-IDは`B-001`形式の安定ID。削除や再採番で使い回さない。判断のstatusは`keep` / `hold` / `change`、課題は`open` / `waiting` / `resolved`、priorityは`P1` / `P2` / `P3`。各項目に`updated_on`、課題には関連判断の`decisions`を持つ。見出しは`## J-001：題名`、`## B-001：題名`とし、判断には判断・根拠・再検討条件、課題には問い・現状・次の確認・解決条件を記す。解決済み課題には`**解決結果**：`を記す。
 
-- `YYYY-MM-DD_review-request.md`
-- `YYYY-MM-DD_review-response.md`
-- `YYYY-MM-DD_menu-change-note.md`
-- `YYYY-MM-DD_garmin-coach-review-request.md`
-- `YYYY-MM-DD_garmin-coach-review-response.md`
+単一セッションの実績・通常フィードバックは`sessions.csv` / `sessions.yaml`が正本。新規ログがレビューの判断や課題に影響する場合だけ2つの正本も更新する。未提供の回数・症状等を補作しない。
 
-## レビュー依頼履歴
-
-オンデマンドGarminコーチングレビューの依頼履歴は、本文とは分けて `review-request-history.jsonl` に保存します。
-
-1行1レビュー依頼で、可能な範囲で以下を記録します。
-
-- `requested_at`
-- `timestamp_precision`
-- `repo_state`
-- `previous_review_requested_at`
-- `log_range_covered`
-- `files_used`
-- `prompt_file`
-- `short_summary`
-- `notes`
-
-ChatGPTの回答本文はこのJSONLには入れません。回答を保存する場合は、日付つきMarkdownとして別ファイルに保存します。
-
-## 依頼文の生成
-
-新しいGarminコーチングレビュー依頼を作る場合は、以下を使います。
+## ChatGPTへの依頼
 
 ```sh
 python3 scripts/generate_garmin_coach_review_prompt.py
 ```
 
-履歴更新なしで確認する場合は以下を使います。
+最新の依頼文は固定の`review-request.md`、依頼日時・対象ログ範囲等は`review-request-state.json`へ上書きする。依頼文には現在の判断とバックログの本文も埋め込む。本文完結型であり、添付やローカルファイルの閲覧を前提にしない。`--dry-run`ではどのファイルも更新しない。
 
-```sh
-python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
-```
+依頼メタデータは次回の抽出期間を決める補助情報で、レビュー結果の正本ではない。依頼の生成だけでChatGPTへの送信・回答受領を保証しない。JSONLへの追記や日付付き依頼文の自動生成は行わない。
 
-## 注意
+長い調査は一論点ずつ進め、統合と最終Codex向け依頼を別工程にする。最終依頼ではJ/B-IDごとの更新・維持・解決案を指定させる。受領した回答は必要な根拠と判断を2つの正本へ統合し、全文の別保存はしない。
 
-- 提案を保存しても、最新メニューの正本は `data/menus/current-menus.md`
-- 採用した変更は、必ず `data/menus/menu-history.md` にも残す
-- ChatGPTレビューは外部意見であり、具体的な根拠のある変更だけを採用する
-- 変更不要というレビュー結果なら、メニュー本体は更新しない
+## 過去資料の扱い
+
+既存の日付付きレビュー文書と依頼履歴JSONLは、必要な判断・根拠・課題を移行して削除した。日付付き結果のアーカイブは作らない。実施ログ、通常処方の版付き履歴、試行の実施・終了履歴、メニュー改定履歴はそれぞれの正本で維持する。
+
+## 検証
+
+`ruby scripts/validate_fitness_data.rb`で正本の必須項目・ID重複・課題から判断への参照と既存データの整合を確認する。生成処理を変更した場合は`python3 -m unittest discover -s tests`も実行する。

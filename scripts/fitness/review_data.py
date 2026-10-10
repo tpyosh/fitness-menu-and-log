@@ -1,4 +1,4 @@
-"""Read review history and session sources without modifying training records."""
+"""Read current review state and session sources without modifying records."""
 
 from __future__ import annotations
 
@@ -12,7 +12,9 @@ from typing import Any
 from .paths import (
     CURRENT_MENUS,
     DESIGN_PHILOSOPHY,
-    HISTORY_PATH,
+    REQUEST_STATE,
+    REVIEW_ASSESSMENT,
+    REVIEW_BACKLOG,
     PROMPT_TEMPLATE,
     REVIEWS_DIR,
     ROOT,
@@ -55,33 +57,20 @@ def parse_session_date(row: dict[str, str]) -> date:
         raise SystemExit(f"Invalid session date in {rel(SESSIONS_CSV)}: {row}") from exc
 
 
-def load_history() -> list[dict[str, Any]]:
-    if not HISTORY_PATH.exists():
-        return []
-    records: list[dict[str, Any]] = []
-    with HISTORY_PATH.open(encoding="utf-8") as file:
-        for line_number, line in enumerate(file, start=1):
-            stripped = line.strip()
-            if not stripped:
-                continue
-            try:
-                records.append(json.loads(stripped))
-            except json.JSONDecodeError as exc:
-                raise SystemExit(
-                    f"Invalid JSONL at {rel(HISTORY_PATH)}:{line_number}"
-                ) from exc
-    return records
-
-
-def latest_history_record(records: list[dict[str, Any]]) -> dict[str, Any] | None:
-    dated_records = [
-        (parse_record_date(str(record.get("requested_at", ""))), record)
-        for record in records
-    ]
-    dated_records = [(record_date, record) for record_date, record in dated_records if record_date]
-    if not dated_records:
+def load_request_state() -> dict[str, Any] | None:
+    if not REQUEST_STATE.exists():
         return None
-    return sorted(dated_records, key=lambda item: item[0])[-1][1]
+    try:
+        record = json.loads(REQUEST_STATE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"Invalid JSON at {rel(REQUEST_STATE)}:{exc.lineno}") from exc
+    if (
+        not isinstance(record, dict)
+        or not isinstance(record.get("requested_at"), str)
+        or not parse_record_date(record["requested_at"])
+    ):
+        raise SystemExit(f"Invalid request state at {rel(REQUEST_STATE)}")
+    return record
 
 
 def load_sessions() -> list[dict[str, str]]:
@@ -162,17 +151,22 @@ def git_state() -> str:
 
 
 def read_markdown(path: Path) -> str:
-    return path.read_text(encoding="utf-8").strip()
+    try:
+        text = path.read_text(encoding="utf-8").strip()
+    except FileNotFoundError as exc:
+        raise SystemExit(f"Required source missing: {rel(path)}") from exc
+    if not text:
+        raise SystemExit(f"Required source empty: {rel(path)}")
+    return text
 
 
 def choose_output_path(requested_at: datetime, explicit: Path | None) -> Path:
     if explicit:
-        return explicit if explicit.is_absolute() else ROOT / explicit
-    base = REVIEWS_DIR / f"{requested_at.date().isoformat()}_garmin-coach-review-request.md"
-    if not base.exists():
-        return base
-    suffix = requested_at.strftime("%H%M%S")
-    return REVIEWS_DIR / f"{requested_at.date().isoformat()}_{suffix}_garmin-coach-review-request.md"
+        output = explicit if explicit.is_absolute() else ROOT / explicit
+        if output.resolve() in {REVIEW_ASSESSMENT.resolve(), REVIEW_BACKLOG.resolve(), REQUEST_STATE.resolve()}:
+            raise SystemExit(f"Cannot overwrite review source with a prompt: {rel(output)}")
+        return output
+    return REVIEWS_DIR / "review-request.md"
 
 
 def source_files() -> list[str]:
@@ -182,5 +176,7 @@ def source_files() -> list[str]:
         rel(CURRENT_MENUS),
         rel(DESIGN_PHILOSOPHY),
         rel(PROMPT_TEMPLATE),
-        rel(HISTORY_PATH),
+        rel(REVIEW_ASSESSMENT),
+        rel(REVIEW_BACKLOG),
+        rel(REQUEST_STATE),
     ]

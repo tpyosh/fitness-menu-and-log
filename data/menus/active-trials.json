@@ -6,7 +6,7 @@
       "menu": "B",
       "created_on": "2026-09-11",
       "source_session": "2026-09-11 B_full",
-      "status": "active",
+      "status": "completed",
       "applies_to": "next_B_session",
       "targets": [
         {
@@ -33,6 +33,38 @@
             "weight_kg": 25
           }
         }
+      ],
+      "closed_on": "2026-10-07",
+      "closure_reason": "10/7 B60で試行を終了。Lat Pulldown 47kg・Row Machine 47kg・Shoulder Press 25kgを実施。Chest Press 40kgは無理だったため33kgへ戻した。",
+      "target_results": [
+        {
+          "exercise_id": "lat_pulldown",
+          "status": "completed",
+          "actual_weight_kg": 47,
+          "rir": "1-2",
+          "provenance": "user_reported"
+        },
+        {
+          "exercise_id": "row_machine",
+          "status": "completed",
+          "actual_weight_kg": 47,
+          "rir": "1-2",
+          "provenance": "user_reported"
+        },
+        {
+          "exercise_id": "chest_press",
+          "status": "reverted",
+          "actual_weight_kg": 33,
+          "rir": "1-2",
+          "provenance": "user_reported"
+        },
+        {
+          "exercise_id": "shoulder_press",
+          "status": "completed",
+          "actual_weight_kg": 25,
+          "rir": "1-2",
+          "provenance": "user_reported"
+        }
       ]
     },
     {
@@ -57,7 +89,7 @@
       "menu": "A",
       "created_on": "2026-10-04",
       "source_session": "2026-10-04 A_full",
-      "status": "active",
+      "status": "expired",
       "applies_to": "next_A_session",
       "targets": [
         {
@@ -70,6 +102,57 @@
           "exercise_id": "chest_press",
           "fields": {
             "weight_kg": 40
+          }
+        }
+      ],
+      "closed_on": "2026-10-10",
+      "closure_reason": "第1工程レビューと10/7 BのChest Press40kg困難を受け、AのChest40kg試行を保留。元の2種目試行をLatのみの次回試行へ置換。Aで実施した結果でもユーザの見送り申告でもない。",
+      "superseded_by": "2026-10-10-A-lat-trial"
+    },
+    {
+      "id": "2026-10-07-B-upper-confirmation",
+      "menu": "B",
+      "created_on": "2026-10-07",
+      "source_session": "2026-10-07 B_full",
+      "status": "active",
+      "applies_to": "next_B_session",
+      "purpose": "今回成立した3種目の同重量を次回Bだけ継続確認する。追加増量と通常処方の恒久変更は行わない。",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47
+          }
+        },
+        {
+          "exercise_id": "row_machine",
+          "fields": {
+            "weight_kg": 47
+          }
+        },
+        {
+          "exercise_id": "shoulder_press",
+          "fields": {
+            "weight_kg": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-10-10-A-lat-trial",
+      "menu": "A",
+      "created_on": "2026-10-10",
+      "source_session": "2026-10-04 A_full",
+      "source_review": "data/logs/reviews/current-assessment.md",
+      "status": "active",
+      "applies_to": "next_A_session",
+      "supersedes": "2026-10-04-A-upper-trial",
+      "purpose": "Lat47kgの次回限定試行のみ継続。Chest40kgは10/7 Bで困難だったため保留し、通常33kgで確認する。",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47
           }
         }
       ]

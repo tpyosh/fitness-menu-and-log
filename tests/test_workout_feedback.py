@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from copy import deepcopy
@@ -67,9 +68,23 @@ class WorkoutFeedbackTests(unittest.TestCase):
         self.assertEqual(chest["sets"], 2)
 
     def test_new_session_resolves_from_repository_without_chat_history(self):
-        resolved = MODULE.resolve_session("2026-10-06", "A", completed_as_prescribed=True)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            menu_path = root / "data/menus/current-menus.md"
+            menu_path.parent.mkdir(parents=True)
+            menu_path.write_text((ROOT / "data/menus/current-menus.md").read_text(encoding="utf-8"), encoding="utf-8")
+            (menu_path.parent / "prescriptions.json").write_text(json.dumps(self.manifest), encoding="utf-8")
+            trials = {"schema_version": 1, "trials": [{
+                "id": "test-A-upper-trial", "menu": "A", "created_on": "2026-10-04",
+                "status": "active", "targets": [{"exercise_id": "lat_pulldown", "fields": {"weight_kg": 47}}],
+            }]}
+            (menu_path.parent / "active-trials.json").write_text(json.dumps(trials), encoding="utf-8")
+            sessions_path = root / "data/logs/structured/sessions.csv"
+            sessions_path.parent.mkdir(parents=True)
+            sessions_path.write_text("date,session_type\n2026-10-04,A_full\n", encoding="utf-8")
+            resolved = MODULE.resolve_session("2026-10-06", "A", completed_as_prescribed=True, root=root)
         self.assertEqual(resolved["prescription_id"], "2026-08-31-baseline")
-        self.assertEqual(resolved["trial_id"], "2026-10-04-A-upper-trial")
+        self.assertEqual(resolved["trial_id"], "test-A-upper-trial")
         lat = next(item for item in resolved["effective_execution"] if item["id"] == "lat_pulldown")
         self.assertEqual(lat["weight_kg"], 47)
         self.assertEqual(lat["provenance"]["weight_kg"], "active_one_session_trial")
@@ -96,8 +111,12 @@ class WorkoutFeedbackTests(unittest.TestCase):
             path = root / "data/logs/structured/sessions.csv"
             path.parent.mkdir(parents=True)
             path.write_text("date,session_type\n2026-10-06,A_full\n", encoding="utf-8")
+            trials = {"trials": [{
+                "id": "test-A-upper-trial", "menu": "A",
+                "created_on": "2026-10-04", "status": "active",
+            }]}
             with self.assertRaises(MODULE.PrescriptionError):
-                MODULE.validate_trial_lifecycle(self.trials, root)
+                MODULE.validate_trial_lifecycle(trials, root)
 
     def test_one_set_can_change_without_replacing_workout(self):
         effective = MODULE.interpret_execution(

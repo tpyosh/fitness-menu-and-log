@@ -10,7 +10,9 @@ DESIGN_PHILOSOPHY = ROOT / "data/menus/design-philosophy.md"
 SESSIONS_CSV = ROOT / "data/logs/structured/sessions.csv"
 SESSIONS_YAML = ROOT / "data/logs/structured/sessions.yaml"
 REVIEWS_DIR = ROOT / "data/logs/reviews"
-HISTORY_PATH = REVIEWS_DIR / "review-request-history.jsonl"
+REQUEST_STATE = REVIEWS_DIR / "review-request-state.json"
+REVIEW_ASSESSMENT = REVIEWS_DIR / "current-assessment.md"
+REVIEW_BACKLOG = REVIEWS_DIR / "backlog.md"
 PROMPT_TEMPLATE = ROOT / "data/prompts/garmin-coach-review-request.md"
 
 

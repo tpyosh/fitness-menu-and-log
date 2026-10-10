@@ -7,22 +7,30 @@ from scripts.fitness import review_data
 
 
 class ReviewDataTests(unittest.TestCase):
-    def test_history_reports_malformed_line_with_location(self):
+    def test_request_state_reports_malformed_json_with_location(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "history.jsonl"
-            path.write_text('{"requested_at":"2026-10-04"}\n\ninvalid\n', encoding="utf-8")
-            with patch.object(review_data, "HISTORY_PATH", path):
-                with self.assertRaisesRegex(SystemExit, "history.jsonl:3"):
-                    review_data.load_history()
+            path = Path(directory) / "state.json"
+            path.write_text('{\ninvalid\n', encoding="utf-8")
+            with patch.object(review_data, "REQUEST_STATE", path):
+                with self.assertRaisesRegex(SystemExit, "state.json:2"):
+                    review_data.load_request_state()
 
-    def test_missing_history_and_yaml_are_empty(self):
+    def test_missing_request_state_and_yaml_are_empty(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "missing"
-            with patch.object(review_data, "HISTORY_PATH", path):
-                self.assertEqual(review_data.load_history(), [])
+            with patch.object(review_data, "REQUEST_STATE", path):
+                self.assertIsNone(review_data.load_request_state())
             with patch.object(review_data, "SESSIONS_YAML", path):
                 self.assertEqual(review_data.load_yaml_details(), {})
                 self.assertEqual(review_data.load_yaml_excerpt_details(), {})
+
+    def test_request_uses_fixed_output_and_protects_review_sources(self):
+        first = review_data.parse_requested_at("2026-10-10T12:00:00+09:00")
+        second = review_data.parse_requested_at("2026-10-11T12:00:00+09:00")
+        self.assertEqual(review_data.choose_output_path(first, None), review_data.choose_output_path(second, None))
+        for path in (review_data.REVIEW_ASSESSMENT, review_data.REVIEW_BACKLOG, review_data.REQUEST_STATE):
+            with self.subTest(path=path), self.assertRaisesRegex(SystemExit, "Cannot overwrite review source"):
+                review_data.choose_output_path(first, path)
 
     def test_csv_sessions_are_sorted_by_date(self):
         with tempfile.TemporaryDirectory() as directory:

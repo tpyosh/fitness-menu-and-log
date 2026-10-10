@@ -55,9 +55,11 @@ class CommandLineTests(unittest.TestCase):
             self.assertIn("# ChatGPT Garmin Coaching Review Request", review.stdout)
             self.assertEqual(list(cwd.iterdir()), [])
 
-    def test_review_dry_run_does_not_write_prompt_or_history(self):
-        history = ROOT / "data/logs/reviews/review-request-history.jsonl"
-        before = history.read_bytes()
+    def test_review_dry_run_does_not_write_prompt_or_review_state(self):
+        paths = [ROOT / "data/logs/reviews" / name for name in (
+            "review-request-state.json", "current-assessment.md", "backlog.md",
+        )]
+        before = {path: path.read_bytes() for path in paths}
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "review.md"
             self.run_cli("generate_garmin_coach_review_prompt", [
@@ -65,7 +67,7 @@ class CommandLineTests(unittest.TestCase):
                 "--output", str(output), "--dry-run",
             ])
             self.assertFalse(output.exists())
-        self.assertEqual(history.read_bytes(), before)
+        self.assertEqual({path: path.read_bytes() for path in paths}, before)
 
 
 if __name__ == "__main__":

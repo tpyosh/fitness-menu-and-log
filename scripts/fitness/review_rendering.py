@@ -137,6 +137,8 @@ def render_prompt(
     *,
     design_philosophy: str,
     current_menus: str,
+    current_assessment: str,
+    backlog: str,
     sources: list[str],
 ) -> str:
     previous_requested_at = (
@@ -167,7 +169,7 @@ def render_prompt(
     return f"""# ChatGPT Garmin Coaching Review Request
 
 以下は、現在運用しているフィットネスメニュー管理情報とGarminログです。
-必要であればメニューを修正してください。
+本文完結型です。本文だけを新規ChatGPTチャットへ貼り付けて使います。パスは由来を示すもので、ローカルファイルの閲覧や添付を前提にしないでください。
 ただし、レビュー依頼があるだけで改善案を作らないでください。
 
 重要原則:
@@ -192,6 +194,17 @@ def render_prompt(
 - Garminにはマシンごとの全セット実績が残らない場合があります
 - セッション件数が少ない場合、トレンドは弱い証拠として扱ってください
 - 医療診断はしないでください
+- 本人申告・Garmin観測・処方継承・レビュー上の推論を区別してください
+
+# 現在の判断と未解決課題（正本の本文）
+
+## data/logs/reviews/current-assessment.md
+
+{current_assessment}
+
+## data/logs/reviews/backlog.md
+
+{backlog}
 
 # 3. 現在の設計思想
 
@@ -229,51 +242,20 @@ def render_prompt(
 - メニュー改善は、明確な理由がある場合だけ提案してください
 - 観察事実、合理的解釈、不確かな仮説を分けてください
 - 医療診断は避けてください
-- 質問は、どうしても必要な場合だけにしてください。それ以外は仮定を明示してベストエフォートで返してください
+- 判断に必要な情報が欠ける場合は未確認のまま残し、次に必要な確認を示してください。推測で実績を埋めないでください
 - 出力は日本語にしてください
 
 # 8. あなたの出力形式
 
-以下の形式で返してください。
+今回実行するのは最初の一工程だけです。Request notesで指定された一論点を優先し、指定がなければバックログのP1から一論点を選びます。全課題の調査や最終成果物の同時作成は行わないでください。
 
-```md
-# Garmin Coaching Review
+今回の回答は、対象のJ/B-ID、結論、確認済み事実と根拠、推論、未確認事項、次に送る短い指示だけを簡潔に返してください。外部資料を確認した場合は出典名・直接URL・確認日・情報の変動性・適用限界を記録し、未確認の資料を確認済みにしないでください。
 
-## 1. Scope of review
+次工程はユーザが同じ会話で明示的に依頼してから実行してください。複数論点は一論点ずつ扱い、統合は確認済み情報だけで別工程にします。最後のCodex向け反映依頼も統合後の単独工程とします。
 
-- Last review request:
-- Current review request:
-- Data range:
-- Data quality / limitations:
+最終出力は、Codexへそのまま渡せる本文完結型のドキュメンテーション依頼プロンプトにしてください。目的・対象範囲・基準日・結論、事実／推論／未確認、直接URL等の出典情報、セッション・処方・試行IDと既存状態、J/B-IDごとの更新・維持・解決案を本文に含めてください。
 
-## 2. Observed changes since last review
+反映先は`data/logs/reviews/current-assessment.md`と`data/logs/reviews/backlog.md`です。既存IDを更新し、同じ問いを重複作成せず、日付付きのレビュー回答・採否メモ・統合記録は作成しないよう指定してください。課題の解決には根拠と解決条件の成立が必要です。
 
-Separate objective observations from interpretation.
-
-## 3. Recent trend assessment
-
-Discuss only supported trends.
-
-## 4. Coaching judgment
-
-Choose one:
-
-- No change recommended
-- Minor adjustment recommended
-- Clear menu change recommended
-- Insufficient data
-
-## 5. Suggested training menu changes, if any
-
-Only include if justified by the data.
-
-## 6. Watch items until next review
-
-List measurable indicators to monitor.
-
-## 7. Codex handoff prompt
-
-Write a concise prompt that I can paste back into Codex to apply any justified changes to this repository.
-If no repository change is needed, the prompt should explicitly say that no menu change is recommended and only the review result should be recorded if the repo supports that.
-```
+既存スキーマ・命名・provenance・推測禁止・未確認を解決済みにしない条件、通常処方と次回試行の区別、変更禁止事項も含めてください。必要なYAML/JSON parse・ID重複・参照・本文ハッシュ検証、`ruby scripts/validate_fitness_data.rb`、コード変更時の既存テストを指定し、完了時は変更ファイル・反映内容・未解決事項・検証結果を報告させてください。
 """

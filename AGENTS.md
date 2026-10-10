@@ -1,6 +1,6 @@
 # AGENTS.md
 
-このリポジトリは、最新のトレーニングメニュー、Garminログ、レビュー履歴の正本です。正確性、履歴の一貫性、人間が追えることを優先します。
+このリポジトリは、最新のトレーニングメニュー、Garminログ、現在のレビュー判断と課題バックログの正本です。正確性、履歴の一貫性、人間が追えることを優先します。
 
 ## 正本
 
@@ -12,7 +12,9 @@
 - `data/menus/design-philosophy.md`: 設計思想
 - `data/logs/structured/sessions.csv` / `sessions.yaml`: セッションの要約 / 詳細
 - `data/machines/gym-machines.yaml`: 利用可能設備、マシン識別、写真で確認した仕様・用途候補・未確認事項の正本。既存マシンの重量スタックは `data/machines/weight-options/`
-- `data/prompts/`、`data/logs/reviews/`、`scripts/`: 既存の手順・レビュー履歴・補助自動化
+- `data/logs/reviews/current-assessment.md`: 現在のレビュー判断・根拠・再検討条件のSSOT
+- `data/logs/reviews/backlog.md`: 未解決課題・次の確認・解決条件のSSOT
+- `data/prompts/`、`scripts/`: 手順・補助自動化。レビュー依頼は固定の`review-request.md`と`review-request-state.json`を更新する
 
 ## 常時守る規約
 
@@ -21,6 +23,7 @@
 - ログ取り込み時は `scripts/workout_feedback.py` の解決順序（該当日付の処方→明示的な差分→観測値）を使う。Garminにない項目だけを理由に処方値をunknownにしない。矛盾、真の処方欠損、メニュー種別不明など判断が変わる場合だけ質問する。
 - `active-trials.json` の有効な試行は通常処方と区別し、実施・見送り・失効をセッションごとに更新する。試行提案を通常重量の恒久変更として扱わない。
 - 過去ログは実際の転記誤りを直す場合以外は変更しない。新規ログはCSVとYAMLを同時に更新する。
+- レビュー結果は現在の判断とバックログの既存IDを継続更新する。同じ問いを重複作成せず、日付付きの回答・採否メモ・統合スナップショットやアーカイブは作らない。課題の解決には根拠と解決条件の成立を記す。新規ログで判断が変わる場合は2つの正本も同期する。
 - メニュー正本を変更する場合は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同期する。設計思想が変わる場合だけ `design-philosophy.md` も更新する。
 - 処方数値を変える場合は `prescriptions.json` に新しいスナップショットを追加し、`current_id`と本文ハッシュを更新する。既存スナップショットの数値は上書きしない。
 - 単発の通常セッション、Garmin単独の数値、または根拠のない外部提案で恒久メニューを変更しない。

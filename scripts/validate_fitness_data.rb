@@ -19,12 +19,89 @@ sessions = YAML.safe_load(File.read(yaml_path), [Date], [], true).fetch('session
 rows = CSV.read(csv_path, headers: true)
 errors = []
 
+# Review results are mutable state, with stable IDs shared by decisions and tasks.
+review_entries = {}
+{
+  'current-assessment.md' => ['J', %w[keep hold change]],
+  'backlog.md' => ['B', %w[open waiting resolved]]
+}.each do |name, (prefix, statuses)|
+  path = File.join(root, 'data/logs/reviews', name)
+  unless File.file?(path)
+    errors << "missing review SSOT: #{name}"
+    next
+  end
+  text = File.read(path)
+  blocks = text.scan(/^## (#{prefix}-\d{3,})：[^\n]+\n(.*?)(?=^## |\z)/m)
+  errors << "no review entries: #{name}" if blocks.empty?
+  ids = blocks.map(&:first)
+  errors << "duplicate review id: #{name}" unless ids.uniq.length == ids.length
+  review_entries[prefix] = blocks.to_h
+  dates = text.scan(/^- updated_on: (.*)$/).flatten
+  errors << "missing review update date: #{name}" if dates.empty?
+  dates.each do |value|
+    begin
+      Date.iso8601(value)
+    rescue ArgumentError
+      errors << "invalid review update date: #{name} #{value}"
+    end
+  end
+  blocks.each do |id, body|
+    status = body[/^- status: (.*)$/, 1]
+    errors << "invalid review status: #{id}" unless statuses.include?(status)
+    errors << "missing review update date: #{id}" unless body.match?(/^- updated_on: /)
+    if prefix == 'J'
+      %w[判断 再検討条件].each do |field|
+        errors << "missing review #{field}: #{id}" unless body.match?(/\*\*#{field}\*\*：\S/)
+      end
+    else
+      errors << "invalid backlog priority: #{id}" unless body.match?(/^- priority: P[123]$/)
+      %w[問い 現状 次の確認 解決条件].each do |field|
+        errors << "missing backlog #{field}: #{id}" unless body.match?(/\*\*#{field}\*\*：\S/)
+      end
+      if status == 'resolved' && !body.match?(/\*\*解決結果\*\*：\S/)
+        errors << "resolved backlog lacks outcome: #{id}"
+      end
+    end
+  end
+end
+review_entries.fetch('B', {}).each do |id, body|
+  refs = body[/^- decisions: (.*)$/, 1].to_s.split(/,\s*/)
+  if refs.empty? || refs.any? { |ref| !review_entries.fetch('J', {}).key?(ref) }
+    errors << "unknown or missing judgment reference: #{id}"
+  end
+end
+review_entries.fetch('J', {}).each do |id, body|
+  body.scan(/\bB-\d{3,}\b/).each do |ref|
+    errors << "unknown backlog reference: #{id} #{ref}" unless review_entries.fetch('B', {}).key?(ref)
+  end
+end
+request_state_path = File.join(root, 'data/logs/reviews/review-request-state.json')
+if File.file?(request_state_path)
+  state = JSON.parse(File.read(request_state_path))
+  errors << 'invalid latest request date' unless state['requested_at'].is_a?(String) && state['requested_at'].match?(/\A\d{4}-\d{2}-\d{2}/)
+  Array(state['files_used']).each do |path|
+    errors << "missing review request source: #{path}" unless File.file?(File.join(root, path))
+  end
+  if state['prompt_file'] && !File.file?(File.expand_path(state['prompt_file'], root))
+    errors << 'missing latest review request'
+  end
+else
+  errors << 'missing latest review request state'
+end
+
 key = ->(row) { [row.fetch('date').to_s, row.fetch('session_type')] }
 csv_keys = rows.map { |row| key.call(row) }
 yaml_keys = sessions.map { |row| key.call(row) }
 errors << 'duplicate CSV session' if csv_keys.uniq.length != csv_keys.length
 errors << 'duplicate YAML session' if yaml_keys.uniq.length != yaml_keys.length
 errors << 'CSV/YAML session mismatch' unless csv_keys.sort == yaml_keys.sort
+review_entries.each_value do |entries|
+  entries.each do |id, body|
+    body.scan(/`(\d{4}-\d{2}-\d{2} [ABC]_\w+)`/).flatten.each do |ref|
+      errors << "unknown review session reference: #{id} #{ref}" unless yaml_keys.include?(ref.split(' ', 2))
+    end
+  end
+end
 
 snapshots = manifest.fetch('snapshots')
 snapshot_ids = snapshots.map { |item| item.fetch('id') }
@@ -46,6 +123,9 @@ active_counts = trials.fetch('trials').select { |item| item['status'] == 'active
 errors << 'multiple active trials for a menu' if active_counts.any? { |_menu, items| items.length > 1 }
 trials.fetch('trials').each do |trial|
   errors << "missing source session for trial #{trial['id']}" unless yaml_keys.include?(trial.fetch('source_session').split(' ', 2))
+  if trial['source_review'] && !File.file?(File.join(root, trial['source_review']))
+    errors << "missing review reference for trial #{trial['id']}"
+  end
   if trial['status'] == 'active'
     subsequent = csv_keys.find do |session_date, session_type|
       session_date > trial.fetch('created_on') && session_type.start_with?("#{trial.fetch('menu')}_")
@@ -113,4 +193,4 @@ if errors.any?
   exit 1
 end
 
-puts "OK: #{rows.length} CSV/YAML sessions, #{snapshots.length} prescription snapshot, #{trial_ids.length} trials"
+puts "OK: #{rows.length} CSV/YAML sessions, #{snapshots.length} prescription snapshot, #{trial_ids.length} trials, #{review_entries.fetch('J', {}).length} judgments, #{review_entries.fetch('B', {}).length} backlog items"

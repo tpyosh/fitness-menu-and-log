@@ -14,7 +14,9 @@ if __package__:
     from .fitness.paths import (
         CURRENT_MENUS,
         DESIGN_PHILOSOPHY,
-        HISTORY_PATH,
+        REQUEST_STATE,
+        REVIEW_ASSESSMENT,
+        REVIEW_BACKLOG,
         PROMPT_TEMPLATE,
         REVIEWS_DIR,
         ROOT,
@@ -25,8 +27,7 @@ if __package__:
     from .fitness.review_data import (
         choose_output_path,
         git_state,
-        latest_history_record,
-        load_history,
+        load_request_state,
         load_sessions,
         load_yaml_details,
         load_yaml_excerpt_details,
@@ -49,7 +50,9 @@ else:
     from fitness.paths import (
         CURRENT_MENUS,
         DESIGN_PHILOSOPHY,
-        HISTORY_PATH,
+        REQUEST_STATE,
+        REVIEW_ASSESSMENT,
+        REVIEW_BACKLOG,
         PROMPT_TEMPLATE,
         REVIEWS_DIR,
         ROOT,
@@ -60,8 +63,7 @@ else:
     from fitness.review_data import (
         choose_output_path,
         git_state,
-        latest_history_record,
-        load_history,
+        load_request_state,
         load_sessions,
         load_yaml_details,
         load_yaml_excerpt_details,
@@ -93,7 +95,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--notes",
         default="",
-        help="Optional freeform notes to include in the history record and prompt.",
+        help="Optional freeform notes to include in the current request state and prompt.",
     )
     parser.add_argument(
         "--baseline-sessions",
@@ -104,12 +106,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        help="Output Markdown path. Defaults to data/logs/reviews/YYYY-MM-DD_garmin-coach-review-request.md.",
+        help="Output Markdown path. Defaults to data/logs/reviews/review-request.md (replaced each time).",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Print the prompt without writing a request file or appending history.",
+        help="Print the prompt without writing the request or its metadata.",
     )
     return parser.parse_args(argv)
 
@@ -126,6 +128,8 @@ def render_prompt(
         requested_at, previous_record, target_sessions, baseline_sessions, details, notes,
         design_philosophy=read_markdown(DESIGN_PHILOSOPHY),
         current_menus=read_markdown(CURRENT_MENUS),
+        current_assessment=read_markdown(REVIEW_ASSESSMENT),
+        backlog=read_markdown(REVIEW_BACKLOG),
         sources=source_files(),
     )
 
@@ -160,17 +164,15 @@ def build_record(
     }
 
 
-def append_history(record: dict[str, Any]) -> None:
-    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with HISTORY_PATH.open("a", encoding="utf-8") as file:
-        file.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
+def write_request_state(record: dict[str, Any]) -> None:
+    REQUEST_STATE.parent.mkdir(parents=True, exist_ok=True)
+    REQUEST_STATE.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     requested_at = parse_requested_at(args.requested_at)
-    history = load_history()
-    previous_record = latest_history_record(history)
+    previous_record = load_request_state()
     previous_date = parse_record_date(str(previous_record.get("requested_at"))) if previous_record else None
     sessions = load_sessions()
     current_date = requested_at.date()
@@ -190,7 +192,7 @@ def main(argv: list[str] | None = None) -> int:
         target_sessions = [row for row in sessions if parse_session_date(row) <= current_date]
         baseline_pool = []
 
-    baseline_sessions = baseline_pool[-max(args.baseline_sessions, 0) :]
+    baseline_sessions = baseline_pool[-args.baseline_sessions:] if args.baseline_sessions > 0 else []
     details = load_yaml_details()
     output_path = choose_output_path(requested_at, args.output)
     prompt = render_prompt(
@@ -211,15 +213,15 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.dry_run:
         print(prompt)
-        print("\n--- dry-run history record ---", file=sys.stderr)
+        print("\n--- dry-run request state ---", file=sys.stderr)
         print(json.dumps(record, ensure_ascii=False, indent=2), file=sys.stderr)
         return 0
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(prompt, encoding="utf-8")
-    append_history(record)
+    write_request_state(record)
     print(f"Wrote prompt: {rel(output_path)}")
-    print(f"Appended history: {rel(HISTORY_PATH)}")
+    print(f"Updated request state: {rel(REQUEST_STATE)}")
     return 0
 
 

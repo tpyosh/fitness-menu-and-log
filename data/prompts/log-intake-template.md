@@ -214,7 +214,8 @@ segments:
 6. `menu_decision.outcome` を `keep` / `adjust` / `defer` から1つ選び、根拠と再評価条件を保存する
 7. 正本判断と分けて `next_session_action` を決める。正本を維持した次回試行は `outcome: keep`、`next_session_action: trial_one_step` とする
 8. 判断に必要なクリティカル情報が欠ける場合は `status: pending_user_input` と質問を保存し、回答後に `status: final` として判断を確定する
-9. 同じフィードバックと判断の要点をユーザへ日本語で返す
+9. 今回の実績が`data/logs/reviews/current-assessment.md`や`backlog.md`の判断・課題に関係する場合は、既存J/B-IDの根拠・次の確認・解決状態も同期する。解決条件を満たさない課題は閉じず、日付付きレビューメモは作らない
+10. 同じフィードバックと判断の要点をユーザへ日本語で返す
 
 `feedback` はGarmin転記値や取り込み元メモとは別の解釈レイヤーである。一般的な称賛は避け、各結論を今回ログ、ユーザコメント、または日付つき比較ログへ結びつける。
 

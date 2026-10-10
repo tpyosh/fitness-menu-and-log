@@ -12,5 +12,6 @@ description: 確定したログ判断、明示的なユーザー指示、また�
 3. `README.md` 冒頭のQuick Reference、`current-menus.md`、`menu-history.md` を同じ変更で更新する。通常処方の数値が変わる場合は `prescriptions.json` に新しい版を追加し、本文ハッシュと `current_id` を同期する。次回限定試行は `active-trials.json` に管理し、通常処方の版を変えない。設計思想が変わる場合だけ `design-philosophy.md` も更新する。
 4. 履歴にはprevious/new version、正確なbefore/after、日付付き根拠、意図する効果、再評価条件、rollbackまたは再検討条件を残す。
 5. 更新後、A/B/C区分、順序、重量、回数、セット数、レスト、速度、傾斜がQuick Referenceと完全版で一致することを確認する。`ruby scripts/validate_fitness_data.rb` で版・ログ・試行参照を検証する。
+6. 改定が[現在のレビュー判断](../../../data/logs/reviews/current-assessment.md)や[バックログ](../../../data/logs/reviews/backlog.md)に関係する場合は、既存J/B-IDも同期する。レビュー結果の別スナップショットは作らない。
 
 外部レビューは根拠の一つであり、それ自体で採用しない。単発の通常ログ、Garmin単独の良否、次回だけの増量試行では正本を改定しない。

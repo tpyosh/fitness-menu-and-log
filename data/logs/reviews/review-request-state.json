@@ -1,0 +1,24 @@
+{
+  "requested_at": "2026-10-10T13:25:42+09:00",
+  "timestamp_precision": "second",
+  "repo_state": "38ca371+dirty",
+  "previous_review_requested_at": "2026-10-10T13:22:11+09:00",
+  "log_range_covered": {
+    "from": null,
+    "to": null,
+    "session_count": 0
+  },
+  "files_used": [
+    "data/logs/structured/sessions.csv",
+    "data/logs/structured/sessions.yaml",
+    "data/menus/current-menus.md",
+    "data/menus/design-philosophy.md",
+    "data/prompts/garmin-coach-review-request.md",
+    "data/logs/reviews/current-assessment.md",
+    "data/logs/reviews/backlog.md",
+    "data/logs/reviews/review-request-state.json"
+  ],
+  "prompt_file": "data/logs/reviews/review-request.md",
+  "short_summary": "対象ログ0件。前回レビュー依頼以降の新規Garminログは見つかりませんでした。",
+  "notes": ""
+}

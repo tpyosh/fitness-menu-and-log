@@ -1,60 +1,23 @@
-# Apply Garmin Coach Feedback Template
-
-このテンプレートは、ChatGPTのGarminコーチングレビュー結果をCodexに貼り戻し、リポジトリ変更へ変換するためのものです。
-
-## Codexへの依頼テンプレート
+# レビュー回答の反映テンプレート
 
 ```md
-以下は、ChatGPTによるGarmin Coaching Reviewです。
-このリポジトリの `AGENTS.md` を守り、提案を鵜呑みにせず、具体的で根拠のある変更だけを反映してください。
-
-# 1. ChatGPTレビュー本文
+以下のChatGPTレビューを、現在の判断と課題バックログへ反映してください。
 
 {{chatgpt_feedback}}
 
-# 2. Codexにしてほしいこと
-
-- ChatGPTレビューを読み、具体的で実行可能な変更だけを抽出してください
-- 曖昧なモチベーション、一般論、データで支えられていない助言は無視してください
-- メニュー、設計思想、ログ記録ルール、プロンプト、ドキュメントの更新は、レビュー内容が明確に正当化する場合だけ行ってください
-- このリポジトリの元の意図を保ってください
-- 変更は小さく、レビューしやすい範囲にしてください
-- 何を変更したか、なぜ変更したか、どのレビュー項目が根拠かを説明してください
-- レビューが「No change recommended」または実質的に変更不要という結論なら、メニュー本体は変更しないでください
-- 変更不要の場合は、必要に応じてレビュー結果だけを `data/logs/reviews/` に保存してください
-- レビュー依頼メタデータの `data/logs/reviews/review-request-history.jsonl` には、ChatGPT回答本文を保存しないでください
-
-# 3. 更新時の制約
-
-- メニュー更新時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を同時更新してください
-- 設計思想が変わる場合だけ `data/menus/design-philosophy.md` も更新してください
-- 推測で重量、回数、セット数、レスト、速度、傾斜を補わないでください
-- ログに記録された処方継承値と直接観測値のprovenanceを区別し、実施日の `prescription_id` と有効だった試行状態を確認してください
-- 単発ログで現行メニューと違う重量を使っただけの場合、現行メニュー本体を自動更新しないでください
-- 更新後は `README.md` と `data/menus/current-menus.md` の数値、順序、A/B/C区分が一致しているか確認してください
-- 軽量チェックがあれば実行してください
+- AGENTS.mdとdata/logs/reviews/README.mdを守り、current-assessment.mdとbacklog.mdを先に読む。
+- 提案を鵜呑みにせず、本人申告・Garmin観測・処方継承・推論を分けて正本へ照合する。
+- 既存J-IDの判断・根拠・不確実性・再検討条件をその場で更新する。新しい判断だけ新規IDを付ける。
+- 未解決の問いは既存B-IDへ統合し、優先度・次の確認・解決条件を更新する。新しい問いだけ新規IDを付ける。
+- 解決には根拠と解決条件の成立が必要。同じ項目をresolvedにし、解決結果を記す。回答受領だけで閉じない。
+- updated_on、出典名・直接URL・確認日・確認範囲・適用限界・情報の変動性、セッション・処方・試行IDを必要な箇所に残す。
+- 回答全文や日付付きレビュー結果・採否メモ・統合メモは保存しない。依頼メタデータに回答本文を入れない。
+- 根拠不足・変更不要・保留も有効な結果。推測で回数、症状、意図、重量、活動量を補わない。
+- 通常処方と次回限定試行を区別し、レビューだけを理由に試行を重複作成したり恒久増量したりしない。
+- 具体的な恒久改定が正当化される場合だけrevise-training-menuに従い、README冒頭・current-menus.md・menu-history.mdを同期する。処方数値変更はprescriptions.jsonへ新しい版を追加する。設計思想変更時だけdesign-philosophy.mdを更新する。
+- 過去ログは根拠のある転記誤り以外では変更しない。ヒップ系の内向き／外向きとprovenanceを維持する。
+- ruby scripts/validate_fitness_data.rbを実行する。コード変更時は適切な既存テストも実行する。
+- 最後に、変更ファイル、J/B-IDごとの更新・維持・解決、未解決事項、検証結果を簡潔に報告する。
 ```
 
-## Codexの判断ルール
-
-- `No change recommended`
-  - メニュー本体は変更しない
-  - 必要ならレビュー結果をMarkdownで保存する
-- `Minor adjustment recommended`
-  - 根拠、対象ファイル、具体値が明確なものだけ反映する
-  - 反映しない提案があれば理由を書く
-- `Clear menu change recommended`
-  - 変更対象を最小限に絞る
-  - `menu-history.md` に理由と差分概要を残す
-- `Insufficient data`
-  - 原則としてメニュー本体は変更しない
-  - 次回以降に記録すべき指標や主観メモだけを保存する
-
-## レビュー結果の保存先
-
-ChatGPTの回答本文を保存する場合は、`data/logs/reviews/` 配下に日付つきMarkdownで保存する。
-
-推奨命名:
-
-- `YYYY-MM-DD_garmin-coach-review-response.md`
-- 同日に複数ある場合は `YYYY-MM-DD_HHMM_garmin-coach-review-response.md`
+正本は`data/logs/reviews/current-assessment.md`と`data/logs/reviews/backlog.md`。メニュー実行値は従来のメニュー・処方・試行ファイルを参照する。
