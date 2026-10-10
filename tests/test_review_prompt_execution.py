@@ -1,16 +1,25 @@
-import importlib.util
 import unittest
-from pathlib import Path
+from datetime import datetime
 
-
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts/generate_garmin_coach_review_prompt.py"
-SPEC = importlib.util.spec_from_file_location("garmin_review_prompt", SCRIPT)
-assert SPEC and SPEC.loader
-MODULE = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(MODULE)
+from scripts import generate_garmin_coach_review_prompt as MODULE
+from scripts.fitness.review_rendering import render_prompt
 
 
 class ReviewPromptExecutionTests(unittest.TestCase):
+    def test_renderer_uses_supplied_sources_without_repository_files(self):
+        output = render_prompt(
+            datetime.fromisoformat("2026-10-10T12:00:00+09:00"),
+            None, [], [], {}, "review focus",
+            design_philosophy="supplied philosophy",
+            current_menus="supplied menus",
+            sources=["source.md"],
+        )
+        self.assertIn("supplied philosophy", output)
+        self.assertIn("supplied menus", output)
+        self.assertIn("  - source.md", output)
+        self.assertIn("review focus", output)
+        self.assertIn("前回レビュー依頼以降の新規Garminログはありません", output)
+
     def test_review_handoff_preserves_execution_provenance(self):
         row = {
             "date": "2026-10-04", "session_type": "A_full", "duration_min": "62.88",

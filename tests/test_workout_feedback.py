@@ -1,17 +1,11 @@
-import importlib.util
 import tempfile
 import unittest
 from copy import deepcopy
 from pathlib import Path
 
+from scripts import workout_feedback as MODULE
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location(
-    "workout_feedback", ROOT / "scripts/workout_feedback.py"
-)
-assert SPEC and SPEC.loader
-MODULE = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(MODULE)
 
 
 class WorkoutFeedbackTests(unittest.TestCase):
@@ -127,6 +121,23 @@ class WorkoutFeedbackTests(unittest.TestCase):
     def test_missing_historical_prescription_fails_closed(self):
         with self.assertRaises(MODULE.PrescriptionError):
             MODULE.resolve_prescription(self.manifest, "2026-08-11", "A")
+
+    def test_resolution_selects_snapshot_at_date_boundary_without_mutation(self):
+        manifest = deepcopy(self.manifest)
+        newer = deepcopy(manifest["snapshots"][0])
+        newer.update(id="test-newer", effective_from="2026-10-10")
+        leg = next(item for item in newer["menus"]["A"] if item["id"] == "seated_leg_press")
+        leg["weight_kg"] = 130
+        manifest["snapshots"].append(newer)
+        before = deepcopy(manifest)
+        old_id, _ = MODULE.resolve_prescription(manifest, "2026-10-09", "A")
+        new_id, exercises = MODULE.resolve_prescription(manifest, "2026-10-10", "A")
+        self.assertEqual(old_id, self.manifest["snapshots"][0]["id"])
+        self.assertEqual(new_id, "test-newer")
+        resolved_leg = next(item for item in exercises if item["id"] == "seated_leg_press")
+        self.assertEqual(resolved_leg["weight_kg"], 130)
+        resolved_leg["weight_kg"] = 999
+        self.assertEqual(manifest, before)
 
     def test_unconfirmed_workout_cannot_inherit_all_exercises(self):
         with self.assertRaises(MODULE.PrescriptionError):

@@ -8,11 +8,12 @@ import html
 import re
 import subprocess
 from datetime import date
-from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
-CURRENT_MENUS = ROOT / "data/menus/current-menus.md"
+if __package__:
+    from .fitness.paths import CURRENT_MENUS, ROOT
+else:
+    from fitness.paths import CURRENT_MENUS, ROOT
 NOTE_TITLE = "今日のトレーニングメニュー"
 
 SECTION_STARTS = {
@@ -52,7 +53,7 @@ end run
 '''
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Export an A, B, or C menu to one fixed Apple Notes note. "
@@ -80,7 +81,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Print the snapshot without opening or changing Apple Notes.",
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def validate_date(value: str) -> str:
@@ -203,8 +204,8 @@ def write_apple_note(note_body: str) -> str:
     return completed.stdout.strip()
 
 
-def main() -> None:
-    args = parse_args()
+def main(argv: list[str] | None = None) -> None:
+    args = parse_args(argv)
     if args.c_mode and args.menu != "C":
         raise SystemExit("--c-mode can only be used with --menu C")
     snapshot_date = validate_date(args.date)

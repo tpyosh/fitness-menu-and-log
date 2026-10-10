@@ -1,17 +1,6 @@
-import importlib.util
 import unittest
-from pathlib import Path
 
-
-SCRIPT = (
-    Path(__file__).resolve().parents[1]
-    / "scripts"
-    / "export_today_menu_to_apple_notes.py"
-)
-SPEC = importlib.util.spec_from_file_location("apple_notes_export", SCRIPT)
-assert SPEC and SPEC.loader
-MODULE = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(MODULE)
+from scripts import export_today_menu_to_apple_notes as MODULE
 
 
 class ExportTodayMenuTests(unittest.TestCase):

@@ -159,7 +159,7 @@ python3 scripts/generate_garmin_coach_review_prompt.py --dry-run
 - `data/prompts/`
   - Codexが使うテンプレート
 - `scripts/`
-  - 将来の補助スクリプト置き場
+  - 処方の解決、レビュー依頼文の生成、Apple Notesへの出力、データ検証。共通処理は `scripts/fitness/`、構成と使い方は `scripts/README.md` を参照
 
 ## 運用の前提
 
