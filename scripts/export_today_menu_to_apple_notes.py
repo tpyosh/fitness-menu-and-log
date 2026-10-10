@@ -108,7 +108,13 @@ def extract_menu(markdown: str, menu: str) -> str:
         ),
         len(lines),
     )
-    return "\n".join(lines[start:end]).strip()
+    return "\n".join(
+        line for line in lines[start:end]
+        if line not in {
+            "<!-- next-session-trial:start -->",
+            "<!-- next-session-trial:end -->",
+        }
+    ).strip()
 
 
 def extract_c_mode(menu_markdown: str, c_mode: str) -> str:

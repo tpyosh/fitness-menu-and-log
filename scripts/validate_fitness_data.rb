@@ -13,7 +13,8 @@ yaml_path = File.join(root, 'data/logs/structured/sessions.yaml')
 manifest = JSON.parse(File.read(File.join(root, 'data/menus/prescriptions.json')))
 trials = JSON.parse(File.read(File.join(root, 'data/menus/active-trials.json')))
 menu_text = File.read(File.join(root, 'data/menus/current-menus.md'))
-baseline_menu_text = menu_text.gsub(/^## 次回[^\n]*\n.*?(?=^## |^# |\z)/m, '')
+baseline_menu_text = menu_text.gsub(/^<!-- next-session-trial:start -->\n.*?^<!-- next-session-trial:end -->\n?/m, '')
+baseline_menu_text = baseline_menu_text.gsub(/^## 次回[^\n]*\n.*?(?=^## |^# |\z)/m, '')
 quick_text = File.read(File.join(root, 'README.md'))
 sessions = YAML.safe_load(File.read(yaml_path), [Date], [], true).fetch('sessions')
 rows = CSV.read(csv_path, headers: true)
@@ -141,8 +142,13 @@ trials.fetch('trials').each do |trial|
         next unless planned
         from = planned.fetch('weight_kg')
         to = target.fetch('fields').fetch('weight_kg')
-        errors << "trial missing from current menu: #{trial['id']} #{title}" unless menu_text.include?("#{title}: #{from}kg → **#{to}kg**")
-        errors << "trial missing from Quick Reference: #{trial['id']} #{title}" unless quick_text.include?("#{title}: **#{to}kg**")
+        menu = trial.fetch('menu')
+        menu_section = menu_text[/^# #{menu}（.*?(?=^# |\z)/m].to_s
+        exercise_section = menu_section[/^## [①-⑩]+ #{Regexp.escape(title)}\n.*?(?=^## |\z)/m].to_s
+        quick_section = quick_text[/^### #{menu}（.*?(?=^### |^## |\z)/m].to_s
+        quick_exercise = quick_section[/^- #{Regexp.escape(title)}: [^\n]*\n(?:  [^\n]*\n)*/].to_s
+        errors << "trial missing from current menu: #{trial['id']} #{title}" unless exercise_section.include?("#{from}kg → **#{to}kg**")
+        errors << "trial missing from Quick Reference: #{trial['id']} #{title}" unless quick_exercise.include?("**次回#{menu}のみ: #{to}kg**")
       end
     end
   end

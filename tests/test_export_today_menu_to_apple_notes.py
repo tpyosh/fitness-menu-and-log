@@ -22,6 +22,12 @@ class ExportTodayMenuTests(unittest.TestCase):
         self.assertIn("## Endurance（60分）", menu_c)
         self.assertNotIn("# 8〜12週間の運用とDeload", menu_c)
 
+    def test_trial_notes_survive_without_internal_markers(self):
+        menu_a = MODULE.extract_menu(self.source, "A")
+        self.assertIn("40kg → **47kg**", menu_a)
+        self.assertIn("40kg試行は保留", menu_a)
+        self.assertNotIn("next-session-trial", menu_a)
+
     def test_extracts_only_selected_c_mode_and_common_rules(self):
         menu_c = MODULE.extract_menu(self.source, "C")
         standard = MODULE.extract_c_mode(menu_c, "standard")

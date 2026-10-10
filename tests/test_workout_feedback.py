@@ -178,7 +178,11 @@ class WorkoutFeedbackTests(unittest.TestCase):
             source = root / "data/menus/current-menus.md"
             source.parent.mkdir(parents=True)
             current_text = (ROOT / "data/menus/current-menus.md").read_text(encoding="utf-8")
-            source.write_text(current_text.replace("次回Aだけ試行", "今回限り試行"), encoding="utf-8")
+            changed_trial = current_text.replace("40kg → **47kg**", "40kg → **54kg**", 1)
+            self.assertNotEqual(current_text, changed_trial)
+            source.write_text(changed_trial, encoding="utf-8")
+            MODULE.validate_manifest(self.manifest, root)
+            source.write_text(MODULE.baseline_menu_text(current_text), encoding="utf-8")
             MODULE.validate_manifest(self.manifest, root)
             source.write_text(current_text.replace("参考重量: 125kg", "参考重量: 115kg"), encoding="utf-8")
             with self.assertRaises(MODULE.PrescriptionError):

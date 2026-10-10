@@ -39,6 +39,10 @@ def load_json(path: Path) -> dict[str, Any]:
 
 def baseline_menu_text(markdown: str) -> str:
     """Exclude transient next-session trial displays from the base menu hash."""
+    markdown = re.sub(
+        r"^<!-- next-session-trial:start -->\n.*?^<!-- next-session-trial:end -->\n?",
+        "", markdown, flags=re.M | re.S,
+    )
     return re.sub(r"^## 次回[^\n]*\n.*?(?=^## |^# |\Z)", "", markdown, flags=re.M | re.S)
 
 

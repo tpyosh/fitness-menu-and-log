@@ -6,39 +6,34 @@
 
 ### A（Lower emphasis + Upper）
 
-- **次回Aのみの増量試行（2026-10-10レビューで見直し。通常の参考重量は未変更）**
-  - Lat Pulldown: **47kg**（通常40kgから1段増）
-  - Chest Press: **33kg**（10/7 Bで40kgが難しかったため、40kg試行は保留）
-  - Latは上限回数に固執せずRIR 1〜2を目安にし、フォーム崩れや痛みが出る前に終了する。
-  - Chestは8〜12回×2set・RIR 2〜3で確認する。40kgの再試行は困難の内容と33kgでの実績を確認してから判断する。
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Seated Leg Press: 125kg（参考）x 12〜15回 x 3set, RIR 2〜3, rest 90秒
 - Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
 - Leg Extension: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
 - Lat Pulldown: 40kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
+  - **次回Aのみ: 47kg**（通常40kgから1段増。2026-10-10レビュー）。RIR 1〜2を目安に、上限回数に固執せず、フォーム崩れや痛みが出る前に終了する。
 - Chest Press: 33kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
+  - **次回A: 33kgで確認**。10/7 Bで40kgが難しかったため、40kg試行は保留。8〜12回×2set・RIR 2〜3で確認し、再試行は困難の内容と33kgでの実績を確認してから判断する。
 - Hip Abduction (Outward / 外向き): 61kg（参考）x 12〜15回 x 2set, RIR 2〜3, rest 60秒
 - Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 18分: 6.2 km/h・12% x 6分 → 6.3 km/h・13% x 6分 → 6.2 km/h・14% x 6分
 
 ### B（Upper emphasis + Lower）
 
-- **次回Bのみの試行重量の継続確認（2026-10-07ログに基づく。通常の参考重量は未変更）**
-  - Lat Pulldown: **47kg**（通常40kg。今回重量を継続確認）
-  - Row Machine: **47kg**（通常40kg。今回重量を継続確認）
-  - Shoulder Press: **25kg**（通常20kg。今回重量を継続確認）
-  - Chest Press: **33kg**（40kgは無理だったため通常重量へ戻す）
-  - 追加増量せず、背中2種目はRIR 2、Shoulder PressはRIR 2〜3を目安にする。
-  - 下半身・体幹は通常重量を維持。Seated Leg Press・Torso RotationはRIR 3で止める。
-  - 痛み・フォーム崩れ・回数下限未達なら通常重量へ戻す。最終setの回数・RIR、翌日反応を記録する。
 - WU 8分: 6.3 km/h, 傾斜 11%
 - Lat Pulldown: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
+  - **次回Bのみ: 47kg**（通常40kg。10/7の重量を継続確認）。追加増量せずRIR 2を目安にする。痛み・フォーム崩れ・回数下限未達なら通常重量へ戻し、最終setの回数・RIR、翌日反応を記録する。
 - Row Machine: 40kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
+  - **次回Bのみ: 47kg**（通常40kg。10/7の重量を継続確認）。追加増量せずRIR 2を目安にする。痛み・フォーム崩れ・回数下限未達なら通常重量へ戻し、最終setの回数・RIR、翌日反応を記録する。
 - Chest Press: 33kg（参考）x 8〜12回 x 3set, RIR 2, rest 90秒
+  - **次回B: 33kg**。10/7に40kgが無理だったため通常重量へ戻す。
 - Shoulder Press: 20kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
+  - **次回Bのみ: 25kg**（通常20kg。10/7の重量を継続確認）。追加増量せずRIR 2〜3を目安にする。痛み・フォーム崩れ・回数下限未達なら通常重量へ戻し、最終setの回数・RIR、翌日反応を記録する。
 - Seated Leg Press: 115kg（参考）x 12〜15回 x 2set, RIR 3, rest 90秒
+  - 次回Bも通常重量を維持し、RIR 3で止める。
 - Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
 - Torso Rotation: 57.5kg（参考）左右10〜12回 x 1set, RIR 3, rest 60秒
+  - 次回Bも通常重量を維持し、RIR 3で止める。
 - Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 16分: 6.2 km/h・11% x 6分 → 6.3 km/h・11% x 6分 → 6.2 km/h・12% x 4分
 
