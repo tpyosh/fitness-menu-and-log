@@ -177,6 +177,14 @@ sessions.each do |session|
   end
   menu = session.fetch('session_type')[0]
   exercises = snapshot.fetch('menus').fetch(menu)
+  if menu == 'C'
+    mode = session['c_mode']
+    unless exercises.key?(mode)
+      errors << "unknown or missing C mode for #{date}"
+      next
+    end
+    exercises = exercises.fetch(mode)
+  end
   weights = exercises.select { |item| item['kind'] == 'machine' }.to_h { |item| [item['id'], item['weight_kg']] }
   prescribed = session.dig('prescribed_workout', 'machine_weights_kg')
   if prescribed

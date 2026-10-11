@@ -3283,3 +3283,307 @@ sessions:
         sets: 2
         rir: 1-2
         trial_id: 2026-10-11-A-lat-confirmation
+  - date: '2026-10-11'
+    start_time: unknown
+    session_type: C_treadmill
+    c_mode: endurance
+    segment_type: full_session
+    duration_min: 60.15
+    duration: '1:00:09'
+    duration_seconds: 3609
+    distance_km: 5.61
+    avg_pace_min_per_km: '10:44'
+    avg_moving_pace_min_per_km: '10:09'
+    best_pace_min_per_km: '9:04'
+    avg_hr: 105
+    max_hr: 124
+    aerobic_te: 1.6
+    anaerobic_te: 0.0
+    exercise_load: 16
+    calories: 269
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: '18:50'
+    zone2_time: '30:39'
+    zone3_time: '0:00'
+    zone4_time: '0:00'
+    zone5_time: '0:00'
+    subjective_fatigue: 正直かなり楽。心肺に負担がかかった感じもありませんでした。
+    soreness_next_day: unknown
+    machine_order_changed: not_applicable
+    menu_deviation: 速度・傾斜の変更申告なし。処方の計60分に対してGarmin総時間60:09。実際の設定変更時刻は未確認。
+    notes: Garmin画像4枚と本人申告から転記。日付・C60は本人指定。C60を現行Enduranceとして解決。速度・傾斜・予定時間は差分申告なしの処方継承であり、直接観測ではない。膝痛・明確な違和感は運動中・終了後ともなしと追加回答。7ラップを保持し、設定変更境界は未確認。
+    source_metadata:
+      source: Garmin Connect screenshots and user report
+      recorded_on: '2026-10-11'
+      garmin_date: unknown
+      session_date_provenance: user_reported
+      session_type_provenance: user_reported
+      c_mode_resolution: 本人のC60指定と現行メニューのEndurance60分から一意に解決。目的の個別申告ではない。
+      source_images:
+      - codex-clipboard-a2dbbca5-ae70-42f5-8059-de8742fdcb47.png
+      - codex-clipboard-3f093e08-61b3-4653-bf23-c56fc908adf3.png
+      - codex-clipboard-5498e6a7-e7b1-413e-a96e-30d455f2217b.png
+      - codex-clipboard-4287bbf2-e0e3-466e-a37b-c907e90e383a.png
+      lap_segment_mapping: 7ラップをそのまま記録。Lap2〜5は各1km。既定のC3区間に直接対応付けない。
+    prescription_id: 2026-08-31-baseline
+    execution_basis: menu_completed
+    trial_id: null
+    prescribed_workout:
+      source: data/menus/prescriptions.json
+      prescription_id: 2026-08-31-baseline
+      menu: C
+      c_mode: endurance
+      target_main_rpe: 3-4
+      conversation_target: 会話可能
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.2
+          incline_percent: 4
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 6
+      - id: cooldown
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.0
+          incline_percent: 2
+    reported_deviations: []
+    effective_execution:
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.2
+          incline_percent: 4
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 6
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+      - id: cooldown
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.0
+          incline_percent: 2
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+      observation_note: 速度・傾斜・各区間の予定時間はprescribed_no_deviation_reported。Garmin全体時間と7ラップは直接観測として別記。区間別の実時間へ推測変換しない。
+    minimum_subjective:
+      overall_load: light
+      overall_load_provenance: user_reported
+      muscle_soreness:
+        status: unknown
+        areas: []
+        timing: next_day
+      pain_or_form_issue:
+        status: partial
+        details: 運動中・終了後の膝痛・明確な違和感はなし。フォームは明示申告なし。
+        provenance: user_reported
+    subjective_notes:
+      treadmill_feedback:
+        selected_c_mode: endurance
+        selection_purpose: unknown
+        main_rpe: かなり楽（数値RPEはunknown）
+        conversation_possible: unknown
+        knee_pain_or_discomfort: none
+        knee_pain_or_discomfort_provenance: user_reported
+        cardiorespiratory_load: 心肺に負担がかかった感じもない（本人申告）
+        local_fatigue: unknown
+        next_day_impact_on_a_b_or_daily_activity: unknown
+    nutrition_hydration:
+      resting_calories: 73
+      active_calories: 196
+      total_calories_burned: 269
+      calories_consumed: unknown
+      calories_net: -269
+      estimated_sweat_loss_ml: 469
+      fluid_consumed_ml: unknown
+      fluid_net_ml: -469
+    stamina:
+      beginning_potential_percent: 100
+      ending_potential_percent: 96
+      minimum_percent: 96
+    body_battery:
+      net_impact: -3
+    movement:
+      moving_time: '56:53'
+      elapsed_time: '1:00:09'
+      walk_time: '58:13'
+      idle_time: '1:55.0'
+      avg_power_w: 98
+      max_power_w: 138
+      wind_data: Disabled
+      avg_cadence_spm: 117
+      max_cadence_spm: 137
+      avg_stride_length_m: 0.82
+      avg_vertical_ratio_percent: 8.2
+      avg_vertical_oscillation_cm: 6.7
+      avg_ground_contact_time_ms: 444
+    intensity_minutes:
+      moderate_min: 44
+      vigorous_min: 0
+      total_weighted_min: 44
+    heart_rate_zones:
+    - zone: 1
+      range_bpm: 92-109
+      time: '18:50'
+      percent: 31
+    - zone: 2
+      range_bpm: 110-128
+      time: '30:39'
+      percent: 50
+    - zone: 3
+      range_bpm: 129-146
+      time: '0:00'
+      percent: 0
+    - zone: 4
+      range_bpm: 147-165
+      time: '0:00'
+      percent: 0
+    - zone: 5
+      range_bpm: ">165"
+      time: '0:00'
+      percent: 0
+    laps:
+    - lap: 1
+      duration: '5:18.5'
+      cumulative_time: '5:18.5'
+      distance_km: 0.4
+      avg_pace_min_per_km: '13:21'
+      average_hr_bpm: 86
+      maximum_hr_bpm: 94
+      avg_power_w: 71
+      max_power_w: 100
+      avg_cadence_spm: 96
+      avg_ground_contact_time_ms: unknown
+      avg_stride_length_m: 0.81
+      avg_vertical_oscillation_cm: 6.0
+    - lap: 2
+      duration: '9:53.2'
+      cumulative_time: '15:12'
+      distance_km: 1.0
+      avg_pace_min_per_km: '9:53'
+      average_hr_bpm: 95
+      maximum_hr_bpm: 108
+      avg_power_w: 115
+      max_power_w: 138
+      avg_cadence_spm: 123
+      avg_ground_contact_time_ms: 442
+      avg_stride_length_m: 0.83
+      avg_vertical_oscillation_cm: 7.5
+    - lap: 3
+      duration: '10:19'
+      cumulative_time: '25:31'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:19'
+      average_hr_bpm: 103
+      maximum_hr_bpm: 124
+      avg_power_w: 100
+      max_power_w: 129
+      avg_cadence_spm: 120
+      avg_ground_contact_time_ms: 445
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 6.6
+    - lap: 4
+      duration: '10:10'
+      cumulative_time: '35:41'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:10'
+      average_hr_bpm: 113
+      maximum_hr_bpm: 124
+      avg_power_w: 103
+      max_power_w: 130
+      avg_cadence_spm: 122
+      avg_ground_contact_time_ms: 445
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 6.7
+    - lap: 5
+      duration: '10:49'
+      cumulative_time: '46:30'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:49'
+      average_hr_bpm: 112
+      maximum_hr_bpm: 120
+      avg_power_w: 98
+      max_power_w: 125
+      avg_cadence_spm: 118
+      avg_ground_contact_time_ms: 444
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 6.7
+    - lap: 6
+      duration: '8:38.0'
+      cumulative_time: '55:08'
+      distance_km: 0.78
+      avg_pace_min_per_km: '11:08'
+      average_hr_bpm: 111
+      maximum_hr_bpm: 120
+      avg_power_w: 94
+      max_power_w: 124
+      avg_cadence_spm: 115
+      avg_ground_contact_time_ms: 444
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 6.6
+    - lap: 7
+      duration: '5:00.3'
+      cumulative_time: '1:00:09'
+      distance_km: 0.43
+      avg_pace_min_per_km: '11:36'
+      average_hr_bpm: 102
+      maximum_hr_bpm: 115
+      avg_power_w: 80
+      max_power_w: 95
+      avg_cadence_spm: 108
+      avg_ground_contact_time_ms: unknown
+      avg_stride_length_m: 0.81
+      avg_vertical_oscillation_cm: 6.0
+    graph_observations:
+    - 心拍グラフは約19〜20分付近で約90台から約110台へ上がり、その後は概ね110台、終盤約55分以降に低下するように見える。目視の概略で正確な時系列値ではない。
+    - ペースに複数の短い途切れが見える。停止・センサー・記録仕様等の原因は未確認。心拍変化を設定変更や異常と断定しない。
+    data_quality_notes:
+    - Zone合計49:29は総時間60:09より10:40短い。表示割合合計81%。Zone1下限未満・未分類などの内訳は画像から確定しない。
+    - ラップ時間合計60:08.0と総時間60:09は1.0秒差。ラップ距離合計5.61km。表示値を補正しない。
+    - Walk58:13とIdle1:55.0の合計60:08は総時間と1秒差。Moving Time56:53とは異なる集計値として保持。
+    - 屋内のGarmin距離・ペース・歩行時のRunning Dynamics・Powerはトレッドミル設定や勾配の直接観測ではない。
+    - 心拍Zoneの設定方法・最大心拍・安静時心拍・計測機器は未確認。Garmin Zone2を生理学的Zone2と同一視しない。
+    - 消費・発汗はGarmin推定。摂取量未記録のnet表示を実際の収支と断定しない。
+    - 前日の10/10 A_full実施は記録済み。今回の所感から翌日回復やA/Bへの影響を推測しない。
+    feedback:
+      completed: C60（Endurance）を60:09、5.61km。平均105・最大124bpm、Aerobic TE1.6、Load16。速度・傾斜は処方継承で直接確認ではない。膝痛・違和感なし。
+      positives: 約60分の実施と膝痛・違和感なしを確認。「かなり楽・心肺負担感なし」はGarminの低い心拍反応と整合する。
+      concerns: 数値RPE・会話可能性・翌日反応は未確認。目標RPE3〜4を下回った可能性はあるが、TE単独で効果不足を断定しない。心拍・勾配計測とラップ区間にも限界がある。
+      recent_comparison: 直近8週間の同モードEnduranceは0件で今回が初回。8/30 Standardは45:04・平均126/最大145bpm・TE2.8・Load52で「かなり軽い」所感だったが、モード・処方・メイン完遂状況が異なるため反復成功や体力向上の根拠には数えない。10/10
+        Aの翌日実施は文脈として保持。
+      next_workout: レビューが反映されるまではmaintain。次回EnduranceもWU5分5.2km/h・4%、メイン50分5.8km/h・6%、CD5分5.0km/h・2%の計60分を基準とする。レビューで目的適合と次回限定の1項目調整の必要性を比較し、採用時だけ試行を登録する。数値RPE、会話、膝、翌日影響を確認する。
+    menu_decision:
+      status: final
+      outcome: keep
+      next_session_action: maintain
+      trial_targets: none
+      fact: 本人はC60を実施し、かなり楽・心肺負担感なし。膝痛・明確な違和感なし。60:09、平均105/最大124bpm、TE1.6、Load16。
+      interpretation: 主観とGarmin上の低い負荷反応は整合し、初期処方の目標RPE3〜4未満の可能性がある。長時間登坂への目的適合はこの一回だけでは確定しない。
+      hypothesis: メインの速度・傾斜・時間のうち1項目だけを次回限定で小幅調整する余地がある。計測条件と翌日反応の確認が必要。
+      rationale: 同モード初回のため恒久変更をしない。今回の依頼は外部レビューでの目的適合評価を優先し、それまで通常処方を暫定維持する。異なるStandardを同条件の2回目に数えない。
+      evidence:
+      - 2026-10-11 C_treadmill endurance
+      review_conditions: J-005/B-005で外部レビューの根拠・計測の限界・翌日反応を照合し、次回だけの1項目調整か維持かを再判断。同モードで比較可能な完遂2回以上の同方向の根拠が揃うまでは恒久改定しない。
