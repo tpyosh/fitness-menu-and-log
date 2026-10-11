@@ -144,7 +144,7 @@
       "created_on": "2026-10-10",
       "source_session": "2026-10-04 A_full",
       "source_review": "data/logs/reviews/current-assessment.md",
-      "status": "active",
+      "status": "completed",
       "applies_to": "next_A_session",
       "supersedes": "2026-10-04-A-upper-trial",
       "purpose": "Lat47kgの次回限定試行のみ継続。Chest40kgは10/7 Bで困難だったため保留し、通常33kgで確認する。",
@@ -153,6 +153,38 @@
           "exercise_id": "lat_pulldown",
           "fields": {
             "weight_kg": 47
+          }
+        }
+      ],
+      "closed_on": "2026-10-10",
+      "closure_reason": "10/10 A60でLat47kg・試行指定RIR1〜2を実施したと本人確認。痛み・明確なフォーム崩れなし。通常重量への恒久反映はせず次回Aの同条件継続確認へ移す。",
+      "target_results": [
+        {
+          "exercise_id": "lat_pulldown",
+          "status": "completed",
+          "actual_weight_kg": 47,
+          "rir": "1-2",
+          "provenance": "user_reported",
+          "exact_reps": "unknown",
+          "pain_or_form_issue": "none"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-11-A-lat-confirmation",
+      "menu": "A",
+      "created_on": "2026-10-11",
+      "source_session": "2026-10-10 A_full",
+      "source_review": "data/logs/reviews/current-assessment.md",
+      "status": "active",
+      "applies_to": "next_A_session",
+      "purpose": "10/10 Aで成立したLat47kg・試行RIR1〜2を次回Aだけ同条件で継続確認。追加増量と通常処方の恒久変更は行わない。",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47,
+            "rir": "1-2"
           }
         }
       ]

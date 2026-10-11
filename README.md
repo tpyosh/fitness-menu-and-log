@@ -1,6 +1,6 @@
 # fitness-menu-and-log
 
-## 最新メニュー Quick Reference（2026-10-10時点）
+## 最新メニュー Quick Reference（2026-10-11時点）
 
 この冒頭セクションを、ユーザがGitHubアプリですぐ確認するための最新メニューとして運用する。完全版は `data/menus/current-menus.md` を参照し、メニュー変更時は `README.md` 冒頭、`data/menus/current-menus.md`、`data/menus/menu-history.md` を必ず同期する。
 
@@ -11,9 +11,9 @@
 - Seated Leg Curl: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
 - Leg Extension: 40kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60〜75秒
 - Lat Pulldown: 40kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
-  - **次回Aのみ: 47kg**（通常40kgから1段増。2026-10-10レビュー）。RIR 1〜2を目安に、上限回数に固執せず、フォーム崩れや痛みが出る前に終了する。
+  - **次回Aのみ: 47kg**（通常40kg。10/10の同条件を継続確認）。8〜12回×2set・RIR 1〜2。追加増量せず、回数下限未達・痛み・フォーム崩れなら通常40kgへ戻す。
 - Chest Press: 33kg（参考）x 8〜12回 x 2set, RIR 2〜3, rest 90秒
-  - **次回A: 33kgで確認**。10/7 Bで40kgが難しかったため、40kg試行は保留。8〜12回×2set・RIR 2〜3で確認し、再試行は困難の内容と33kgでの実績を確認してから判断する。
+  - **次回A: 33kgを維持**。10/10 Aは指定回数範囲・RIR 2〜3どおり。10/7 Bの40kg困難の詳細は未確認のため、40kg試行は保留する。
 - Hip Abduction (Outward / 外向き): 61kg（参考）x 12〜15回 x 2set, RIR 2〜3, rest 60秒
 - Abdominal: 42.5kg（参考）x 10〜15回 x 2set, RIR 2〜3, rest 60秒
 - トレッドミル 18分: 6.2 km/h・12% x 6分 → 6.3 km/h・13% x 6分 → 6.2 km/h・14% x 6分

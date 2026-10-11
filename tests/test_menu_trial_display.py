@@ -1,5 +1,6 @@
 """Check that each active trial appears beside its own menu exercise."""
 
+import json
 import shutil
 import subprocess
 import tempfile
@@ -10,6 +11,12 @@ from scripts.fitness.paths import ROOT
 
 
 class MenuTrialDisplayTests(unittest.TestCase):
+    def setUp(self):
+        trials = json.loads((ROOT / "data/menus/active-trials.json").read_text())
+        active_a = [trial for trial in trials["trials"] if trial["menu"] == "A" and trial["status"] == "active"]
+        self.assertEqual(len(active_a), 1)
+        self.active_a_trial_id = active_a[0]["id"]
+
     def validate_with_change(self, filename, before, after):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -31,14 +38,14 @@ class MenuTrialDisplayTests(unittest.TestCase):
             "README.md", "**次回Aのみ: 47kg**", "**次回Aのみ: 54kg**",
         )
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("trial missing from Quick Reference: 2026-10-10-A-lat-trial", result.stderr)
+        self.assertIn(f"trial missing from Quick Reference: {self.active_a_trial_id}", result.stderr)
 
     def test_b_lat_trial_cannot_satisfy_missing_a_full_menu(self):
         result = self.validate_with_change(
             "data/menus/current-menus.md", "40kg → **47kg**", "40kg → **54kg**",
         )
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("trial missing from current menu: 2026-10-10-A-lat-trial", result.stderr)
+        self.assertIn(f"trial missing from current menu: {self.active_a_trial_id}", result.stderr)
         self.assertNotIn("baseline hash mismatch", result.stderr)
 
 

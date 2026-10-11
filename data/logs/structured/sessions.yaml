@@ -2780,3 +2780,506 @@ sessions:
       calories: 20
       avg_temp: unknown
       notes: Lap 4。表示時間00:05:35.4。区間対応はB60の既定運用による。
+  - date: '2026-10-10'
+    start_time: unknown
+    session_type: A_full
+    segment_type: full_session
+    prescription_id: 2026-08-31-baseline
+    trial_id: 2026-10-10-A-lat-trial
+    execution_basis: menu_A60_completed_as_prescribed_with_confirmed_one_session_trial
+    duration_min: 69.62
+    duration: '01:09:37'
+    duration_seconds: 4177
+    avg_hr: 122
+    max_hr: 161
+    aerobic_te: 3.1
+    anaerobic_te: 1.1
+    exercise_load: 85
+    calories: 480
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: unknown
+    zone1_time: '21:48'
+    zone2_time: '23:43'
+    zone3_time: '8:39'
+    zone4_time: '14:36'
+    zone5_time: '0:00'
+    subjective_fatigue: 全体的に疲労感は心地よい。明確に部分的な筋肉痛はない。
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: 通常処方に対してLat Pulldownのみ次回限定試行47kg・RIR 1〜2。その他は参考重量・指定RIRどおり。回数は指定範囲内で正確な各set回数・上限達成は未報告。warmup
+      8:01.9、treadmill_main 18:06。
+    notes: Garmin画像3枚から転記。日付・A60は本人指定。メニューと次回限定試行、RIRは指定どおりとの本人確認。Lap 1〜4は既定のwarmup・machine・treadmill_main・cooldownとして対応付ける。筋肉痛の申告時点は未指定で、翌日と断定しない。
+      運動中・終了後の痛みと明確なフォーム崩れはどちらもなしと追加回答。
+    source_metadata:
+      source: Garmin Connect screenshots and user report
+      recorded_on: '2026-10-11'
+      garmin_date: unknown
+      session_date_provenance: user_reported
+      session_type_provenance: user_reported
+      source_images:
+      - codex-clipboard-ab21e56d-84e1-4306-96af-829919098c78.png
+      - codex-clipboard-8ad6b235-a855-49cf-99eb-bdc70ae64466.png
+      - codex-clipboard-e9b198d6-78ea-4b5a-b7f8-6cdb0e60c2b5.png
+      lap_segment_mapping: repository_default_A60_four_laps
+    minimum_subjective:
+      overall_load: appropriate
+      overall_load_provenance: interpretation_from_prescribed_RIR_and_comfortable_fatigue
+      muscle_soreness:
+        status: none
+        areas: []
+        timing: unknown
+        provenance: user_reported
+      pain_or_form_issue:
+        status: none
+        details: 運動中・終了後の痛みと明確なフォーム崩れはどちらもなし（本人追加回答）。
+        provenance: user_reported
+    prescribed_workout:
+      source: data/menus/prescriptions.json
+      prescription_id: 2026-08-31-baseline
+      menu: A
+      machine_weights_kg:
+        seated_leg_press: 125
+        seated_leg_curl: 40
+        leg_extension: 40
+        lat_pulldown: 40
+        chest_press: 33
+        hip_abduction_outward: 61
+        abdominal: 42.5
+      prescribed_machine_sets: 15
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 8
+          speed_kmh: 6.3
+          incline_percent: 11
+      - id: seated_leg_press
+        kind: machine
+        weight_kg: 125
+        reps_min: 12
+        reps_max: 15
+        sets: 3
+        rir: 2-3
+      - id: seated_leg_curl
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: leg_extension
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: lat_pulldown
+        kind: machine
+        weight_kg: 40
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 2-3
+      - id: chest_press
+        kind: machine
+        weight_kg: 33
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 2-3
+      - id: hip_abduction_outward
+        kind: machine
+        weight_kg: 61
+        reps_min: 12
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: abdominal
+        kind: machine
+        weight_kg: 42.5
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 12
+        - duration_min: 6
+          speed_kmh: 6.3
+          incline_percent: 13
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 14
+    reported_deviations: []
+    effective_execution:
+      basis: 本人が通常メニュー・有効な次回限定試行とRIRへの準拠を明示。重量・RIRはuser_reported、未変更のset数・回数範囲・トレッドミル設定は処方継承。
+      trial_application:
+        trial_id: 2026-10-10-A-lat-trial
+        provenance: user_reported
+        resolution_note: 作成日と実施日が同じため自動解決はtrial_id=null。本人の次回限定試行への準拠申告から当該試行を明示適用。RIR
+          1〜2はcurrent-menus.mdの試行表示に由来する。
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 8
+          speed_kmh: 6.3
+          incline_percent: 11
+        provenance:
+          steps: prescribed_no_deviation_reported
+          actual_duration_min: observed
+        direct_observations:
+          observed:
+          - field: actual_duration_min
+            value: 8.031666666666666
+            set_index:
+        set_overrides: {}
+        actual_duration_min: 8.031666666666666
+      - id: seated_leg_press
+        kind: machine
+        weight_kg: 125
+        reps_min: 12
+        reps_max: 15
+        sets: 3
+        rir: 2-3
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 125
+            set_index:
+          - field: rir
+            value: 2-3
+            set_index:
+        set_overrides: {}
+      - id: seated_leg_curl
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 40
+            set_index:
+          - field: rir
+            value: 2-3
+            set_index:
+        set_overrides: {}
+      - id: leg_extension
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 40
+            set_index:
+          - field: rir
+            value: 2-3
+            set_index:
+        set_overrides: {}
+      - id: lat_pulldown
+        kind: machine
+        weight_kg: 47
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 47
+            set_index:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: chest_press
+        kind: machine
+        weight_kg: 33
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 2-3
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 33
+            set_index:
+          - field: rir
+            value: 2-3
+            set_index:
+        set_overrides: {}
+      - id: hip_abduction_outward
+        kind: machine
+        weight_kg: 61
+        reps_min: 12
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 61
+            set_index:
+          - field: rir
+            value: 2-3
+            set_index:
+        set_overrides: {}
+      - id: abdominal
+        kind: machine
+        weight_kg: 42.5
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: weight_kg
+            value: 42.5
+            set_index:
+          - field: rir
+            value: 2-3
+            set_index:
+        set_overrides: {}
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 12
+        - duration_min: 6
+          speed_kmh: 6.3
+          incline_percent: 13
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 14
+        provenance:
+          steps: prescribed_no_deviation_reported
+          actual_duration_min: observed
+        direct_observations:
+          observed:
+          - field: actual_duration_min
+            value: 18.1
+            set_index:
+        set_overrides: {}
+        actual_duration_min: 18.1
+      exact_reps: unknown
+      upper_rep_limit_achieved: unknown
+    machine_adjustments:
+    - machine: lat_pulldown
+      planned_weight_kg: 40
+      trial_weight_kg: 47
+      actual_weight_kg: 47
+      adjustment: one_step_heavier_trial
+      resolution_basis: 2026-10-10-A-lat-trialとLat重量表の40→47を照合。本人が試行・指定RIRどおりと確認。
+      subjective_comment: RIR 1〜2の指定どおり。
+    subjective_notes:
+      exercise_feedback:
+        lat_pulldown: 47kg・8〜12回×2setの範囲、RIR 1〜2の指定どおり。正確な回数は未申告。
+        chest_press: 33kg・8〜12回×2setの範囲、RIR 2〜3の指定どおり。40kgは今回の試行対象ではない。
+        other_machines: 全種目で通常メニュー・RIR 2〜3の指定どおり。
+      muscle_soreness: 明確に部分的な筋肉痛はない。時点未指定。
+      overall_fatigue: 心地よい疲労感。
+      pain: なし（運動中・終了後）
+      clear_form_issue: なし
+      next_day_impact: unknown
+    nutrition_hydration:
+      resting_calories: 89
+      active_calories: 391
+      total_calories_burned: 480
+      calories_consumed:
+      calories_net: -480
+      estimated_sweat_loss_ml: 923
+      fluid_consumed_ml:
+      fluid_net_ml: -923
+    training_effect_labels:
+      aerobic: Impacting
+      anaerobic: Some Benefit
+    body_battery:
+      net_impact: -9
+    workout_details:
+      total_reps: unknown
+      total_sets: 15
+      total_sets_provenance: prescribed_no_deviation_reported
+      garmin_displayed_total_sets: 1
+      volume_kg: unknown
+    intensity_minutes:
+      moderate_min: 34
+      vigorous_min: 25
+      vigorous_multiplier: 2
+      total_weighted_min: 84
+    heart_rate_zones:
+    - zone: 5
+      label: Maximum
+      range_bpm: ">165"
+      duration: '0:00'
+      percentage: 0
+    - zone: 4
+      label: Threshold
+      range_bpm: 147-165
+      duration: '14:36'
+      percentage: 20
+    - zone: 3
+      label: Aerobic
+      range_bpm: 129-146
+      duration: '8:39'
+      percentage: 12
+    - zone: 2
+      label: Easy
+      range_bpm: 110-128
+      duration: '23:43'
+      percentage: 34
+    - zone: 1
+      label: Warm Up
+      range_bpm: 92-109
+      duration: '21:48'
+      percentage: 31
+    laps:
+    - lap: 1
+      duration: '8:01.9'
+      cumulative_time: '8:01.9'
+      average_hr_bpm: 127
+      maximum_hr_bpm: 148
+      calories_kcal: 72
+    - lap: 2
+      duration: '36:50'
+      cumulative_time: '44:52'
+      average_hr_bpm: 110
+      maximum_hr_bpm: 146
+      calories_kcal: 190
+    - lap: 3
+      duration: '18:06'
+      cumulative_time: '1:02:58'
+      average_hr_bpm: 147
+      maximum_hr_bpm: 161
+      calories_kcal: 193
+    - lap: 4
+      duration: '6:38.9'
+      cumulative_time: '1:09:37'
+      average_hr_bpm: 115
+      maximum_hr_bpm: 155
+      calories_kcal: 26
+    lap_distance_metrics:
+      distance: 0
+      average_speed: 0
+      moving_time: 0
+      interpretation: Garminの表示値。傾斜歩行の実際の距離・速度が0である証拠ではない。
+    segments:
+    - segment_type: warmup
+      duration_min: 8.03
+      avg_hr: 127
+      max_hr: 148
+      calories: 72
+      avg_temp: unknown
+      notes: Lap 1。表示時間8:01.9。区間対応はA60既定。
+    - segment_type: machine
+      duration_min: 36.83
+      avg_hr: 110
+      max_hr: 146
+      calories: 190
+      avg_temp: unknown
+      notes: Lap 2。表示時間36:50。区間対応はA60既定。
+    - segment_type: treadmill_main
+      duration_min: 18.1
+      avg_hr: 147
+      max_hr: 161
+      calories: 193
+      avg_temp: unknown
+      notes: Lap 3。表示時間18:06。区間対応はA60既定。
+    - segment_type: cooldown
+      duration_min: 6.65
+      avg_hr: 115
+      max_hr: 155
+      calories: 26
+      avg_temp: unknown
+      notes: Lap 4。表示時間6:38.9。区間対応はA60既定。
+    data_quality_notes:
+    - 心拍Zone合計68:46は総時間69:37より51秒短い。割合合計97%。未分類時間を推測補完しない。
+    - ラップ別カロリー合計481kcalと全体480kcalは1kcal差。表示値をそれぞれ保持。
+    - ラップ時間合計69:36.8と総時間69:37は0.2秒差。表示丸めの可能性があるが補正しない。
+    - Garmin Total Sets 1・Total Reps --・Volume --kgは種目別実績を示さない。15setは処方継承値。
+    - 消費・発汗はGarmin推定。飲食・飲水量未記録のnet表示から実際の収支を断定しない。
+    - 同日作成試行の適用はユーザの明示申告に基づく。通常処方のRIR 2〜3と試行時RIR 1〜2を混同しない。
+    feedback:
+      completed: A60を69:37で実施。Lat47kg・RIR1〜2の試行、Chest33kgを含む他種目は参考重量・RIR2〜3の指定どおり。7種目15setは処方継承。
+      positives: 指定RIRへの準拠と心地よい疲労感を本人が確認。明確な局所筋肉痛なし。69:37は目安60〜70分内。 運動中・終了後の痛み、明確なフォーム崩れはどちらもなし。
+      concerns: 正確な各set回数・上限達成、筋肉痛の申告時点・翌日への影響は未確認。筋肉痛がないことだけで刺激不足とはしない。
+      recent_comparison: 直近8週間のA_fullは10/4・9/20・8/23。10/4は62:53、Lat40kg・上半身RIR4+。今回は69:37で6:44長く、machine区間は30:30→36:50で6:20長いが理由は不明。メインは18:05・平均146/最大160→18:06・147/161と近い。9/20は70:24、Lat
+        RIR4+、Load90（重量未確認）。今回Load85・TE3.1は近いが筋力や回復改善の証明ではない。8/23は73:30・Load139、ジム前の自転車/ランがあり心拍反応の直接比較に制約がある。
+      next_workout: 通常処方は維持。次回AのみLat47kg・8〜12回×2set・RIR1〜2の同条件で継続確認し、追加増量しない。回数下限未達・痛み・フォーム崩れなら打ち切り、通常40kgへ戻す。Chest33kg・8〜12回×2set・RIR2〜3を維持し40kgは保留。他種目と有酸素設定も維持する。記録できればLat最終setの回数・RIRと翌日反応を残す。
+    menu_decision:
+      status: final
+      fact: Lat47kg・試行RIR1〜2、その他は通常参考重量・指定RIRどおりと本人確認。心地よい疲労感、明確な局所筋肉痛なし。運動中・終了後の痛み、明確なフォーム崩れはどちらもなし。
+      interpretation: 47kgで狙った余力に近づいた可能性を支持する初回A試行。異なる重量と目標RIRの比較であり筋力向上を断定しない。
+      hypothesis: Lat47kgは次回も同条件で継続確認できる可能性がある。
+      rationale: 10/10 Aの初回試行は指定範囲・RIRと痛みなし・明確なフォーム崩れなしが両立した。追加増量せず同重量の次回限定継続確認を支持する。B10/7はset数・順序が異なりAの反復成功と同一視しない。正確な回数と上限達成は不明で、通常重量の恒久変更は保留。
+      evidence:
+      - 2026-10-10 A_full
+      - 2026-10-04 A_full
+      - 2026-09-20 A_full
+      - 2026-08-23 A_full
+      - 2026-10-07 B_full
+      review_conditions: 次回AのLat47kgで指定回数範囲・RIR1〜2・フォーム・無痛と翌日反応を再確認。回数下限未達・痛み・フォーム崩れなら通常40kgへ戻す。Chest40kg困難の内容は不明のまま保留。第三者レビューはJ-002/B-001を優先する。
+      outcome: keep
+      next_session_action: trial_one_step
+      trial_targets:
+      - machine: lat_pulldown
+        planned_weight_kg: 40
+        trial_weight_kg: 47
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 1-2
+        trial_id: 2026-10-11-A-lat-confirmation
