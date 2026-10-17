@@ -11,7 +11,7 @@
 
 セッション取り込みでは、`scripts/workout_feedback.py` が通常処方→有効な次回限定試行→ユーザの明示的な差分→直接観測値の順で実施基準を組み立てる。`prescribed_no_deviation_reported` は直接観測した値とは別の根拠である。処方の回数範囲を実際の正確な回数へ変換しない。申告と観測が衝突した箇所だけ確認する。
 
-次回限定試行は同じA/B/Cの次セッション1件にだけ適用する。そのセッションを記録したら `active-trials.json` の状態を `completed` / `declined` / `expired` に更新する。更新漏れがある場合は検証と次の処方解決を失敗させる。
+次回限定試行は同じA/B/Cの次セッション1件にだけ適用する。Cではさらに同じ `c_mode` に限定し、別モードの実施だけでは適用・消化しない。作成日以降かつ根拠セッションより後の実施を対象とし、元セッションへは遡及しない。そのセッションを記録したら `active-trials.json` の状態を `completed` / `declined` / `expired` に更新する。更新漏れがある場合は検証と次の処方解決を失敗させる。
 
 処方を恒久変更するときは、通常の `README.md` / `current-menus.md` / `menu-history.md` の同期に加え、`prescriptions.json` に新しい版を追加し、`current_id`と`source_sha256`を更新する。`python3 scripts/workout_feedback.py --date YYYY-MM-DD --menu A --completed`で解決結果を確認し、`ruby scripts/validate_fitness_data.rb`とテストを実行する。
 

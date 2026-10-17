@@ -188,6 +188,56 @@
           }
         }
       ]
+    },
+    {
+      "id": "2026-10-17-C-endurance-incline-trial",
+      "menu": "C",
+      "c_mode": "endurance",
+      "created_on": "2026-10-17",
+      "source_session": "2026-10-11 C_treadmill",
+      "source_review": "data/logs/reviews/current-assessment.md",
+      "status": "active",
+      "applies_to": "next_C_endurance_session",
+      "purpose": "10/11のかなり楽という所感と、10/17に確認した翌日の膝痛・違和感および支障のある疲労なしを踏まえ、C再構成依頼の範囲で次回Enduranceだけメイン傾斜6→7%を試す。通常処方は6%を維持する。",
+      "entry_conditions": [
+        "長時間歩行・登坂への耐性が目的でEnduranceを選ぶ",
+        "実施直前に膝痛・明確な違和感がなく、支障のある疲労が残っていない",
+        "A/Bや登山・サイクリングの回復を優先できる"
+      ],
+      "fallback": "条件を満たさなければ7%は実施せず、症状と疲労に応じて通常6%、Recoveryまたは休養を選ぶ。膝痛がある日はCを行わない。",
+      "reduction_conditions": [
+        "目標RPE3〜4を超える",
+        "会話が難しい",
+        "局所疲労が強すぎる"
+      ],
+      "reduction_action": "まず傾斜7→6%へ戻し、必要ならさらに傾斜、次に速度を下げる。",
+      "stop_conditions": [
+        "実施中に膝痛または明確な違和感が出る"
+      ],
+      "evaluation_conditions": [
+        "RPE3〜4・会話可能",
+        "膝痛や明確な違和感なし・強すぎる局所疲労なし",
+        "翌日のA/B・日常活動への支障なし"
+      ],
+      "closure_conditions": "次のEndurance1件を記録したら実施はcompleted、見送りはdeclined、置換はexpiredとして閉じる。別モードのCには適用せず、それだけでは消化しない。実施結果を踏まえ継続確認・低減・終了を判断する。",
+      "preserved_parameters": "WU5分5.2km/h・4%、メイン50分5.8km/h、CD5分5.0km/h・2%、計60分。",
+      "authorization_basis": "2026-10-17のC再構成依頼に対するコーチング判断。本人が7%を個別に指定した申告ではない。",
+      "followup_reported_on": "2026-10-17",
+      "followup_original_text": "痛み・支障のある疲労はなかった",
+      "targets": [
+        {
+          "exercise_id": "treadmill_main",
+          "fields": {
+            "steps": [
+              {
+                "duration_min": 50,
+                "speed_kmh": 5.8,
+                "incline_percent": 7
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

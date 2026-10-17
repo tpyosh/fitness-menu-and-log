@@ -3411,6 +3411,15 @@ sessions:
         cardiorespiratory_load: 心肺に負担がかかった感じもない（本人申告）
         local_fatigue: unknown
         next_day_impact_on_a_b_or_daily_activity: unknown
+    user_followups:
+    - reported_on: '2026-10-17'
+      pertains_to_date: '2026-10-12'
+      provenance: user_reported
+      question: 10/11のC（60分）の翌日、膝の痛み・違和感や、日常生活／次の運動に響く疲労はありましたか？
+      original_text: 痛み・支障のある疲労はなかった
+      next_day_knee_pain_or_discomfort: none
+      next_day_impact_on_a_b_or_daily_activity: none
+      note: 当初のunknownと当時の判断は記録として保持。筋肉痛全般・軽い疲労・フォーム・数値RPEまで否定する回答とは扱わない。現在の次回判断はJ-005/B-005とactive-trials.jsonを参照。
     nutrition_hydration:
       resting_calories: 73
       active_calories: 196

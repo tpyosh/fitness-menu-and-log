@@ -128,10 +128,13 @@ trials.fetch('trials').each do |trial|
     errors << "missing review reference for trial #{trial['id']}"
   end
   if trial['status'] == 'active'
-    subsequent = csv_keys.find do |session_date, session_type|
-      session_date > trial.fetch('created_on') && session_type.start_with?("#{trial.fetch('menu')}_")
+    subsequent = sessions.find do |session|
+      session['date'].to_s >= trial.fetch('created_on') &&
+        session['date'].to_s > trial.fetch('source_session').split.first &&
+        session['session_type'].start_with?("#{trial.fetch('menu')}_") &&
+        (trial['menu'] != 'C' || session['c_mode'].nil? || session['c_mode'] == trial['c_mode'])
     end
-    errors << "active trial not closed after #{subsequent[0]}: #{trial['id']}" if subsequent
+    errors << "active trial not closed after #{subsequent['date']}: #{trial['id']}" if subsequent
     if current
       baseline = current.fetch('menus').fetch(trial.fetch('menu'))
       trial.fetch('targets').each do |target|

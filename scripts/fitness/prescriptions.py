@@ -204,14 +204,23 @@ def validate_trials(trials: dict[str, Any], manifest: dict[str, Any]) -> None:
                 raise PrescriptionError("Trial target has no fields")
             if not set(target["fields"]).issubset(exercise):
                 raise PrescriptionError("Trial target has an unknown field")
+            _validate_exercise({**exercise, **target["fields"]})
 
 
-def active_trials(trials: dict[str, Any], menu: str, session_date: str | None = None) -> list[dict[str, Any]]:
+def active_trials(
+    trials: dict[str, Any], menu: str, session_date: str | None = None,
+    *, c_mode: str | None = None,
+) -> list[dict[str, Any]]:
     return [
         item for item in trials["trials"]
         if item["menu"] == menu
         and item["status"] == "active"
-        and (session_date is None or item["created_on"] < session_date)
+        and (
+            session_date is None
+            or (item["created_on"] <= session_date
+                and item.get("source_session", item["created_on"]).split()[0] < session_date)
+        )
+        and (menu != "C" or item.get("c_mode") == c_mode)
     ]
 
 
@@ -224,8 +233,14 @@ def validate_trial_lifecycle(trials: dict[str, Any], root: Path = ROOT) -> None:
             continue
         later_same_menu = [
             session for session in sessions
-            if session["date"] > trial["created_on"]
+            if session["date"] >= trial["created_on"]
+            and session["date"] > trial.get("source_session", trial["created_on"]).split()[0]
             and session["session_type"].startswith(trial["menu"] + "_")
+            and (
+                trial["menu"] != "C"
+                or not re.search(r"c_mode: (recovery|standard|endurance)\b", session.get("notes", ""))
+                or re.search(r"c_mode: (recovery|standard|endurance)\b", session["notes"])[1] == trial["c_mode"]
+            )
         ]
         if later_same_menu:
             raise PrescriptionError(f"Active trial must be closed after {later_same_menu[0]['date']}: {trial['id']}")

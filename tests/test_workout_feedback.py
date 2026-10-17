@@ -118,6 +118,47 @@ class WorkoutFeedbackTests(unittest.TestCase):
             with self.assertRaises(MODULE.PrescriptionError):
                 MODULE.validate_trial_lifecycle(trials, root)
 
+    def test_endurance_trial_does_not_change_other_c_modes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            menu_dir = root / "data/menus"
+            menu_dir.mkdir(parents=True)
+            (menu_dir / "current-menus.md").write_text((ROOT / "data/menus/current-menus.md").read_text())
+            (menu_dir / "prescriptions.json").write_text(json.dumps(self.manifest))
+            trials = {"schema_version": 1, "trials": [{
+                "id": "test-C-endurance", "menu": "C", "c_mode": "endurance",
+                "created_on": "2026-10-17", "source_session": "2026-10-11 C_treadmill", "status": "active",
+                "targets": [{"exercise_id": "treadmill_main", "fields": {"steps": [
+                    {"duration_min": 50, "speed_kmh": 5.8, "incline_percent": 7}
+                ]}}],
+            }]}
+            (menu_dir / "active-trials.json").write_text(json.dumps(trials))
+            sessions = root / "data/logs/structured/sessions.csv"
+            sessions.parent.mkdir(parents=True)
+            sessions.write_text("date,session_type,notes\n2026-10-18,C_treadmill,c_mode: recovery\n")
+            self.assertEqual(
+                MODULE.active_trials(trials, "C", "2026-10-17", c_mode="endurance")[0]["id"],
+                "test-C-endurance",
+            )
+            for mode, incline, duration in [("recovery", 5, 20), ("standard", 8, 35), ("endurance", 7, 50)]:
+                resolved = MODULE.resolve_session("2026-10-19", "C", c_mode=mode, completed_as_prescribed=True, root=root)
+                main = next(e for e in resolved["effective_execution"] if e["id"] == "treadmill_main")
+                self.assertEqual(main["steps"][0]["incline_percent"], incline)
+                self.assertEqual(main["steps"][0]["duration_min"], duration)
+                self.assertEqual(resolved["trial_id"], "test-C-endurance" if mode == "endurance" else None)
+            sessions.write_text("date,session_type,notes\n2026-10-18,C_treadmill,c_mode: endurance\n")
+            with self.assertRaises(MODULE.PrescriptionError):
+                MODULE.validate_trial_lifecycle(trials, root)
+
+    def test_incomplete_treadmill_trial_fails_validation(self):
+        trials = {"schema_version": 1, "trials": [{
+            "id": "test-invalid-C", "menu": "C", "c_mode": "endurance",
+            "created_on": "2026-10-17", "status": "active",
+            "targets": [{"exercise_id": "treadmill_main", "fields": {"steps": [{"incline_percent": 7}]}}],
+        }]}
+        with self.assertRaises(MODULE.PrescriptionError):
+            MODULE.validate_trials(trials, self.manifest)
+
     def test_one_set_can_change_without_replacing_workout(self):
         effective = MODULE.interpret_execution(
             self.a_menu, completed_as_prescribed=True,

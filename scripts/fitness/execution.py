@@ -100,7 +100,7 @@ def resolve_session(
     trials = load_json(root / "data/menus/active-trials.json")
     validate_trials(trials, manifest)
     validate_trial_lifecycle(trials, root)
-    applicable = active_trials(trials, menu, session_date)
+    applicable = active_trials(trials, menu, session_date, c_mode=c_mode)
     if len(applicable) > 1:
         raise PrescriptionError(f"Multiple active trials for {menu}")
     trial = applicable[0] if applicable else None
