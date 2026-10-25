@@ -1,6 +1,6 @@
 # Garmin Log Intake Template
 
-Garmin画像からテキスト転記するときのテンプレートです。画像を見ながら、分かる範囲だけを正確に埋めます。推測はしません。
+Garmin画像・Connect画面から転記するときのテンプレートです。分かる範囲だけを正確に埋めます。全欄を埋める必要はなく、推測はしません。Connectの取得のみの依頼では、このテンプレートによる正本保存は行いません。
 
 ## セッション要約テンプレート
 
@@ -39,13 +39,13 @@ effective_execution:
   # 処方の回数範囲を、実際の正確な回数に変換しない。
   exercises: []
 minimum_subjective:
-  overall_load: light | appropriate | heavy | mixed
+  overall_load: light | appropriate | heavy | mixed | unknown
   muscle_soreness:
-    status: none | light | strong
+    status: none | light | strong | unknown
     areas: []
     timing: pre_session | post_session | next_day
   pain_or_form_issue:
-    status: none | present
+    status: none | present | unknown
     details:
 machine_adjustments:
   - machine:
@@ -178,13 +178,13 @@ segments:
 
 ## 転記時のルール
 
-- Garmin画像やユーザのテキストから確認できる値だけを埋める
+- Garmin画像・Connect画面やユーザのテキストから確認できる値だけを埋める
 - A/B/Cを実施した申告があれば、該当日の版付き処方を先に解決し、ユーザ入力を原則として差分と読む。`prescription_id`と`effective_execution`に継承元・上書き元のprovenanceを残す
 - Garminが重量・set数・速度を表示しないことだけを理由に、処方から継承できる実施基準を`unknown`へ戻さない。Garminが表示する不完全な集計は別に保持する
 - メニューが見つからない、入力が別メニューへの置換、または直接観測同士が矛盾する場合は、その範囲だけ確認する
-- 分からない項目は空欄または `unknown`
-- 通常の最小主観入力は `minimum_subjective` の負荷感、筋肉痛、運動中の痛み・明確なフォーム問題とする。詳細なreps・RIRは任意
-- メニュー判断に必要な最小主観が欠けている場合は、ユーザへ1〜3問だけ短く確認する。未質問の欠損だけで `defer` にしない
+- 分からない数値はCSVで空欄、YAMLで空欄（`null`）。文字・主観は空欄または `unknown`。未取得を0にせず、主要値・ラップ・ゾーンの欠損でも読めた情報を保存する
+- `minimum_subjective` の負荷感、筋肉痛、痛み・フォーム問題や詳細なreps・RIRは任意。未申告を「なし」にせず、毎回一律に質問しない
+- 対象・記録分類の特定、安全や次回判断が実質的に変わる情報だけ、既存文脈で補えなければ1〜3問に絞る。事実保存は進め、重要な判断だけ `pending_user_input` とする。小さな欠損は限界と再評価条件を添え、未質問の欠損だけで `defer` にしない
 - `session_type` は必ず分類ルールに従う
 - `segments` は存在するものだけ残し、不要な雛形は削ってよい
 - A/Bのマシンパート、後半トレッドミル、追加トレッドミルが分かるなら分割して記録する
@@ -192,8 +192,8 @@ segments:
 - 現行Cとして実施したログは `session_type = C_treadmill` とし、`c_mode = recovery | standard | endurance` を必ず記録する。ユーザから明示的な指定がない限り `Lap 1 = warmup`、`Lap 2 = treadmill_main`、`Lap 3 = cooldown` として転記する。C以外の任意のトレッドミルのみ実施は `treadmill_only` とし、`c_mode = not_applicable` とする
 - Cの予定速度・傾斜は正本の該当モードから転記する。ユーザ入力またはGarmin情報から確認できる実際の設定を別に記録し、不明なら推測しない
 - CのCSV行では、専用列を追加せず `notes` に `c_mode: recovery | standard | endurance` を明記する。YAMLではトップレベルの `c_mode` に保存する
-- `notes` に、画像ファイル名や転記時の補足を残してよい
-- B日は `subjective_notes` をできるだけ埋める
+- `notes` に画像ファイル名や転記時の補足を残してよい。Connect取得では [取得元・重複規約](../logs/structured/README.md#garmin-connectの取得元と重複確認)に従い、URL・activity ID・取得日時・欠損を残し、追加前に既存セッションを照合する
+- B日の `subjective_notes` も本人申告がある範囲だけ埋める
 - ヒップマシンは裸の `hip_abduction` / `Hip Abduction` を使わず、内向きは `hip_adduction_inward` / `Hip Adduction (Inward / 内向き)`、外向きは `hip_abduction_outward` / `Hip Abduction (Outward / 外向き)` と記録する
 - ユーザ入力や画像から方向を特定できない場合は、どちらかへ推測で割り当てず `hip_abduction_direction_unknown` とし、元表現を `notes` に残す
 - 手動ラップを使う場合は、cooldown に入るとき負荷を下げた瞬間にラップを切る
@@ -211,7 +211,7 @@ segments:
 3. AはA、BはB、Cは同じ `c_mode` の `C_treadmill` 同士、同じマシン、同等のトレッドミル処方を優先して比較する
 4. 今回の事実、解釈、仮説、反証またはデータ限界を分ける
 5. `feedback` に、完遂内容、予定との差、良い点、注意点、日付つき直近比較、次回への意味を簡潔な日本語で保存する
-6. `menu_decision.outcome` を `keep` / `adjust` / `defer` から1つ選び、根拠と再評価条件を保存する
+6. 判断を確定できる場合は `menu_decision.outcome` を `keep` / `adjust` / `defer` から1つ選び、根拠と再評価条件を保存する。回答待ちなら無理に選ばず空欄にする
 7. 正本判断と分けて `next_session_action` を決める。正本を維持した次回試行は `outcome: keep`、`next_session_action: trial_one_step` とする
 8. 判断に必要なクリティカル情報が欠ける場合は `status: pending_user_input` と質問を保存し、回答後に `status: final` として判断を確定する
 9. 今回の実績が`data/logs/reviews/current-assessment.md`や`backlog.md`の判断・課題に関係する場合は、既存J/B-IDの根拠・次の確認・解決状態も同期する。解決条件を満たさない課題は閉じず、日付付きレビューメモは作らない

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Garmin Connectログ取得"
+  short_description: "SafariでGarminログを読み、取れた情報で気軽に記録する"

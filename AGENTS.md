@@ -33,6 +33,7 @@
 
 ## ルーティング
 
+- Garmin Connectの指定日・URL・activity IDからの取得（記録依頼なら記録Skillへ接続）: `$fetch-garmin-connect-session`
 - Garminログの転記・保存・比較・次回判断: `$record-garmin-session`
 - 現行メニューの恒久改定と同期: `$revise-training-menu`
 - ChatGPTへのGarminコーチングレビュー依頼または回答反映: `$review-garmin-coaching`
