@@ -176,7 +176,7 @@
       "created_on": "2026-10-11",
       "source_session": "2026-10-10 A_full",
       "source_review": "data/logs/reviews/current-assessment.md",
-      "status": "active",
+      "status": "completed",
       "applies_to": "next_A_session",
       "purpose": "10/10 Aで成立したLat47kg・試行RIR1〜2を次回Aだけ同条件で継続確認。追加増量と通常処方の恒久変更は行わない。",
       "targets": [
@@ -187,6 +187,25 @@
             "rir": "1-2"
           }
         }
+      ],
+      "closed_on": "2026-10-25",
+      "closure_reason": "10/26本人回答で10/25のLat47kg実施を確認したため、回答待ちの暫定expiredをcompletedへ訂正。各set RIR約1〜2、運動中・終了後から翌日まで痛み・明確な違和感、マシンの明確なフォーム崩れなし。completedは実施確認で恒久採用の確定ではない。",
+      "completed_session": "2026-10-25 A_full",
+      "evaluation_status": "not_finalized",
+      "completion_confirmed_on": "2026-10-26",
+      "evaluation_note": "同47kgの次回限定継続を支持。正確な回数・上限達成、疲労持続と日常生活への影響は未確認で、恒久採用評価は確定しない。",
+      "target_results": [
+        {
+          "exercise_id": "lat_pulldown",
+          "status": "completed",
+          "actual_weight_kg": 47,
+          "rir": "1-2",
+          "rir_approximate": true,
+          "pain_or_form_issue": "none",
+          "exact_reps": "unknown",
+          "provenance": "user_reported",
+          "reported_on": "2026-10-26"
+        }
       ]
     },
     {
@@ -196,7 +215,7 @@
       "created_on": "2026-10-17",
       "source_session": "2026-10-11 C_treadmill",
       "source_review": "data/logs/reviews/current-assessment.md",
-      "status": "active",
+      "status": "completed",
       "applies_to": "next_C_endurance_session",
       "purpose": "10/11のかなり楽という所感と、10/17に確認した翌日の膝痛・違和感および支障のある疲労なしを踏まえ、C再構成依頼の範囲で次回Enduranceだけメイン傾斜6→7%を試す。通常処方は6%を維持する。",
       "entry_conditions": [
@@ -237,7 +256,143 @@
             ]
           }
         }
-      ]
+      ],
+      "closed_on": "2026-10-17",
+      "completion_confirmed_on": "2026-10-18",
+      "completed_session": "2026-10-17 C_treadmill",
+      "closure_reason": "2026-10-18本人追加申告で10/17のC60・Main7%試行実施を確認。completedは実施の意味であり評価条件の成立や増量成功の確定ではない。",
+      "evaluation_status": "not_finalized",
+      "evaluation_note": "10/18訂正申告でMain中は会話可能、翌日10/18は特に疲労感なしと確認。疲労感は限定的でまだ上げられそうという初回所感も保持。運動中・終了後・翌日とも膝痛・明確な違和感なしとCodexの事前質問で確認。数値RPE・局所疲労・フォームは未確認。これらの欠損を全判断の一律保留理由とせず、次回運用と恒久改定を分けてレビュー依頼中。",
+      "target_results": [
+        {
+          "exercise_id": "treadmill_main",
+          "status": "completed",
+          "actual_incline_percent": 7,
+          "provenance": "user_reported",
+          "reported_on": "2026-10-18",
+          "speed_kmh": 5.8,
+          "duration_min": 50,
+          "other_fields_provenance": "prescribed_no_deviation_reported"
+        }
+      ],
+      "confirmed_evaluation_observations": {
+        "conversation_possible": true,
+        "next_day_date": "2026-10-18",
+        "next_day_fatigue": "none_notable",
+        "provenance": "user_reported",
+        "reported_on": "2026-10-18",
+        "knee_pain_or_discomfort": "none",
+        "knee_pain_or_discomfort_timing": [
+          "during_session",
+          "post_session",
+          "next_day"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-18-C-endurance-incline-recheck-trial",
+      "menu": "C",
+      "c_mode": "endurance",
+      "created_on": "2026-10-18",
+      "source_session": "2026-10-17 C_treadmill",
+      "source_review": "data/logs/reviews/current-assessment.md",
+      "status": "expired",
+      "applies_to": "next_C_endurance_session",
+      "purpose": "J-005の確定判断（outcome: keep、next_session_action: trial_one_step）に基づき、次回C60の1件だけMain7%を同条件で再確認する。比較参照は2026-10-11 C_treadmill（6%）。通常処方2026-08-31-baselineの6%は維持し、10/17の7%からの追加増量・8%・恒久改定は採用しない。関連課題B-005は目的適合性と次回方針の判断・記録によりresolved。",
+      "entry_conditions": [
+        "C60を任意追加日として実施できる状態で、A/Bの代替や不足分の埋め合わせにしない",
+        "実施直前に膝痛や明確な違和感がなく、通常どおり歩行運動が可能である",
+        "主運動では会話可能な状態を目安とし、速度・時間を同時に引き上げない"
+      ],
+      "fallback": "実施前に膝痛・明確な違和感があれば開始しない。身体状態に応じて通常6%への低減または見送り・中止を優先し、追加日を行わなくても基本計画は成立する。",
+      "reduction_conditions": [
+        "会話の継続が難しくなる",
+        "脚の局所疲労が強い",
+        "フォームの維持が難しくなる"
+      ],
+      "reduction_action": "主運動の傾斜を7%から通常6%へ低減する。速度を増やさず、予定時間の延長で負荷を補わない。低減した事実と理由を記録し、7%での完全な成功として評価しない。",
+      "stop_conditions": [
+        "実施前に膝痛や明確な違和感がある場合は開始しない",
+        "運動中に膝痛や明確な違和感が出る",
+        "危険なふらつき等が生じる",
+        "低減しても強い負担が解消しない"
+      ],
+      "evaluation_conditions": [
+        "C60全体と主運動7%の完遂状況を記録し、中止を予定どおりの完遂にしない",
+        "実際の速度・傾斜・時間の変更有無と、変更・低減・中止した場合の理由を記録する",
+        "主運動中の会話可否を本人申告として確認する",
+        "運動中・終了後・翌日の膝痛や明確な違和感を確認する",
+        "翌日の疲労感を確認し、筋肉痛なし・全活動への支障なしへ拡張しない",
+        "脚の局所疲労とフォームについて本人が把握した内容を記録する",
+        "数値RPEを使う場合は事前に尺度を定義し、尺度と実測値を記録する。任意項目であり過去値を遡及作成しない",
+        "未申告は未確認として残し、評価前に試行成功・7%の恒久採用を確定しない。良好でも恒久改定を自動確定しない"
+      ],
+      "closure_conditions": "次のEndurance1件のみが対象。実施はcompleted、見送りはdeclined、置換はexpiredとして閉じ、完遂・低減・中止の実態と評価状態を区別する。別モードのCでは消化しない。次回の具体的な実施日は未指定。",
+      "preserved_parameters": "通常処方2026-08-31-baselineから主運動の傾斜のみ6→7%。WU5分5.2km/h・4%、Main50分5.8km/h、CD5分5.0km/h・2%、計60分。",
+      "authorization_basis": "2026-10-18のC60レビュー結果反映依頼で、次回7%の1回限定再試行を正式採用。根拠と外部資料の確認範囲・限界はJ-005、目的適合性と次回方針の解決結果はdata/logs/reviews/backlog.mdのB-005を参照。旧試行2026-10-17-C-endurance-incline-trialはcompleted・evaluation_status: not_finalizedのまま保持し、再開しない。",
+      "evaluation_status": "not_finalized",
+      "targets": [
+        {
+          "exercise_id": "treadmill_main",
+          "fields": {
+            "steps": [
+              {
+                "duration_min": 50,
+                "speed_kmh": 5.8,
+                "incline_percent": 7
+              }
+            ]
+          }
+        }
+      ],
+      "closed_on": "2026-10-24",
+      "closure_reason": "次のEndurance対象日10/24に、本人が7%再確認を自己判断の8%へ置換したためclosure_conditionsの置換はexpiredに従い閉じる。7%実施・成功とは数えない。",
+      "replacement_session": "2026-10-24 C_treadmill",
+      "actual_main_incline_percent": 8,
+      "actual_incline_provenance": "user_reported",
+      "reported_on": "2026-10-26",
+      "evaluation_note": "8%への自己変更と会話可能に加え、終盤「最後の5分で痛みの気配」を感じ中止と追加本人申告。8%継続候補は取り下げ当面C見送り。旧7%試行expiredは維持し、7%実施・成功とは評価しない。10/27現在の痛み・違和感残存なしを本人確認。部位は未確認で、C見送りを自動解除しない。"
+    },
+    {
+      "id": "2026-10-26-A-lat-confirmation",
+      "menu": "A",
+      "created_on": "2026-10-26",
+      "source_session": "2026-10-25 A_full",
+      "source_review": "data/logs/reviews/current-assessment.md",
+      "status": "active",
+      "applies_to": "next_A_session",
+      "purpose": "10/10と10/25のLat47kg・RIR約1〜2と痛み・明確なフォーム崩れなしを踏まえ、次回A1回だけ同条件を継続確認。追加増量せず、通常40kgの恒久変更は行わない。",
+      "targets": [
+        {
+          "exercise_id": "lat_pulldown",
+          "fields": {
+            "weight_kg": 47,
+            "rir": "1-2"
+          }
+        }
+      ],
+      "entry_conditions": [
+        "日常生活や通常の運動に支障となる疲労が強く残っていない",
+        "実施直前に痛み・明確な違和感がなくフォームを保てる"
+      ],
+      "fallback": "疲労が強く残る場合は47kg確認を見送り、通常40kgで余力を残すか休養する。痛みがある場合は症状回避を優先する。",
+      "reduction_conditions": [
+        "回数下限8回を満たせない",
+        "指定余力やフォームを保てない"
+      ],
+      "reduction_action": "試行を打ち切り通常40kgへ戻す。回数や追加setで補わない。",
+      "stop_conditions": [
+        "痛み・明確な違和感が出る",
+        "明確なフォーム崩れが出る",
+        "低減しても問題が続く"
+      ],
+      "evaluation_conditions": [
+        "47kg・8〜12回×2setの範囲とRIR1〜2が両立するか確認。RIR2で止めてよい",
+        "症状・フォームと翌日疲労を本人が把握できる範囲で記録する",
+        "記録できれば最終setの回数を残すが、未報告値は補作しない"
+      ],
+      "closure_conditions": "次の記録済みA1件に限る。実施はcompleted、見送りはdeclined、置換はexpiredとして閉じる。実施と成功・恒久採用を分ける。",
+      "evaluation_status": "not_finalized"
     }
   ]
 }

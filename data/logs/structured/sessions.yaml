@@ -2141,7 +2141,7 @@ sessions:
         calories: 21
         avg_temp: unknown
         notes: Lap 4。表示時間6:16.0。速度・傾斜の実績は未報告。
-  - date: '2026-10-07'
+  - date: 2026-10-07
     start_time: unknown
     session_type: B_full
     segment_type: full_session
@@ -2169,7 +2169,8 @@ sessions:
     machine_order_changed: unknown
     menu_deviation: 次回B限定のChest Press 40kgは無理だったため33kgで実施。Lat Pulldown 47kg・Row Machine
       47kg・Shoulder Press 25kg、その他の重量と回数はメニューどおり。正確な各set回数は未報告。
-    notes: Garmin Connectのユーザ転記。日付・B60はユーザ指定（Garmin原文の日付・種目はnull）。Lap 1〜4はリポジトリ既定でwarmup・machine・treadmill_main・cooldownに対応し、Garmin単独では運動との対応は未確認。痛み・明確なフォーム崩れはどちらもなしと追加回答。
+    notes: 'Garmin Connectのユーザ転記。日付・B60はユーザ指定（Garmin原文の日付・種目はnull）。Lap 1〜4はリポジトリ既定でwarmup・machine・treadmill_main・cooldownに対応し、Garmin単独では運動との対応は未確認。痛み・明確なフォーム崩れはどちらもなしと追加回答。
+      2026-10-27本人訂正: 以前のChest40kg困難という判定はマシン設定不適切が原因との説明。最近数回は40kgでフォーム崩れなく実施との申告。ただし対象日・A/B・回数・RIR・痛み・設定項目は未指定。今回の追記は当時申告の解釈訂正で、10/7の実重量や実績を変更せず、最近の40kgを特定日に割り当てない。'
     source_metadata:
       source: Garmin Connect
       garmin_date:
@@ -2780,6 +2781,29 @@ sessions:
       calories: 20
       avg_temp: unknown
       notes: Lap 4。表示時間00:05:35.4。区間対応はB60の既定運用による。
+    user_followups:
+    - reported_on: '2026-10-27'
+      provenance: user_reported
+      scope: retrospective_correction_of_prior_chest_difficulty_assessment_and_undated_recent_execution
+      prior_report_reference_session: 2026-10-07 B_full
+      recent_execution_dates:
+      recent_execution_menu:
+      original_text: 伝え忘れていたことがあるチェストプレスは以前に「40kgは難しかった」と伝えているがこれを修正したい。ここ数回は40kgでフォームの崩れなくできている。前回40kgで難しかったと判定したのは、マシンの設定がおかしかっただけ。
+      confirmed_observations:
+        exercise_id: chest_press
+        recent_weight_kg: 40
+        recent_frequency_original: ここ数回
+        recent_clear_form_breakdown: none_reported
+        prior_difficulty_attributed_by_user_to: inappropriate_machine_setting
+      unconfirmed:
+      - recent_execution_dates
+      - menu_A_or_B
+      - exact_reps
+      - sets
+      - rir
+      - pain
+      - specific_setting_changed
+      note: 10/7の当時申告に関する訂正の受け口として保存。最近の40kg実施を10/7・10/10・10/25へ割り当てず、当時の重量・回数・判断は保持する。原因は本人の説明で、設備不具合を客観確認したわけではない。
   - date: '2026-10-10'
     start_time: unknown
     session_type: A_full
@@ -3596,3 +3620,1440 @@ sessions:
       evidence:
       - 2026-10-11 C_treadmill endurance
       review_conditions: J-005/B-005で外部レビューの根拠・計測の限界・翌日反応を照合し、次回だけの1項目調整か維持かを再判断。同モードで比較可能な完遂2回以上の同方向の根拠が揃うまでは恒久改定しない。
+  - date: '2026-10-17'
+    start_time: '20:12'
+    timezone: null
+    activity_name: Treadmill Running
+    session_type: C_treadmill
+    c_mode: endurance
+    segment_type: full_session
+    duration_min: 60.2
+    duration: '1:00:12'
+    duration_seconds: 3612
+    distance_km: 5.59
+    avg_pace_min_per_km: '10:47'
+    avg_moving_pace_min_per_km: '10:12'
+    best_pace_min_per_km: '4:52'
+    total_ascent_m: null
+    avg_hr: 111
+    max_hr: 123
+    aerobic_te: 2.0
+    anaerobic_te: 0.0
+    exercise_load: 21
+    calories: 191
+    primary_benefit: Base (Low Aerobic)
+    avg_temp: null
+    zone1_time: '12:52'
+    zone2_time: '46:26'
+    zone3_time: '0:00'
+    zone4_time: '0:00'
+    zone5_time: '0:00'
+    subjective_fatigue: 疲労感は限定的で、「会話できる程度」が目安ならまだ上げれると感じています。追加本人確認：Main中は会話可能、翌日2026-10-18は特に疲労感なし。運動中・終了後・翌日とも膝痛・明確な違和感なしと本人確認。
+    soreness_next_day: null
+    machine_order_changed: not_applicable
+    menu_deviation: 通常処方Main6%に対して次回限定試行7%を実施（2026-10-18本人確認）。速度・予定区間時間・WU/CDは変更申告なしによる継承。実際の区間切替時刻は未確認。
+    notes: 'c_mode: endurance。10/17 C60・Main7%試行（10/18本人確認）。Main中は会話可能、翌日10/18は特に疲労感なしと本人が前提を訂正。初回所感・Garmin
+      OCR・7ラップ・検算は保持。運動中・終了後・翌日とも膝痛・明確な違和感なしと事前確認。数値RPE・局所疲労・フォームは未確認。現在はC60の妥当性と条件付き次回案のレビューを依頼中。'
+    source_metadata:
+      source: User-provided OCR transcription of Garmin Connect
+      recorded_on: '2026-10-18'
+      ocr_checked_on: '2026-10-18'
+      raw_transcription_file: data/logs/raw/2026-10-17_treadmill_only_garmin-ocr_01.txt
+      raw_transcription_sha256: ef7d4ab3ae994988dd8c838cd2cba7486b56f32809ec8df6cb9e0d6883f77399
+      session_date_provenance: user_reported
+      session_date_basis: 2026-10-18の会話でユーザーが「日付は昨日」と指定（提供本文の記載）。
+      start_time_and_metrics_provenance: garmin_display_via_user_provided_ocr
+      session_type_provenance: user_reported
+      session_type_basis: 2026-10-18に本人が「C60の次回提案版の傾斜が7%」と申告。提案版との対応からEnduranceを確定。
+      garmin_date_display: YESTERDAY @ 20:12
+      displayed_recorder: TAPPEI YOSHIDA
+      garmin_activity_id: null
+      garmin_activity_url: null
+      image_captured_at: null
+      images_received: false
+      image_reference_note: 元画像名は提供本文内の由来情報。画像そのものは今回参照していない。出典IDはGarmin活動IDではない。
+      source_images:
+      - id: garmin-ocr-20261018-01
+        filename: codex-clipboard-84bf666b-b527-468d-a3bb-37cb92c0e97c.png
+        content: 活動概要と時間軸のグラフ
+      - id: garmin-ocr-20261018-02
+        filename: codex-clipboard-7ab515fc-b28e-4c79-b3e8-731cd6504eb3.png
+        content: 同じ活動の概要と距離軸のグラフ
+      - id: garmin-ocr-20261018-03
+        filename: codex-clipboard-b2a547c8-d75b-41a6-9faa-cad375ddb4a1.png
+        content: Stats
+      - id: garmin-ocr-20261018-04
+        filename: codex-clipboard-30dcd677-3682-4a34-89af-2291984e1ab6.png
+        content: Laps
+      - id: garmin-ocr-20261018-05
+        filename: codex-clipboard-717f39c0-f3f7-4ea4-b480-058111ced5ce.png
+        content: Time in Zones
+      lap_segment_mapping: 7ラップをそのまま保持。既定のA/B4区間・C3区間への対応は行わない。
+      normalization:
+        duration_min: 表示1:00:12の3612秒を60で除した派生値。
+        numeric_values: 原表示の数値を型変換。単位は表示列に従い、Caloriesの単位は未補完。
+        missing_values: 表示--と未確認値はnullとし、理由をmissing_value_reasonsへ保存。
+        raw_displays: 提供本文を原文のままraw_transcription_fileへ保存。集計値はraw_stats_displayにも保持。
+      c_mode_resolution: C60と2026-10-17-C-endurance-incline-trialの本人申告からenduranceとして解決。
+      raw_filename_note: 原転記ファイル名のtreadmill_onlyは初回分類に由来する。内容とSHA256を保持し、現在の分類はC_treadmillへ訂正済み。
+    activity_metadata:
+      event: null
+      event_type: Uncategorized
+      course: null
+      gear: null
+      gear_ui_display: Add
+    prescription_id: 2026-08-31-baseline
+    execution_basis: menu_completed
+    trial_id: 2026-10-17-C-endurance-incline-trial
+    prescribed_workout:
+      source: data/menus/prescriptions.json
+      prescription_id: 2026-08-31-baseline
+      menu: C
+      c_mode: endurance
+      target_main_rpe: 3-4
+      conversation_target: 会話可能
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.2
+          incline_percent: 4
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 6
+      - id: cooldown
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.0
+          incline_percent: 2
+    prescription_resolution_note: 本人のC60・7%試行指定を受け、2026-10-17の2026-08-31-baselineと同日作成の有効試行をworkout_feedback.pyで解決。初回のA/B/C未指定による不適用記録を訂正。
+    nutrition_hydration:
+      resting_calories: 53
+      active_calories: 138
+      total_calories_burned: 191
+      calories_consumed: null
+      calories_net: -191
+      calorie_unit: null
+      calorie_unit_note: Calories各値の単位は画像上に明記なしとの転記。kcal等を補わない。
+      estimated_sweat_loss_ml: 140
+      fluid_consumed_ml: null
+      fluid_net_ml: -140
+    stamina:
+      beginning_potential_percent: 99
+      ending_potential_percent: 95
+      minimum_percent: 95
+    training_effect_display:
+      aerobic: 2.0 Maintaining
+      anaerobic: 0.0 No Benefit
+    body_battery:
+      net_impact: -3
+    movement:
+      moving_time: '56:59'
+      elapsed_time: '1:01:47'
+      run_time: '0:41.2'
+      walk_time: '58:29'
+      idle_time: '1:02.0'
+      avg_power_w: 29
+      max_power_w: 86
+      wind_data: Disabled
+      avg_cadence_spm: 117
+      max_cadence_spm: 247
+      avg_stride_length_m: 0.82
+      avg_vertical_ratio_percent: 8.7
+      avg_vertical_oscillation_cm: 7.1
+      avg_ground_contact_time_ms: 429
+      run_walk_classification_note: Garmin活動名Treadmill RunningとRun/Walk Detection表示を併存保存。実際の動作や分類の正否は判断しない。
+    intensity_minutes:
+      moderate_min: 53
+      vigorous_min: 0
+      vigorous_multiplier_display: "×2"
+      total_weighted_min: 53
+    heart_rate_zones:
+    - zone: 5
+      range_bpm: "> 165"
+      range_display: "> 165 bpm"
+      name: Maximum
+      time: '0:00'
+      percent: 0
+    - zone: 4
+      range_bpm: 147–165
+      range_display: 147–165 bpm
+      name: Threshold
+      time: '0:00'
+      percent: 0
+    - zone: 3
+      range_bpm: 129–146
+      range_display: 129–146 bpm
+      name: Aerobic
+      time: '0:00'
+      percent: 0
+    - zone: 2
+      range_bpm: 110–128
+      range_display: 110–128 bpm
+      name: Easy
+      time: '46:26'
+      percent: 77
+    - zone: 1
+      range_bpm: 92–109
+      range_display: 92–109 bpm
+      name: Warm Up
+      time: '12:52'
+      percent: 21
+    laps:
+    - lap: 1
+      duration: '5:16.6'
+      cumulative_time: '5:16.6'
+      distance_km: 0.42
+      avg_pace_min_per_km: '12:38'
+      average_hr_bpm: 96
+      maximum_hr_bpm: 113
+      avg_power_w: 22
+      avg_power_w_per_kg: 0.39
+      max_power_w: 28
+      max_power_w_per_kg: 0.5
+      avg_cadence_spm: 103
+      avg_ground_contact_time_ms: null
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 6.0
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    - lap: 2
+      duration: '10:25'
+      cumulative_time: '15:42'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:25'
+      average_hr_bpm: 112
+      maximum_hr_bpm: 120
+      avg_power_w: 35
+      avg_power_w_per_kg: 0.63
+      max_power_w: 45
+      max_power_w_per_kg: 0.81
+      avg_cadence_spm: 120
+      avg_ground_contact_time_ms: 427
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 8.4
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    - lap: 3
+      duration: '10:10'
+      cumulative_time: '25:52'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:10'
+      average_hr_bpm: 113
+      maximum_hr_bpm: 121
+      avg_power_w: 33
+      avg_power_w_per_kg: 0.59
+      max_power_w: 45
+      max_power_w_per_kg: 0.81
+      avg_cadence_spm: 120
+      avg_ground_contact_time_ms: 429
+      avg_stride_length_m: 0.83
+      avg_vertical_oscillation_cm: 7.8
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    - lap: 4
+      duration: '10:26'
+      cumulative_time: '36:18'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:26'
+      average_hr_bpm: 113
+      maximum_hr_bpm: 119
+      avg_power_w: 31
+      avg_power_w_per_kg: 0.56
+      max_power_w: 48
+      max_power_w_per_kg: 0.86
+      avg_cadence_spm: 120
+      avg_ground_contact_time_ms: 430
+      avg_stride_length_m: 0.83
+      avg_vertical_oscillation_cm: 7.3
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    - lap: 5
+      duration: '10:22'
+      cumulative_time: '46:40'
+      distance_km: 1.0
+      avg_pace_min_per_km: '10:22'
+      average_hr_bpm: 115
+      maximum_hr_bpm: 121
+      avg_power_w: 29
+      avg_power_w_per_kg: 0.52
+      max_power_w: 86
+      max_power_w_per_kg: 1.54
+      avg_cadence_spm: 120
+      avg_ground_contact_time_ms: 426
+      avg_stride_length_m: 0.83
+      avg_vertical_oscillation_cm: 6.8
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    - lap: 6
+      duration: '8:55.2'
+      cumulative_time: '55:35'
+      distance_km: 0.79
+      avg_pace_min_per_km: '11:16'
+      average_hr_bpm: 115
+      maximum_hr_bpm: 123
+      avg_power_w: 25
+      avg_power_w_per_kg: 0.45
+      max_power_w: 42
+      max_power_w_per_kg: 0.75
+      avg_cadence_spm: 115
+      avg_ground_contact_time_ms: 435
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 6.2
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    - lap: 7
+      duration: '4:37.5'
+      cumulative_time: '1:00:12'
+      distance_km: 0.38
+      avg_pace_min_per_km: '12:17'
+      average_hr_bpm: 101
+      maximum_hr_bpm: 116
+      avg_power_w: 22
+      avg_power_w_per_kg: 0.39
+      max_power_w: 35
+      max_power_w_per_kg: 0.63
+      avg_cadence_spm: 109
+      avg_ground_contact_time_ms: 440
+      avg_stride_length_m: 0.79
+      avg_vertical_oscillation_cm: 5.9
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    lap_summary:
+      lap: Summary
+      duration: '1:00:12'
+      cumulative_time: '1:00:12'
+      distance_km: 5.59
+      avg_pace_min_per_km: '10:47'
+      average_hr_bpm: 111
+      maximum_hr_bpm: 123
+      avg_power_w: 29
+      avg_power_w_per_kg: 0.52
+      max_power_w: 86
+      max_power_w_per_kg: 1.54
+      avg_cadence_spm: 117
+      avg_ground_contact_time_ms: 429
+      avg_stride_length_m: 0.82
+      avg_vertical_oscillation_cm: 7.1
+      avg_gap_min_per_km: null
+      total_ascent_m: null
+      total_descent_m: null
+      avg_gct_balance_percent: null
+    raw_stats_display:
+    - category: Distance
+      label: Distance
+      value: 5.59 km
+    - category: Timing
+      label: Time
+      value: '1:00:12'
+    - category: Timing
+      label: Moving Time
+      value: '56:59'
+    - category: Timing
+      label: Elapsed Time
+      value: '1:01:47'
+    - category: Pace/Speed
+      label: Avg Pace
+      value: 10:47 /km
+    - category: Pace/Speed
+      label: Avg Moving Pace
+      value: 10:12 /km
+    - category: Pace/Speed
+      label: Best Pace
+      value: 4:52 /km
+    - category: 概要
+      label: Total Ascent
+      value: "--"
+    - category: Nutrition & Hydration
+      label: Resting Calories
+      value: '53'
+    - category: Nutrition & Hydration
+      label: Active Calories
+      value: '138'
+    - category: Nutrition & Hydration
+      label: Total Calories Burned
+      value: '191'
+    - category: Nutrition & Hydration
+      label: Calories Consumed
+      value: "--"
+    - category: Nutrition & Hydration
+      label: Calories Net
+      value: "-191"
+    - category: Nutrition & Hydration
+      label: Est. Sweat Loss
+      value: 140 ml
+    - category: Nutrition & Hydration
+      label: Fluid Consumed
+      value: "-- ml"
+    - category: Nutrition & Hydration
+      label: Fluid Net
+      value: "-140 ml"
+    - category: Stamina
+      label: Beginning Potential
+      value: 99%
+    - category: Stamina
+      label: Ending Potential
+      value: 95%
+    - category: Stamina
+      label: Min Stamina
+      value: 95%
+    - category: Training Effect
+      label: Primary Benefit
+      value: Base (Low Aerobic)
+    - category: Training Effect
+      label: Aerobic
+      value: 2.0 Maintaining
+    - category: Training Effect
+      label: Anaerobic
+      value: 0.0 No Benefit
+    - category: Training Effect
+      label: Exercise Load
+      value: '21'
+    - category: Heart Rate
+      label: Avg HR
+      value: 111 bpm
+    - category: Heart Rate
+      label: Max HR
+      value: 123 bpm
+    - category: Power
+      label: Avg Power
+      value: 29 W
+    - category: Power
+      label: Max Power
+      value: 86 W
+    - category: Power
+      label: Wind Data
+      value: Disabled
+    - category: Run/Walk Detection
+      label: Run Time
+      value: '0:41.2'
+    - category: Run/Walk Detection
+      label: Walk Time
+      value: '58:29'
+    - category: Run/Walk Detection
+      label: Idle Time
+      value: '1:02.0'
+    - category: Running Dynamics
+      label: Avg Run Cadence
+      value: 117 spm
+    - category: Running Dynamics
+      label: Max Run Cadence
+      value: 247 spm
+    - category: Running Dynamics
+      label: Avg Stride Length
+      value: 0.82 m
+    - category: Running Dynamics
+      label: Avg Vertical Ratio
+      value: 8.7%
+    - category: Running Dynamics
+      label: Avg Vertical Oscillation
+      value: 7.1 cm
+    - category: Running Dynamics
+      label: Avg Ground Contact Time
+      value: 429 ms
+    - category: Intensity Minutes
+      label: Moderate
+      value: 53 min
+    - category: Intensity Minutes
+      label: Vigorous
+      value: 0 min、×2の表示あり
+    - category: Intensity Minutes
+      label: Total
+      value: 53 min
+    - category: Body Battery
+      label: Net Impact
+      value: "-3"
+    missing_value_reasons:
+      timezone: 画面で確認できない。会話のAsia/Tokyoを活動のタイムゾーンとして補わない。
+      source_metadata.garmin_activity_id: 画面に表示なし。
+      source_metadata.garmin_activity_url: 画面に表示なし。
+      source_metadata.image_captured_at: 未確認。
+      activity_metadata.event: 原表示--。
+      activity_metadata.course: 原表示--。
+      activity_metadata.gear: 登録内容は表示なし。AddはUI表示。
+      total_ascent_m: 原表示--。
+      avg_temp: 提供転記に記載なし。
+      soreness_next_day: 本人申告なし。
+      nutrition_hydration.calories_consumed: 原表示--。
+      nutrition_hydration.calorie_unit: 単位の明記なし。
+      nutrition_hydration.fluid_consumed_ml: 原表示-- ml。
+      laps[lap=1].avg_ground_contact_time_ms: 原表示--。
+      laps[*].avg_gap_min_per_km: 全7ラップとSummaryで原表示--（min/km）。
+      laps[*].total_ascent_m: 全7ラップとSummaryで原表示--（m）。
+      laps[*].total_descent_m: 全7ラップとSummaryで原表示--（m）。
+      laps[*].avg_gct_balance_percent: 全7ラップとSummaryで原表示--（%）。
+      lap_summary.avg_gap_min_per_km: 原表示--（min/km）。
+      lap_summary.total_ascent_m: 原表示--（m）。
+      lap_summary.total_descent_m: 原表示--（m）。
+      lap_summary.avg_gct_balance_percent: 原表示--（%）。
+      subjective_notes.treadmill_feedback.selection_purpose: 目的の個別申告なし。
+      subjective_notes.treadmill_feedback.main_rpe: 数値RPEの申告なし。
+      subjective_notes.treadmill_feedback.local_fatigue: 局所の具体的申告なし。
+      subjective_notes.treadmill_feedback.next_day_impact_on_a_b_or_daily_activity: 翌日特に疲労感なしは本人確認済み。A/B・日常活動の実施状況や支障全般の個別申告はないため区別する。
+    validation_calculations:
+      provenance: derived_from_transcribed_display_values
+      difference_convention: 各内訳合計 − 表示Time/Summary。差をなくすための原表示の補正はしない。
+      lap_count: 7
+      displayed_duration_seconds: 3612
+      lap_distance_sum_km: 5.59
+      lap_distance_difference_km: 0.0
+      lap_time_sum_seconds: 3612.3
+      lap_time_difference_seconds: 0.3
+      run_walk_idle_sum_seconds: 3612.2
+      run_walk_idle_difference_seconds: 0.2
+      heart_rate_zone_sum_seconds: 3558
+      heart_rate_zone_difference_seconds: -54
+      heart_rate_zone_percent_sum: 98
+      lap_cumulative_difference_seconds:
+      - 0.0
+      - -0.4
+      - -0.4
+      - -0.4
+      - -0.4
+      - -0.2
+      - 0.3
+      lap_cumulative_difference_note: 各ラップまでのTimeの合計 − そのラップの表示Cumulative Time。
+    graph_observations:
+      displayed_graphs:
+      - Pace
+      - Heart Rate
+      - Stamina / Stamina Potential
+      - Stride Length
+      - Run Cadence
+      - 'Power: Watts'
+      - Vertical Ratio
+      - Ground Contact Time
+      - Run/Walk
+      time_series: null
+      time_series_missing_reason: 正確な時系列データは転記に含まれない。グラフから数値やイベント時刻を復元しない。
+    data_quality_notes:
+    - ラップ距離合計5.59kmはSummaryと一致。
+    - ラップ時間合計1:00:12.3はTime/Summary 1:00:12より0.3秒長い。原表示を保持。
+    - Run0:41.2 + Walk58:29 + Idle1:02.0 = 1:00:12.2でTimeより0.2秒長い。Moving Time56:59・Elapsed
+      Time1:01:47は別の表示項目。
+    - 心拍ゾーン合計59:18はTimeより0:54短い。表示割合合計98%。割合の分母、境界の包含関係、未表示時間の内訳・原因は推測しない。
+    - W/kgから本人の体重を逆算しない。
+    - 横スクロール外の項目は未確認。転記にない項目・実機速度・傾斜・区間切替時刻を補完しない。
+    feedback:
+      scope: external_review_requested
+      completed: C60 EnduranceのMain7%試行を実施したと本人確認。Garmin60:12・5.59km。
+      recorded_subjective: 疲労感は限定的で、「会話できる程度」が目安ならまだ上げれると感じています。追加本人確認：Main中は会話可能、翌日2026-10-18は特に疲労感なし。運動中・終了後・翌日とも膝痛・明確な違和感なしと本人確認。
+      reason: 本人確認済みの会話可能・翌日特に疲労感なしを反映し、C60の妥当性と条件付き次回案をChatGPTへ再評価依頼する。ここでは処方判断を確定しない。
+    menu_decision:
+      scope: external_review_requested
+      trial_execution_status: completed
+      trial_evaluation_status: not_finalized
+      reason: 7%実施に加え会話可能・翌日特に疲労感なしを本人確認。運動中・終了後・翌日とも膝痛・明確な違和感なしも本人確認。数値RPE・局所疲労・フォーム等は未確認のまま、判断別に必要性を分けて再レビューを依頼。通常処方と試行の追加変更は未実施。
+    reported_deviations:
+    - exercise_id: treadmill_main
+      fields:
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 7
+      field_provenance:
+        duration_min: prescribed_no_deviation_reported
+        speed_kmh: prescribed_no_deviation_reported
+        incline_percent: user_reported
+      baseline_incline_percent: 6
+      trial_id: 2026-10-17-C-endurance-incline-trial
+      provenance: user_reported
+      reported_on: '2026-10-18'
+      note: Mainの傾斜だけを本人確認。通常処方の恒久変更ではない。steps内のincline_percentへ対応する項目単位の申告。
+    effective_execution:
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.2
+          incline_percent: 4
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+        step_provenance:
+        - duration_min: prescribed_no_deviation_reported
+          speed_kmh: prescribed_no_deviation_reported
+          incline_percent: prescribed_no_deviation_reported
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 7
+        provenance:
+          steps: mixed_prescription_and_user_report
+        direct_observations:
+          user_reported:
+          - field: incline_percent
+            step_index: 1
+            value: 7
+            reported_on: '2026-10-18'
+        set_overrides: {}
+        step_provenance:
+        - duration_min: prescribed_no_deviation_reported
+          speed_kmh: prescribed_no_deviation_reported
+          incline_percent: user_reported
+      - id: cooldown
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.0
+          incline_percent: 2
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+        step_provenance:
+        - duration_min: prescribed_no_deviation_reported
+          speed_kmh: prescribed_no_deviation_reported
+          incline_percent: prescribed_no_deviation_reported
+      observation_note: workout_feedback.pyの対象日処方→有効試行→本人申告の順で解決。Main7%だけ本人直接申告、速度・予定時間・WU/CDはprescribed_no_deviation_reported。Garmin全体60:12と7ラップは別観測で、WU/Main/CDの実時間に変換しない。
+    minimum_subjective:
+      overall_load: unknown
+      overall_load_original_text: 疲労感は限定的で、「会話できる程度」が目安ならまだ上げれると感じています
+      muscle_soreness:
+        status: unknown
+        areas: []
+        timing: next_day
+      pain_or_form_issue:
+        status: partial
+        details: 10/17運動中・終了後・翌日10/18とも膝痛・明確な違和感なしと本人確認。フォームは未申告。
+        provenance: user_reported
+    subjective_notes:
+      treadmill_feedback:
+        selected_c_mode: endurance
+        selection_purpose: null
+        fatigue_original_text: 疲労感は限定的
+        further_increase_original_text: "「会話できる程度」が目安ならまだ上げれると感じています"
+        main_rpe: null
+        conversation_possible: true
+        conversation_note: 10/18の訂正申告「会話可能」で確認。以前の条件付き所感からの推論ではない。実際に他者と会話したかは未申告。
+        knee_pain_or_discomfort: none
+        local_fatigue: null
+        next_day_impact_on_a_b_or_daily_activity: null
+        provenance: user_reported
+        reported_on: '2026-10-18'
+        conversation_provenance: user_reported
+        next_day_fatigue: none_notable
+        next_day_date: '2026-10-18'
+        next_day_fatigue_provenance: user_reported
+        knee_pain_or_discomfort_provenance: user_reported
+        knee_pain_or_discomfort_timing:
+        - during_session
+        - post_session
+        - next_day
+        knee_pain_or_discomfort_confirmed_on: '2026-10-18'
+    user_followups:
+    - reported_on: '2026-10-18'
+      pertains_to_date: '2026-10-17'
+      provenance: user_reported
+      original_text: |-
+        言い忘れてました。これはC60の次回提案版の傾斜が7%のログです
+        所感としては疲労感は限定的で、「会話できる程度」が目安ならまだ上げれると感じています
+      correction:
+        previous_session_type: treadmill_only
+        session_type: C_treadmill
+        c_mode: endurance
+        main_incline_percent: 7
+        trial_id: 2026-10-17-C-endurance-incline-trial
+      note: 日付・Garmin観測値・原転記は変更しない。7%試行の実施と評価条件の成立を区別する。
+    - reported_on: '2026-10-18'
+      pertains_to_date: '2026-10-17'
+      provenance: user_reported
+      original_text: |-
+        Chat GPTが「Main中の実際の会話可否、事前に尺度を明確にしたRPE、膝症状、脚の局所疲労・フォーム、終了後と翌日の反応。数値RPEが取得できなくても、未確認として記録し、他の観察と区別する。」として、具体的な判断を避ける判断をしています
+
+        しかしユーザとしてはCodexに「会話可能、翌日（昨日から見て今日）特に疲労感はなし」と伝えているので、これは不本意な結果です。前提をChat GPTに修正させるとともに、最初のプロンプトに改善の余地がないかレトロスペクティブして
+      confirmed_observations:
+        conversation_possible: true
+        next_day_date: '2026-10-18'
+        next_day_fatigue: none_notable
+      note: 今回の訂正申告を本人確認として保存。以前の条件付き所感は原文のまま保持する。会話可能は本人の判断で、実際に他者と会話したという観察まで補わない。翌日の疲労感なしを膝痛なし・筋肉痛なし・全活動への支障なしへ拡張しない。
+    - reported_on: '2026-10-18'
+      pertains_to_date: '2026-10-17'
+      provenance: user_reported
+      question: 今回のC60で追加増量を検討する際の条件を確認します。10/17の運動中・終了後・翌日10/18に、膝の痛みや明確な違和感はありましたか？
+      original_text: いずれもなし
+      confirmed_observations:
+        during_session_knee_pain_or_discomfort: none
+        post_session_knee_pain_or_discomfort: none
+        next_day_date: '2026-10-18'
+        next_day_knee_pain_or_discomfort: none
+      note: 3時点の膝痛・明確な違和感の否定に限る。フォーム・筋肉痛・局所疲労全般の否定には拡張しない。
+  - date: 2026-10-24
+    session_type: C_treadmill
+    segment_type: full_session
+    duration_min: 55.78
+    avg_hr: 125
+    max_hr: 174
+    aerobic_te: 2.6
+    anaerobic_te: 1.9
+    exercise_load: 66
+    calories: 233
+    primary_benefit: Base (Low Aerobic)
+    avg_temp:
+    zone1_time: '1:30'
+    zone2_time: '40:33'
+    zone3_time: '12:19'
+    zone4_time: '0:22'
+    zone5_time: '0:28'
+    subjective_fatigue: 前回メイン7%が軽かったため自己判断で8%へ変更。会話はまだ十分できる程度。今回の全体疲労は未申告。
+    soreness_next_day: unknown
+    machine_order_changed: not_applicable
+    menu_deviation: 通常Main6%・有効試行7%に対し本人判断で8%へ変更。終盤「最後の5分で痛みの気配」を感じ中止と追加申告。60分完遂や8%成功とはしない。実際の中止区間・正確な時刻は未確認。速度・予定区間時間・WU/CDの処方継承は実測完遂の証拠ではない。
+    notes: 'c_mode: endurance; garmin_activity_id=24835070926; garmin_url=https://connect.garmin.com/app/activity/24835070926;
+      fetched_at=2026-10-26T23:01:56+09:00; start_time=20:08; garmin_type=Cardio; duration_display=55:47。Activities一覧のOct
+      24 2026と詳細SATURDAY・URLを照合。C60とMain8%は本人申告。前回7%が軽かったため自己判断で8%へ変更、会話はまだ十分可能との所感。Garmin総時間は予定60分より4:13短い。10/26追加本人申告「最後の5分で痛みの気配を感じたので止めた」で中止理由を確認。正確な中止時刻・区間と症状部位は未確認。1ラップ全体のみでWU/Main/CD境界は未確認。10/27追加本人申告「残っていない」により同日現在の痛み・違和感の残存なしを確認。痛みの気配を感じた部位は未確認。強い局所疲労・翌日支障は未確認。8%継続案を取り下げ、当面Cを見送る。'
+    c_mode: endurance
+    start_time: '20:08'
+    duration: '00:55:47'
+    duration_seconds: 3347
+    prescription_id: 2026-08-31-baseline
+    trial_id: 2026-10-18-C-endurance-incline-recheck-trial
+    execution_basis: menu_C60_reported_with_self_selected_main_incline_8_percent
+    prescribed_workout:
+      source: data/menus/prescriptions.json
+      menu: C
+      c_mode: endurance
+      planned_total_duration_min: 60
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.2
+          incline_percent: 4
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 6
+      - id: cooldown
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.0
+          incline_percent: 2
+    reported_deviations:
+    - exercise_id: treadmill_main
+      fields:
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 8
+      field_provenance:
+        duration_min: prescribed_no_deviation_reported
+        speed_kmh: prescribed_no_deviation_reported
+        incline_percent: user_reported
+      baseline_incline_percent: 6
+      scheduled_trial_incline_percent: 7
+      trial_id: 2026-10-18-C-endurance-incline-recheck-trial
+      provenance: user_reported
+      reported_on: '2026-10-26'
+      note: 8%は本人の自己変更で、事前採用済みの8%試行ではない。
+    effective_execution:
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.2
+          incline_percent: 4
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 50
+          speed_kmh: 5.8
+          incline_percent: 8
+        provenance:
+          steps: mixed_prescription_and_user_report
+        direct_observations:
+          user_reported:
+          - field: incline_percent
+            step_index: 1
+            value: 8
+            reported_on: '2026-10-26'
+        set_overrides: {}
+        step_provenance:
+        - duration_min: prescribed_no_deviation_reported
+          speed_kmh: prescribed_no_deviation_reported
+          incline_percent: user_reported
+      - id: cooldown
+        kind: treadmill
+        steps:
+        - duration_min: 5
+          speed_kmh: 5.0
+          incline_percent: 2
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+      observation_note: workout_feedback.pyで対象日処方→有効な7%試行→本人のMain8%差分を適用。傾斜8%だけ直接本人申告。速度・各区間の予定時間・WU/CDはprescribed_no_deviation_reported。Garmin総55:47は別観測で、Main50分実測完遂やWU/CDの実時間を示さない。
+    minimum_subjective:
+      overall_load: unknown
+      muscle_soreness:
+        status: unknown
+        areas: []
+        timing: unknown
+      pain_or_form_issue:
+        status: present
+        details: 10/24終盤「最後の5分で痛みの気配」を感じ中止。10/27現在、痛み・違和感の残存なしと本人確認。症状部位・当時の強さ・フォームは未確認。膝痛と決めつけない。
+        symptom_type: pain_warning_sign
+        body_site: unknown
+        provenance: user_reported
+        reported_on: '2026-10-26'
+        current_symptom_status: none_reported
+        current_symptom_reported_on: '2026-10-27'
+    subjective_notes:
+      treadmill_feedback:
+        selected_c_mode: endurance
+        selection_purpose:
+        main_incline_percent: 8
+        incline_change_reason: 前回のメイン7%が軽かったので自己判断で8%へ変更。
+        conversation_possible: true
+        conversation_note: 原文「会はまだ十分できる程度でした」を会話可能の意味として記録。実際に他者と会話した証拠とはしない。
+        main_rpe:
+        knee_pain_or_discomfort: unknown
+        local_fatigue: unknown
+        form: unknown
+        next_day_impact_on_a_b_or_daily_activity:
+        provenance: user_reported
+        reported_on: '2026-10-26'
+        pain_warning_sign: true
+        pain_warning_original_text: 最後の5分で痛みの気配を感じたので止めた
+        pain_warning_timing: 最後の5分（本人表現。具体的区間・正確な時刻は不明）
+        pain_body_site: unknown
+        current_symptom_status: none_reported
+        stopped_due_to_pain_warning: true
+        current_symptom_status_provenance: user_reported
+        current_symptom_reported_on: '2026-10-27'
+    user_followups:
+    - reported_on: '2026-10-26'
+      pertains_to_date: '2026-10-24'
+      provenance: user_reported
+      original_text: 土曜日にC60をやりました。記録してください。前回のメイン7%が軽かったので、自己判断で8%にしました。会はまだ十分できる程度でした。
+      interpretation_note: 土曜日は依頼日2026-10-26(JST)から10/24へ解決。「会は」は会話の意味として保持。
+    - reported_on: '2026-10-26'
+      pertains_to_date: '2026-10-24'
+      provenance: user_reported
+      question: 10/24の運動中〜翌日に、膝の痛み・明確な違和感、強い脚の疲労、翌日の活動に響く疲労はありましたか？
+      original_text: 最後の5分で痛みの気配を感じたので止めた
+      confirmed_observations:
+        stopped_early: true
+        stop_reason: pain_warning_sign
+        reported_timing: 最後の5分
+      note: 質問に膝を含むが回答は部位を特定していない。膝痛・強い疲労・翌日症状・現在症状を補作しない。最後の5分をMain/CDや正確な55分時点へ割り当てない。
+    - reported_on: '2026-10-27'
+      pertains_to_date: '2026-10-24'
+      observation_date: '2026-10-27'
+      provenance: user_reported
+      question: 痛みの気配を感じた部位と、今も痛み・違和感が残っているか。
+      original_text: 残っていない
+      confirmed_observations:
+        current_pain_or_discomfort: none_reported
+      note: 10/27現在の残存否定のみ。症状部位・原因・翌10/25の反応・日常歩行への影響・再開可能性を補作しない。10/24の症状による中止は保持。
+    source_metadata:
+      source: Garmin Connect via Safari native accessibility and user report
+      recorded_on: '2026-10-26'
+      garmin_date: '2026-10-24'
+      session_date_provenance: absolute_activities_date_and_user_report
+      session_type_provenance: user_reported
+      garmin_activity_id: '24835070926'
+      garmin_url: https://connect.garmin.com/app/activity/24835070926
+      fetched_at: '2026-10-26T23:01:56+09:00'
+      lap_segment_mapping: single_full_activity_lap_no_WU_Main_CD_boundaries
+      garmin_device_display: EPIX PRO - 47 mm
+      software_display: '27.18'
+    nutrition_hydration:
+      resting_calories: 49
+      active_calories: 184
+      total_calories_burned: 233
+      calories_consumed:
+      calories_net: -233
+      estimated_sweat_loss_ml: 757
+      fluid_consumed_ml:
+      fluid_net_ml: -757
+    training_effect_labels:
+      aerobic: Maintaining
+      anaerobic: Some Benefit
+    workout_details:
+      garmin_displayed_total_sets: 1
+      garmin_displayed_total_reps: "--"
+      garmin_displayed_volume_kg: "--"
+      interpretation: Cardioの集計表示であり、筋トレ実施やset数の証拠ではない。
+    intensity_minutes:
+      moderate_min: 49
+      vigorous_min: 3
+      vigorous_multiplier: 2
+      total_weighted_min: 55
+    body_battery:
+      net_impact: -2
+    laps:
+    - lap: 1
+      duration: '55:47'
+      cumulative_time: '55:47'
+      average_hr_bpm: 125
+      maximum_hr_bpm: 174
+      calories_kcal: 233
+    lap_distance_metrics:
+      displayed_distance: 0
+      displayed_average_speed: 0
+      displayed_moving_time: 0
+      interpretation: Cardio画面の元表示。実際の歩行距離・速度・移動時間が0である証拠ではない。
+    heart_rate_zones:
+    - zone: 1
+      label: Warm Up
+      range_bpm: 92-109
+      duration: '1:30'
+      percentage: 2
+    - zone: 2
+      label: Easy
+      range_bpm: 110-128
+      duration: '40:33'
+      percentage: 72
+    - zone: 3
+      label: Aerobic
+      range_bpm: 129-146
+      duration: '12:19'
+      percentage: 22
+    - zone: 4
+      label: Threshold
+      range_bpm: 147-165
+      duration: '0:22'
+      percentage: 0
+    - zone: 5
+      label: Maximum
+      range_bpm: ">165"
+      duration: '0:28'
+      percentage: 0
+    segments: []
+    data_quality_notes:
+    - Garmin55:47と通常計画60分に4:13差。追加本人申告で痛みの気配による早期中止と判明。正確な中止時刻・区間・残り時間の割当ては補作しない。
+    - 単一ラップを既定のWU/Main/CDの3区間へ分割しない。Main8%を50分完遂した実測証拠ではない。
+    - Zone合計55:12は総55:47より35秒短く、割合合計96%。非表示区間・分母・原因を補完しない。Zone4と5は非ゼロ時間と0%表示をそのまま保持。
+    - 機器のZone2と生理学的Zone2を同一視しない。最大174bpm単独で危険・誤計測・負荷過多を断定しない。
+    - 終盤の痛みの気配と中止は本人確認。10/27現在の残存なしは本人確認。部位・当時の強さ、翌日疲労・筋肉痛は未確認。過去Cや翌日Aの無痛回答を転用しない。
+    - 発汗・カロリーはGarmin推定。net表示を本人の実収支とみなさない。
+    feedback:
+      completed: 10/24 C60 EnduranceのMain8%を実施、会話可能だったが、終盤「最後の5分で痛みの気配」を感じて中止と本人申告。Garmin55:47。60分完遂・8%成功とは評価しない。
+      positives: 痛みの気配で運動を中止した判断は、既存の症状優先・中止方針に沿う。会話可能だったことと症状による中止は併存する事実として保存。
+      concerns: 会話可能でも10/24終盤に症状兆候があり8%継続は採用しない。10/27現在の痛み・違和感残存なしは本人確認。症状部位・当時の強さ・日常歩行への影響は未確認で、原因や8%との因果関係は断定しない。
+      recent_comparison: 直近8週の同Enduranceは10/17と10/11の2件。10/17は7%・60:12・HR111/123・TE2.0/0.0・Load21、10/11は6%・60:09・HR105/124・TE1.6/0.0・Load16。今回8%・55:47・HR125/174・TE2.6/1.9・Load66で、10/17より時間4:25短い。設定・時間・記録種別が異なり、体力向上や傾斜だけの因果効果を確定しない。
+      next_workout: 10/27現在の残存なしは再開条件の一部として確認。8%未採用と当面C見送りは自動解除せず、C再開を判断する際に症状部位・日常歩行への影響等を確認して通常6%以下から段階的再開を再検討する。今回新しい処方・試行は採用しない。
+    menu_decision:
+      status: final
+      outcome: keep
+      prescription_decision_status: final
+      next_session_action: stop
+      fact: 10/24は本人回答「最後の5分で痛みの気配を感じたので止めた」。10/27追加回答「残っていない」により同日現在の痛み・違和感残存なしを確認。部位は未確認。Main8%・会話可能、Garmin55:47は保持。
+      interpretation: 会話可能だけで8%継続を採用できない。通常処方6%は維持し、次回実行は当面C見送りとする。
+      hypothesis: 原因や症状部位は未確定。8%との因果関係を確定しない。
+      rationale: 症状兆候と中止を本人が確認したため、既存の症状優先方針に従い8%継続候補を取り下げる。時間不足を埋める再試行や7%への自動復帰は行わない。
+      evidence:
+      - 2026-10-24 C_treadmill
+      - 2026-10-17 C_treadmill
+      - 2026-10-11 C_treadmill
+      review_conditions: 10/27現在の残存なしは確認済み。次にC再開を判断する際に未確認の症状部位と日常歩行への影響等を確認し、再開可否・負荷を再評価する。8%不採用・当面見送りは自動解除しない。
+    pending_questions:
+    - asked_on: '2026-10-26'
+      question: 痛みの気配を感じた部位。
+      reason: 既存の質問のうち未回答部分のみ。現在症状は10/27に残存なしと回答済み。次にC再開を判断する際に確認する。
+    execution_status: stopped_early_user_reported
+  - date: '2026-10-25'
+    session_type: A_full
+    segment_type: full_session
+    duration_min: 76.77
+    avg_hr: 109
+    max_hr: 166
+    aerobic_te: 3.2
+    anaerobic_te: 0.2
+    exercise_load: 80
+    calories: 239
+    primary_benefit: Base (Low Aerobic)
+    avg_temp:
+    zone1_time:
+    zone2_time:
+    zone3_time:
+    zone4_time:
+    zone5_time:
+    subjective_fatigue: 各セットRIR1〜2くらいまで追い込んだ。全体的な疲労感はあるが局所的な筋肉痛はない。
+    soreness_next_day: unknown
+    machine_order_changed: unknown
+    menu_deviation: WU/CDをジム往復徒歩で代用。各set RIR約1〜2。Lat47kgは本人直接確認。その他の重量・回数範囲・set数・メイン有酸素は変更申告なしの処方継承。
+    notes: garmin_activity_id=24841556414; garmin_url=https://connect.garmin.com/app/activity/24841556414;
+      fetched_at=2026-10-26T21:57:45+09:00; start_time=10:18; garmin_type=Cardio; duration_display=1:16:46;
+      missing=laps,zones。Activities一覧のOct 25 2026と詳細URLを照合。A60は本人指定。WU/CDはジム往復徒歩で代用し、徒歩の時間・距離・Garmin記録への包含は未確認。各set
+      RIR約1〜2、全体的疲労感あり、局所的筋肉痛なし（10/26申告、症状の観察時点詳細は未指定）。10/26追加本人回答でLat47kg実施と、10/25運動中・終了後から10/26まで痛み・明確な違和感・マシンの明確なフォーム崩れはいずれもなしと確認。正確な回数・上限達成は未申告。
+    start_time: '10:18'
+    duration: '01:16:46'
+    duration_seconds: 4606
+    prescription_id: 2026-08-31-baseline
+    trial_id: 2026-10-11-A-lat-confirmation
+    execution_basis: menu_A60_completed_with_user_reported_walk_replacement_and_RIR
+    prescribed_workout:
+      source: data/menus/prescriptions.json
+      menu: A
+      prescribed_machine_sets: 15
+      machine_weights_kg:
+        seated_leg_press: 125
+        seated_leg_curl: 40
+        leg_extension: 40
+        lat_pulldown: 40
+        chest_press: 33
+        hip_abduction_outward: 61
+        abdominal: 42.5
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps:
+        - duration_min: 8
+          speed_kmh: 6.3
+          incline_percent: 11
+      - id: seated_leg_press
+        kind: machine
+        weight_kg: 125
+        reps_min: 12
+        reps_max: 15
+        sets: 3
+        rir: 2-3
+      - id: seated_leg_curl
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: leg_extension
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: lat_pulldown
+        kind: machine
+        weight_kg: 40
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 2-3
+      - id: chest_press
+        kind: machine
+        weight_kg: 33
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 2-3
+      - id: hip_abduction_outward
+        kind: machine
+        weight_kg: 61
+        reps_min: 12
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: abdominal
+        kind: machine
+        weight_kg: 42.5
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 2-3
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 12
+        - duration_min: 6
+          speed_kmh: 6.3
+          incline_percent: 13
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 14
+    reported_deviations:
+    - exercise_id: warmup
+      fields:
+        status: replaced_by_outdoor_walk
+        steps: []
+    - exercise_id: seated_leg_press
+      fields:
+        rir: 1-2
+    - exercise_id: seated_leg_curl
+      fields:
+        rir: 1-2
+    - exercise_id: leg_extension
+      fields:
+        rir: 1-2
+    - exercise_id: lat_pulldown
+      fields:
+        rir: 1-2
+    - exercise_id: chest_press
+      fields:
+        rir: 1-2
+    - exercise_id: hip_abduction_outward
+      fields:
+        rir: 1-2
+    - exercise_id: abdominal
+      fields:
+        rir: 1-2
+    - exercise_id: lat_pulldown
+      fields:
+        weight_kg: 47
+    effective_execution:
+      exercises:
+      - id: warmup
+        kind: treadmill
+        steps: []
+        provenance:
+          steps: user_reported
+          status: user_reported
+        direct_observations:
+          user_reported:
+          - field: status
+            value: replaced_by_outdoor_walk
+            set_index:
+          - field: steps
+            value: []
+            set_index:
+        set_overrides: {}
+        status: replaced_by_outdoor_walk
+      - id: seated_leg_press
+        kind: machine
+        weight_kg: 125
+        reps_min: 12
+        reps_max: 15
+        sets: 3
+        rir: 1-2
+        provenance:
+          weight_kg: prescribed_no_deviation_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: seated_leg_curl
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: prescribed_no_deviation_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: leg_extension
+        kind: machine
+        weight_kg: 40
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: prescribed_no_deviation_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: lat_pulldown
+        kind: machine
+        weight_kg: 47
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: user_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+          - field: weight_kg
+            value: 47
+            set_index:
+        set_overrides: {}
+      - id: chest_press
+        kind: machine
+        weight_kg: 33
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: prescribed_no_deviation_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: hip_abduction_outward
+        kind: machine
+        weight_kg: 61
+        reps_min: 12
+        reps_max: 15
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: prescribed_no_deviation_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: abdominal
+        kind: machine
+        weight_kg: 42.5
+        reps_min: 10
+        reps_max: 15
+        sets: 2
+        rir: 1-2
+        provenance:
+          weight_kg: prescribed_no_deviation_reported
+          reps_min: prescribed_no_deviation_reported
+          reps_max: prescribed_no_deviation_reported
+          sets: prescribed_no_deviation_reported
+          rir: user_reported
+        direct_observations:
+          user_reported:
+          - field: rir
+            value: 1-2
+            set_index:
+        set_overrides: {}
+      - id: treadmill_main
+        kind: treadmill
+        steps:
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 12
+        - duration_min: 6
+          speed_kmh: 6.3
+          incline_percent: 13
+        - duration_min: 6
+          speed_kmh: 6.2
+          incline_percent: 14
+        provenance:
+          steps: prescribed_no_deviation_reported
+        direct_observations: {}
+        set_overrides: {}
+      observation_note: workout_feedback.pyの対象日処方→当日有効な限定試行→本人差分の順で解決。Lat47kg・各set RIR約1〜2はuser_reported。他の重量・回数範囲・set数・メイン有酸素設定はprescribed_no_deviation_reported。正確な回数や区間実時間を補作しない。
+    minimum_subjective:
+      overall_load: unknown
+      muscle_soreness:
+        status: none
+        areas: []
+        scope: local_muscle_soreness
+        timing: unknown
+        reported_on: '2026-10-26'
+        provenance: user_reported
+      pain_or_form_issue:
+        status: none
+        details: 10/25運動中・終了後から10/26までの痛み・明確な違和感、マシンの明確なフォーム崩れはいずれもなし。
+        provenance: user_reported
+        reported_on: '2026-10-26'
+    subjective_notes:
+      all_machine_sets_rir:
+        value: 1-2
+        approximate: true
+        provenance: user_reported
+      overall_fatigue: あり。程度・持続時間・日常生活や次の運動への影響は未指定。
+      local_muscle_soreness: なし。10/26申告、観察時点の詳細は未指定。
+      pain_or_clear_discomfort: なし（10/25運動中・終了後から10/26まで、本人確認）
+      clear_form_issue: なし（マシン、本人確認）
+      walk_replacement:
+        warmup: true
+        cooldown: true
+        duration_min:
+        distance_km:
+        included_in_garmin_record:
+        provenance: user_reported
+    source_metadata:
+      source: Garmin Connect via Safari native accessibility and Activities screenshot;
+        user report
+      recorded_on: '2026-10-26'
+      garmin_date: '2026-10-25'
+      session_date_provenance: activities_list_absolute_date_and_user_report
+      session_type_provenance: user_reported
+      garmin_activity_id: '24841556414'
+      garmin_url: https://connect.garmin.com/app/activity/24841556414
+      fetched_at: '2026-10-26T21:57:45+09:00'
+      lap_segment_mapping: not_available_walk_replacement_no_default_four_lap_mapping
+    nutrition_hydration:
+      resting_calories: 67
+      active_calories: 172
+      total_calories_burned: 239
+      calories_consumed:
+      calories_net: -239
+      estimated_sweat_loss_ml: 862
+      fluid_consumed_ml:
+      fluid_net_ml: -862
+    training_effect_labels:
+      aerobic: Impacting
+      anaerobic: No Benefit
+    workout_details:
+      total_reps:
+      total_sets: 15
+      total_sets_provenance: prescribed_no_deviation_reported
+      garmin_displayed_total_sets: 1
+      volume_kg:
+    intensity_minutes:
+      moderate_min: 7
+      vigorous_min: 16
+      vigorous_multiplier: 2
+      total_weighted_min: 39
+    body_battery:
+      net_impact: -8
+    segments:
+    - segment_type: warmup
+      duration_min:
+      avg_hr:
+      max_hr:
+      notes: ジムへの徒歩で代用。時間・距離・計測包含は未確認。
+      provenance: user_reported
+    - segment_type: machine
+      duration_min:
+      avg_hr:
+      max_hr:
+      notes: A7種目・15setは処方継承。各set RIR約1〜2は本人申告。
+      provenance: mixed_prescription_and_user_report
+    - segment_type: treadmill_main
+      duration_min:
+      avg_hr:
+      max_hr:
+      notes: 予定18分・3段階の速度傾斜は変更申告なしの処方継承。実測区間時間は未取得。
+      provenance: prescribed_no_deviation_reported
+    - segment_type: cooldown
+      duration_min:
+      avg_hr:
+      max_hr:
+      notes: 帰路の徒歩で代用。時間・距離・計測包含は未確認。
+      provenance: user_reported
+    data_quality_notes:
+    - ラップ・心拍ゾーンは画面取得できず欠損。総時間から区間時間を逆算せず、通常4ラップ対応を適用しない。
+    - Garmin Total Sets 1は種目別セット数ではない。15setは実施申告からの処方継承。
+    - 徒歩がGarmin総時間76:46に含まれるか未確認。全体時間をジム内実時間や時間制約超過と確定しない。
+    - RIR約1〜2と通常2〜3は2で重なる。全セットの逸脱や全種目RIR1を断定しない。
+    - 局所筋肉痛なしから刺激不足・完全回復・無痛を推論しない。
+    - 発汗・カロリーはGarmin推定。net表示を本人の実収支と同一視しない。
+    user_followups:
+    - reported_on: '2026-10-26'
+      pertains_to_date: '2026-10-25'
+      provenance: user_reported
+      original_text: 昨日はA60を実施しました。アップとクールダウンはジムまでの徒歩で代用しました。所感としては各セットRIR1-2くらいまでは追い込みました。全体的な疲労感はあるが局所的な筋肉痛はありません
+    - reported_on: '2026-10-26'
+      pertains_to_date: '2026-10-25'
+      provenance: user_reported
+      question: Lat Pulldownは、次回Aの継続確認として指定していた47kgで実施しましたか？ 試行の終了記録と次回判断に使います。
+      original_text: 47kgで実施した
+      confirmed_observations:
+        lat_pulldown_weight_kg: 47
+    - reported_on: '2026-10-26'
+      pertains_to_date: '2026-10-25'
+      provenance: user_reported
+      question: 次回の負荷をレビューするため、10月25日の運動中・終了後から今日までに、痛みや明確な違和感、マシンでの明確なフォーム崩れはありましたか？
+      original_text: いずれもなし
+      confirmed_observations:
+        pain: none
+        clear_discomfort: none
+        clear_machine_form_issue: none
+        symptom_timing:
+        - during_session
+        - post_session_through_2026-10-26
+      note: 筋肉痛・疲労・日常活動への影響の否定へ拡張しない。
+    feedback:
+      completed: A60を実施。Garmin76:46。Lat47kg・各set RIR約1〜2は本人確認。WU/CDは徒歩代替。他の重量・回数範囲・7種目15setとメイン有酸素設定は処方継承。
+      positives: Lat47kgを再度実施し、10/25運動中・終了後から10/26まで痛み・明確な違和感、マシンの明確なフォーム崩れはなし。局所的筋肉痛もなしと申告。
+      concerns: 通常RIR2〜3より余力を少なくした可能性があり、疲労感もある。RIRの範囲は重なるため全set逸脱とは断定しない。疲労の持続と生活への影響は未確認。
+      recent_comparison: 直近8週間の同Aは10/10・10/4・9/20。順に時間69:37／62:53／70:24、平均HR122／121／122、Load85／76／90。今回76:46・HR109・Load80。10/10より7:09長く平均13bpm低いが、徒歩代替と計測範囲不明のため同条件比較や体力向上としない。10/10はLat47kg・RIR1〜2、他RIR2〜3。10/4の上半身RIR4+から今回の変化も回数・条件が異なり効果を断定しない。
+      next_workout: 通常処方を維持し追加増量しない。次回A1回だけLat47kg・8〜12回×2set・RIR1〜2を継続確認し、RIR2で止めてよい。他6種目は通常重量・set数を維持しRIR2〜3を残すよう回数調整。疲労が強く残れば47kg試行を見送り通常40kgまたは休養。下限未達・痛み・フォーム崩れで試行を打ち切り、負荷を下げても問題が続けば中止。Chest33kg維持・40kg保留。
+    menu_decision:
+      status: final
+      outcome: keep
+      next_session_action: trial_one_step
+      fact: Lat47kg、各set RIR約1〜2、全体的疲労感あり・局所筋肉痛なし。10/25運動中・終了後から10/26まで痛み・違和感・マシンの明確なフォーム崩れはいずれもなしと本人確認。
+      interpretation: 10/10と10/25のLat47kg・RIR1〜2および無痛・明確なフォーム崩れなしは同重量の次回限定継続を支持する。通常処方40kgは維持し追加増量しない。他種目は通常RIR2〜3へ戻す。
+      hypothesis: 余力を通常基準へ戻すことで刺激と疲労の釣り合いを再確認できる可能性。
+      rationale: 47kgを一律40kgへ戻す根拠はなく、強い残存疲労等がなければ次回のみ再確認する。回数範囲・set数は処方継承で、正確な実回数・上限達成・生活への影響は未確認のため47kg恒久採用を自動確定しない。
+      evidence:
+      - 2026-10-25 A_full
+      - 2026-10-10 A_full
+      - 2026-10-04 A_full
+      - 2026-09-20 A_full
+      review_conditions: 次回AのLat47kgで回数下限・余力・フォーム・症状と翌日疲労を確認。残存疲労や症状によって試行見送り・低減・中止。ChatGPTはこの暫定運用とJ-002/J-003・B-001を再評価する。
+      trial_targets:
+      - machine: lat_pulldown
+        planned_weight_kg: 40
+        trial_weight_kg: 47
+        reps_min: 8
+        reps_max: 12
+        sets: 2
+        rir: 1-2
+        trial_id: 2026-10-26-A-lat-confirmation
+    machine_adjustments:
+    - machine: lat_pulldown
+      planned_weight_kg: 40
+      trial_weight_kg: 47
+      actual_weight_kg: 47
+      adjustment: one_step_heavier_trial
+      resolution_basis: 当日有効だった2026-10-11-A-lat-confirmationと10/26本人回答「47kgで実施した」。
+      subjective_comment: 全set RIR約1〜2。痛み・違和感・明確なフォーム崩れなし。
+      provenance: user_reported
